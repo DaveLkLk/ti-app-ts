@@ -1,4 +1,4 @@
-import { getName, getDependency } from "../../data/directivos.ts";
+// import { getName, getDependency } from "../../data/directivos.ts";
 
 export function getEvents(section: HTMLElement){
 
