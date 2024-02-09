@@ -55,7 +55,15 @@ export function createDirectiveCard(obj:DirectivoCard){
   div.title = 'id: '+obj.id
   div.id = `directivo-card-${tagId}`;
   div.innerHTML = `
-
+    <div class="directivo_container">
+      <span id="directivo-name">${obj.nombre}</span>
+      <span id="directivo-cargo">${obj.cargo}</span>
+      <span id="directivo-dependencia">${obj.dependencia}</span>
+    </div>
+    <div>
+      <span id="directivo-correo-general">${obj.correo?.general}</span>
+      <span id="directivo-correo-personal">${obj.correo?.personal == null ? 'vacio' : obj.correo.personal}</span>
+    </div>
   `;
 // DEFINIR LA SALIDA QUE TENDRA ESTE OBJETO 
   return div;

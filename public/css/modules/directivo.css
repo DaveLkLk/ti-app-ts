@@ -1,0 +1,11 @@
+.directivo_result{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+    padding: 2rem 0 0;
+}
+.directivo_result-card{
+    border: 1px solid grey;
+    padding: 1rem;
+    color: grey;
+}

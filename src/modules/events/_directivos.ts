@@ -19,7 +19,7 @@ export function getEvents(section: HTMLElement){
     const BtnDynamic = section.querySelector('#search-drt-dynamic') as HTMLDivElement;
     const BtnDpendency = section.querySelector('#search-dependency') as HTMLDivElement;
     const indicatorFound = section.querySelector('#directivo-result-indicator') as HTMLElement;
-    const resultSearch = section.querySelector('#directivo-result') as HTMLDivElement;
+    const resultSearch = section.querySelector('.directivo_result') as HTMLDivElement;
     
     let switchDynamic = false;
     let switchDependency = false;
@@ -30,7 +30,7 @@ export function getEvents(section: HTMLElement){
             if(type === typeRequest.nm) switchDynamic = true
             if(type === typeRequest.dpd) switchDependency = true
         }
-        if(boolean === false){
+        if(!boolean){
             if(type === typeRequest.nm) switchDynamic = false
             if(type === typeRequest.dpd) switchDependency = false
         }
@@ -44,7 +44,6 @@ export function getEvents(section: HTMLElement){
         return isActive
     }
     function searchActive(type:string){
-        console.log(InpSearch.value);
         const targetInput = InpSearch.value.toLowerCase();
         resultSearch.innerHTML = '';
         if (targetInput === '') {
@@ -67,13 +66,13 @@ export function getEvents(section: HTMLElement){
         });
     }
 
-    const toggleStorage = () => localStorage.getItem(anexoLocalStorage.SEARCH_DINAMYC)
-    const anxStorage = () => localStorage.getItem(anexoLocalStorage.SEARCH_DEPENDENCY)
-    if(toggleStorage() === 'true'){
+    const dynamicStorage = () => localStorage.getItem(anexoLocalStorage.SEARCH_DINAMYC)
+    const dpdStorage = () => localStorage.getItem(anexoLocalStorage.SEARCH_DEPENDENCY)
+    if(dynamicStorage() === 'true'){
         BtnDynamic.classList.toggle(`${BtnDynamic.dataset.class}--active`)
         switchDynamic = true
     }
-    if(anxStorage() === 'true'){
+    if(dpdStorage() === 'true'){
         BtnDpendency.classList.toggle(`${BtnDpendency.dataset.class}--active`)
         switchDependency = true
     }
