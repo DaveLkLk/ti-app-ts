@@ -379,11 +379,24 @@ const arrDirectivos = [
     },
 ];
 
+function deleteAccentMark(str:string){
+  const vocalsMark = "áéíóúü";
+  const vocals = "aeiouu";
+  return str
+  .split('')
+  .map(letra => {
+    const indice = vocalsMark.indexOf(letra)
+    return indice !== -1 ? vocals[indice] : letra
+  })
+  .join('')
+  }
 export const getName = (name:string)=> {
-  const matches = arrDirectivos.filter(obj => obj.nombre.includes(name))
+  const matches = arrDirectivos.filter(obj => deleteAccentMark(obj.nombre.toLowerCase()).includes(name.toLowerCase()))
   return matches;
 }
 export const getDependency = (dpnd:string)=> {
-  const matches = arrDirectivos.filter(obj => obj.nombre.includes(dpnd))
+  console.log(dpnd);
+  const matches = arrDirectivos.filter(obj => deleteAccentMark(obj.dependencia.toLowerCase()).includes(dpnd.toLowerCase()))
+  console.log(matches);
   return matches;
 }

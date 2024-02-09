@@ -1,6 +1,6 @@
 import { svgCopy, svgDelete, svgPin } from '../components/Icons.ts';
 import { generateId } from '../rules/functions.ts'
-import { CardTextParam, OfficeCardParam } from '../rules/types.ts';
+import { CardTextParam, DirectivoCard, OfficeCardParam } from '../rules/types.ts';
 
 export function createCardText(obj:CardTextParam) {
   const tagId = generateId();
@@ -33,9 +33,6 @@ export function createCardText(obj:CardTextParam) {
   return cardText;
 }
 export function createOfficeCard(obj:OfficeCardParam){
-  if(!(obj instanceof Object)){
-    throw new Error('No se recibio un objeto para crear la tarjeta de texto');
-  }
   const tagId = generateId();
   const div = document.createElement('div')
   div.classList.add('office_result-card')
@@ -50,4 +47,24 @@ export function createOfficeCard(obj:OfficeCardParam){
     </div>
   `;
   return div
+}
+export function createDirectiveCard(obj:DirectivoCard){
+  const tagId = generateId();
+  const div = document.createElement('div');
+  div.classList.add('directivo_result-card')
+  div.title = 'id: '+obj.id
+  div.id = `directivo-card-${tagId}`;
+  div.innerHTML = `
+    <div class="directivo_container">
+      <span id="directivo-name">${obj.nombre}</span>
+      <span id="directivo-cargo">${obj.cargo}</span>
+      <span id="directivo-dependencia">${obj.dependencia}</span>
+    </div>
+    <div>
+      <span id="directivo-correo-general">${obj.correo?.general}</span>
+      <span id="directivo-correo-personal">${obj.correo?.personal == null ? 'vacio' : obj.correo.personal}</span>
+    </div>
+  `;
+// DEFINIR LA SALIDA QUE TENDRA ESTE OBJETO 
+  return div;
 }

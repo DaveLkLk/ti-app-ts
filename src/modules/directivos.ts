@@ -1,3 +1,5 @@
+import '../../public/css/modules/directivo.css'
+import '../../public/css/components/layouts.css';
 import { getEvents } from "./events/_directivos.ts";
 import { svgLupa } from "../components/Icons.ts";
 import { LabelBtnToggle } from "../components/btnToggle.ts";
@@ -15,25 +17,28 @@ function pageContentDirectivo(){
     div.classList.add('content_directivos')
     div.innerHTML = `
         <!-- BUSQUEDA DE OFICINAS -->
-        <div class="office_item office_group-search">
-        <div class="box_search-config">
-            ${LabelBtnToggle({btnId:'search-dinamyc',span:'Búsqueda dinámica'}).outerHTML}
-            ${LabelBtnToggle({btnId:'search-directivo',span:'Buscar por dependencia'}).outerHTML}
-        </div>
-        <form class="form_search form-panel" id="office-form-search" data-class="form_search">
-            <div class="form_group">
-            <div class="form_group-row">
-                <input type="search" id="office-inp-search" placeholder="buscar.." class="form_input" autocomplete="off" title="escribe aqui..">
-                <button class="btn_icon btn_fixed" type="submit" id="office-btn-search" title="buscar.." data-class="btn_fixed">
-                ${svgLupa()}
-                </button>
+        <div class="box_item directivo_group-search">
+            <div class="box_search-config">
+                ${LabelBtnToggle({btnId:'search-drt-dynamic',span:'Búsqueda dinámica'}).outerHTML}
+                ${LabelBtnToggle({btnId:'search-dependency',span:'Buscar por dependencia'}).outerHTML}
             </div>
+            <form class="form_search form-panel" id="directivo-form-search" data-class="form_search">
+                <div class="form_group">
+                <div class="form_group-row">
+                    <input type="search" id="directivo-inp-search" placeholder="buscar funcionario.." class="form_input" autocomplete="off" title="escribe aqui..">
+                    <button class="btn_icon btn_fixed" type="submit" id="directivo-btn-search" title="buscar.." data-class="btn_fixed">
+                    ${svgLupa()}
+                    </button>
+                </div>
+                </div>
+            </form>
+            <div class="box_search-indicator">
+                <h2 id="directivo-result-indicator" class="indicator_count" title="número de resultados">-</h2>
+                <p>resultados</p>
             </div>
-        </form>
-        <div class="office_search-indicator">
-            <h2 id="office-result-indicator" class="indicator_count" title="número de resultados">-</h2>
-            <p>resultados</p>
         </div>
+        <div class="directivo_item directivo_group-result">
+            <div class="directivo_result"></div>
         </div>
     `;
     return div

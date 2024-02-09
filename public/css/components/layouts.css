@@ -1,0 +1,99 @@
+  /* LAYOUT BUSQUEDA ANEXOS Y DIRECTIVOS */
+  .box_item{
+    /* margin: auto; */
+    display: grid;
+    /* grid-auto-columns: max-content; */
+    grid-template-areas:
+        "search form indicator";
+    transition: grid-template-areas .5s linear;
+    gap: 2rem;
+}
+.box_search-config{
+    grid-area: search;
+    transition: grid-area .5s linear;
+    display: grid;
+    align-items: center;
+    padding: 3px 0 3px 1em;
+    gap: 1em;
+    padding: 1rem 2rem;
+    background: var(--clr-clay-950);
+    box-shadow: var(--sct-card-shadow);
+    --size: 60px;
+    --circle: 0.7;
+    --inactive: var(--clr-clay-800);
+    --active: var(--clr-clay-400);
+    --clr-circle: var(--clr-clay-300);
+    --clr-circle-active: var(--clr-clay-50);
+}
+    .box_search-config .label_toggle{
+        display: flex;
+        gap: 1em;
+    }
+    .box_search-config span{
+        pointer-events: none;
+        color: var(--clr-white-600);
+        transition: color var(--tr-e-out);
+    }
+    .box_search-config:hover span{
+        color: var(--clr-clay-200);
+    }
+.box_item .form_search{
+    grid-area: form;
+}
+    .box_item .form_search--active{
+        box-shadow: var(--sct-card-shadow-active);
+    } 
+.box_item .box_search-indicator{
+    grid-area: indicator;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: 1rem;
+    background: var(--clr-clay-950);
+    box-shadow: var(--sct-card-shadow);
+    color: var(--clr-white-500);
+    transition: all var(--tr-e-out);
+}
+.box_search-indicator .indicator_count{
+    text-align: center;
+    font-size: 2rem;
+}
+.box_search-indicator p{
+    font-size: .8rem;
+}
+.box_search-indicator:hover{
+    color: var(--clr-clay-200);
+}
+  /* BOX TOGGLE */
+  .box-toggle{
+    position: relative;
+    cursor: pointer;
+    background: var(--inactive);
+    width: var(--size);
+    min-width: var(--size);
+    height: calc(var(--size) - calc(var(--size) * 0.60));
+    border-radius: calc(var(--size) - calc(var(--size) * 0.5));
+    transition: left .5s, right .5s, background .5s;
+}
+.box-toggle .circle-toggle{
+    position: absolute;
+    --circle-width: calc(var(--size) - calc(var(--size) * var(--circle)));
+    --circle-height: calc(var(--size) - calc(var(--size) * var(--circle)));
+    width: var(--circle-width);
+    min-width: var(--circle-width);
+    height: var(--circle-height);
+    background: var(--clr-circle);
+    border-radius: 50%;
+    top: calc(50% - calc(calc(var(--size) - calc(var(--size) * var(--circle))) / 2));
+    transform: translateX(4px);
+    transition: transform var(--tr-e-out), background var(--tr-e-out);
+}
+.box-toggle.box-toggle--active{
+    background: var(--active);
+}
+.box-toggle.box-toggle--active .circle-toggle{
+    transform: translateX(calc(var(--size) * 0.6));
+    background: var(--clr-circle-active);
+}
