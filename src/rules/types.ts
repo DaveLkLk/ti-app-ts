@@ -64,6 +64,15 @@ export type TypeStyles = {
     anexo?: string;
     office?: string;
   }
+  export interface DirectivoCard {
+    id?: string;
+    dependencia: string;
+    nombre: string;
+    cargo: string;
+    telefono?: string;
+    anexo?: number;
+    correo?: {general?: string;personal?: string;}
+  }
 
   type TextTransformFunction = (txt: string) => string;
   type GeneralFunction = (TextTransformFunction | (() => string));

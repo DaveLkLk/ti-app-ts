@@ -20,7 +20,7 @@ export function getEvents(section:HTMLElement){
     const officeIndicator = section.querySelector('#office-result-indicator') as HTMLElement
     const text = formOfficeSearch.querySelector('#office-inp-search') as HTMLInputElement
     const btnForm = formOfficeSearch.querySelector('#office-btn-search') as HTMLButtonElement
-    const searchToggle = section.querySelector('#search-dinamyc') as HTMLElement
+    const searchToggle = section.querySelector('#search-anx-dinamyc') as HTMLElement
     const searchAnexoToggle = section.querySelector('#search-anexo') as HTMLElement
     const officeResponse = section.querySelector('.office_result') as HTMLElement
     
@@ -28,11 +28,8 @@ export function getEvents(section:HTMLElement){
     let switchAnx = false
     
     function validateType(type:string, boolean:Boolean) {
-        if(type === undefined || boolean === undefined){
-            throw new Error('error en los parámetros recibidos')
-        }
         if(type === '') return
-        if(boolean === true){
+        if(boolean){
             if(type === typeRequest.ofc) switchToggle = true
             if(type === typeRequest.anx) switchAnx = true
         }
@@ -42,16 +39,11 @@ export function getEvents(section:HTMLElement){
         }
     }
     function validateElementActive(element:HTMLElement, msg:string, type:string){
-        if(element === undefined || msg === undefined || type === undefined){
-            throw new Error("Parámetros no definidos")
-        }
         const isActive = element.classList.contains(`${element.dataset.class}--active`)
         if(isActive){
             msg.length > 0 ? createAlert(divAlert, msg, ALERT_TYPE.TEMP.success, [], 1200) : null
-            validateType(type, isActive)
-        }else if(isActive === false){
-            validateType(type, isActive)
         }
+        validateType(type, isActive)
         return isActive
     }
     function searchActive(type:string){

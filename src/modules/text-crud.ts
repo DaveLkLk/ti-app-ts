@@ -1,3 +1,4 @@
+import '../../public/css/modules/text-crud.css'
 import { svgConfig, svgLupa, svgPaste } from "../components/Icons.ts";
 import { getEvents } from "./events/_text-crud.ts";
 

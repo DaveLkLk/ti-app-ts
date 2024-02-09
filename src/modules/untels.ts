@@ -1,4 +1,5 @@
 import '../../public/css/modules/untels.css';
+import '../../public/css/components/layouts.css';
 import { getEvents } from "./events/_untels.ts";
 import { svgLupa } from "../components/Icons.ts"
 import { LabelBtnToggle } from '../components/btnToggle.ts';
@@ -18,7 +19,7 @@ function pageContentAnexo(){
     <!-- BUSQUEDA DE OFICINAS -->
     <div class="box_item office_group-search">
       <div class="box_search-config">
-        ${LabelBtnToggle({btnId:'search-dinamyc',span:'Búsqueda dinámica'}).outerHTML}
+        ${LabelBtnToggle({btnId:'search-anx-dinamyc',span:'Búsqueda dinámica'}).outerHTML}
         ${LabelBtnToggle({btnId:'search-anexo',span:'Búsqueda por Anexo'}).outerHTML}
       </div>
       <form class="form_search form-panel" id="office-form-search" data-class="form_search">
@@ -31,7 +32,7 @@ function pageContentAnexo(){
           </div>
         </div>
       </form>
-      <div class="office_search-indicator">
+      <div class="box_search-indicator">
         <h2 id="office-result-indicator" class="indicator_count" title="número de resultados">-</h2>
         <p>resultados</p>
       </div>
