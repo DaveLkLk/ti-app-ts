@@ -1,5 +1,16 @@
-import { getName, getDependency } from "../../data/directivos.ts";
+import { createAlert, ALERT_TYPE, MESSAGE_TYPE } from "../../components/alert";
+import { getDependency, getName } from "../../data/directivos";
+import { createDirectiveCard } from "../../layouts/Layout";
+import { addLocalStorage } from "../../rules/functions";
 
+export const anexoLocalStorage = {
+    SEARCH_DINAMYC: 'search-drt-dinamyc',
+    SEARCH_DEPENDENCY: 'search-dependency'
+}
+const typeRequest = {
+    nm: 'name',
+    dpd: 'dependency'
+}
 export function getEvents(section: HTMLElement){
     const divAlert = document.querySelector(".alert") as HTMLElement;
     const formSearch = section.querySelector('#directivo-form-search') as HTMLFormElement;
