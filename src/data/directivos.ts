@@ -178,7 +178,8 @@ const arrDirectivos = [
   },
   {
     id: 17,
-    nombre: "Altamirano Márquez Edgar Leónidas",
+    modificado: "14-02-2024 09:05",
+    nombre: "Aguilar de la Cruz Josué Esteban",
     cargo: "Jefe",
     dependencia: "Unidad de Recursos Humanos",
     telefono: "(01) 7158878",
