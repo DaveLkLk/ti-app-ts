@@ -8,10 +8,18 @@ const divAlert = document.querySelector('.alert') as HTMLElement;
 
 export const stylesLocalStorage = {
   STYLES_BLOQUED: 'style-bloqued',
-  BTN_CLEAR: 'btn-clear'
+  BTN_CLEAR: 'btn-clear',
+  OPTION_SELECT: 'type-text'
 }
-
-
+const setCurrentOption = (element: HTMLSelectElement, item: string) => {
+  for (let i = 0; i < element.children.length; i++ ){
+    let option = element.options[i]
+    if(option.value === item){
+      option.selected = true;
+      break;
+    }
+  }
+}
 
 
 function pasteText(btn:HTMLButtonElement, element:(HTMLInputElement | HTMLTextAreaElement), section:HTMLElement){
@@ -45,6 +53,14 @@ export function getEvents(section:HTMLElement){
   const btnClearSpace = section.querySelector('#btn_clear-space') as HTMLButtonElement;
 
   pasteText(btnPaste, formElements(section).input, section)
+
+  const selectText = formElements(section).option
+  const itemOptionText = String(localStorage.getItem(stylesLocalStorage.OPTION_SELECT))
+  setCurrentOption(selectText, itemOptionText)
+  selectText.addEventListener('change', () => {
+    let currentOption = String(selectText.value)
+    addLocalStorage(stylesLocalStorage.OPTION_SELECT, currentOption)
+  })
 
   const lockActive = window.localStorage.getItem(stylesLocalStorage.STYLES_BLOQUED)
   if(lockActive === 'true'){

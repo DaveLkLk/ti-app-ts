@@ -6,6 +6,7 @@ import { sectionDirectivoUNTELS } from "../modules/directivos.ts";
 
 import { anexoLocalStorage } from "../modules/events/_untels.ts";
 import { stylesLocalStorage } from "../modules/events/_text-style.ts";
+import { addLocalStorage } from "../rules/functions.ts";
 
 import { PageApp } from "../rules/types.ts";
 
@@ -33,8 +34,11 @@ const pagesApp:PageApp = {
 }
 export function pageManagerApp(dataset:string){
     const dataPage = dataset
+    // que se guarde el id de la seccion en localstorage y no tener conflicto cuando se cambie a otra seccion
+    // const localPageFound = localStorage.getItem('section-app')
     const pageFound = Object.values(pagesApp).find(entry => entry.id === dataPage);
     if(pageFound){
+        addLocalStorage('section-app', dataPage)
         const showPage = {
             page: pageFound.page,
             state: true
