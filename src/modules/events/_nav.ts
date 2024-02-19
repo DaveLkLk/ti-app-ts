@@ -2,10 +2,17 @@ import { pageManagerApp } from "../../controllers/main.ts";
 import { sectionNotFound } from "../../modules/404.ts";
 
 export function getEvents(root: HTMLElement){
-    const mainContainer = root.querySelector('.main_container') as HTMLElement
+  const mainContainer = root.querySelector('.main_container') as HTMLElement;
+  // recuperar la seccion de localstorage
+  const localPageFound = localStorage.getItem('section-app') as string;
+  if(localPageFound){
+    const prevPage = pageManagerApp(localPageFound);
+    mainContainer.innerHTML = '';
+    mainContainer.appendChild(prevPage?.page());
+  }
 
-    const btnMenu = root.querySelector("#btn-show-menu") as HTMLButtonElement;
-    const listMenu = root.querySelector('.navigation_list') as HTMLElement;
+  const btnMenu = root.querySelector("#btn-show-menu") as HTMLButtonElement;
+  const listMenu = root.querySelector('.navigation_list') as HTMLElement;
 
     btnMenu.addEventListener("click",()=>{
         console.log("click");
