@@ -83,30 +83,4 @@ body{
   .main_container{
     grid-template-columns: 1fr;
   }
-/* SECCION ANEXOS */
-  .office_group-search{
-    grid-template-areas:
-      "search indicator"
-      "form indicator";
-  }
-  .office_result-card{
-    margin: auto;
-  }
-}
-@media  screen and (max-width: 568px){
-  /* SECCION ANEXOS */
-  .office_group-search{
-    grid-template-areas:
-      "search"
-      "indicator"
-      "form";
-  }
-  .office_item .office_result{
-    --card-w: 150px;
-  }
-  .office_result-card{
-    flex-direction: column;
-    text-align: center;
-  }
-  
 }

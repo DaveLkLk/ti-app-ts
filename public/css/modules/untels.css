@@ -4,8 +4,6 @@
     gap: 2rem;
 }
 
-
-
 .office_item .office_result{
     --card-w: 15.625rem;
     display: grid;
@@ -56,3 +54,30 @@
         font-size: 1.2rem;
         color: var(--clr-white-400);
     }
+
+@media screen and (max-width: 868px){
+  .office_group-search{
+    grid-template-areas:
+      "search indicator"
+      "form indicator";
+  }
+  .office_result-card{
+    margin: auto;
+  }
+}
+@media  screen and (max-width: 568px){
+    .office_group-search{
+      grid-template-areas:
+        "search"
+        "indicator"
+        "form";
+    }
+    .office_item .office_result{
+      --card-w: 150px;
+    }
+    .office_result-card{
+      flex-direction: column;
+      text-align: center;
+    }
+    
+  }
