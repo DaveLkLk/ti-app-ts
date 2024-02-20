@@ -48,14 +48,14 @@ const NavList = ()=>{
                 <span class="navigation_li-name">About Us</span>
             </li>
             <li class="navigation_li navigation_li-app" data-page="not-found">
-                <span class="navigation_li-name">Documents</span>
+                <span class="navigation_li-name">Docs</span>
             </li>
             <li class="navigation_li">
             <span class="navigation_li-name">Applications</span>
             ${ListApplication().outerHTML}
             </li>
             <li class="navigation_li navigation_li-app" data-page="not-found">
-                <span class="navigation_li-name">Questions</span>
+                <span class="navigation_li-name">FAQ</span>
             </li>
             <li class="navigation_li navigation_li-app" data-page="not-found">
                 <span class="navigation_li-name">Forum</span>
