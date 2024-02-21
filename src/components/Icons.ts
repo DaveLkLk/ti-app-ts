@@ -17,8 +17,8 @@ export function svgCircleAdd(){
         </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgDelete(){
+}
+export function svgDelete(){
       const div = document.createElement('div')
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -27,8 +27,8 @@ export function svgCircleAdd(){
         </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgPin(){
+}
+export function svgPin(){
       const div = document.createElement('div')
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -36,8 +36,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgPaste(){
+}
+export function svgPaste(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -46,8 +46,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgAdd(){
+}
+export function svgAdd(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -55,8 +55,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgLock(){
+}
+export function svgLock(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -64,8 +64,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgUnlock(){
+}
+export function svgUnlock(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -73,8 +73,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgBold(){
+}
+export function svgBold(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -82,8 +82,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgItalic(){
+}
+export function svgItalic(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -91,8 +91,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgTached(){
+}
+export function svgTached(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -100,8 +100,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgUnderline(){
+}
+export function svgUnderline(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-type-underline" viewBox="0 0 16 16">
@@ -109,8 +109,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgMagic(){
+}
+export function svgMagic(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -118,8 +118,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgLupa(){
+}
+export function svgLupa(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -127,8 +127,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgDatabase(){
+}
+export function svgDatabase(){
       const div = document.createElement('div')
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -136,8 +136,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgConfig(){
+}
+export function svgConfig(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -145,8 +145,8 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
-    export function svgMenu(){
+}
+export function svgMenu(){
       const div = document.createElement('div');
       div.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -154,4 +154,42 @@ export function svgCircleAdd(){
       </svg>
       `;
       return div.innerHTML;
-    }
+}
+export function svgTextTransform(){
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M1.5 2.5A1.5 1.5 0 0 1 3 1h10a1.5 1.5 0 0 1 1.5 1.5v3.563a2 2 0 0 1 0 3.874V13.5A1.5 1.5 0 0 1 13 15H3a1.5 1.5 0 0 1-1.5-1.5V9.937a2 2 0 0 1 0-3.874zm1 3.563a2 2 0 0 1 0 3.874V13.5a.5.5 0 0 0 .5.5h10a.5.5 0 0 0 .5-.5V9.937a2 2 0 0 1 0-3.874V2.5A.5.5 0 0 0 13 2H3a.5.5 0 0 0-.5.5zM2 7a1 1 0 1 0 0 2 1 1 0 0 0 0-2m12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+        <path d="M11.434 4H4.566L4.5 5.994h.386c.21-1.252.612-1.446 2.173-1.495l.343-.011v6.343c0 .537-.116.665-1.049.748V12h3.294v-.421c-.938-.083-1.054-.21-1.054-.748V4.488l.348.01c1.56.05 1.963.244 2.173 1.496h.386z"/>
+      </svg>
+      `;
+      return div.innerHTML;
+}
+export function svgTextCRUD(){
+  const div = document.createElement('div');
+  div.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M3 6.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm12 1a1 1 0 0 1 1 1v1H1V2a1 1 0 0 1 1-1zm1 3v10a1 1 0 0 1-1 1h-2V4zm-4 0v11H2a1 1 0 0 1-1-1V4z"/>
+  </svg>
+  `;
+  return div.innerHTML;
+}
+export function svgAnexos(){
+  const div = document.createElement('div');
+  div.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5"/>
+  </svg>
+  `;
+  return div.innerHTML;
+}
+export function svgDirectivos(){
+  const div = document.createElement('div');
+  div.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+  </svg>
+  `;
+  return div.innerHTML;
+}
