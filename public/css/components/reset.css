@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html{
+  font-family: "Open Sans", system-ui;
+  font-optical-sizing: auto;
+}
+
 :root{
     --bg-body: linear-gradient(to right, #1e2638, #1c2333);
     --bg-container: #293042;
@@ -241,7 +248,7 @@
   input{
     max-width: 100%;
   }
-  div span {
+  div > span {
     display: block;
   }
   
@@ -259,4 +266,3 @@
   input:hover::-webkit-search-cancel-button{
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 16 16"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></svg>');
   }
-

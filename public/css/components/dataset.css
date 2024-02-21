@@ -20,7 +20,6 @@ span[data-for="button"]{
     letter-spacing: 2px;
     font-weight: bold;
     color: #ffff;
-    font-family: glitch;
     margin-bottom: 2rem;
   }
   [data-for="title-2"]{

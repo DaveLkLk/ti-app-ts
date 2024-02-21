@@ -1,5 +1,5 @@
 import '../../public/css/modules/nav.css'
-import { svgAnexos, svgDirectivos, svgMenu, svgTextCRUD, svgTextTransform } from "../components/Icons.ts";
+import { svgAnexos, svgDarkTheme, svgDefaultTheme, svgDirectivos, svgLightTheme, svgMenu, svgTextCRUD, svgTextTransform } from "../components/Icons.ts";
 
 const NavTitle = () => {
     const div = document.createElement('div');
@@ -39,11 +39,38 @@ const ListApplication = ()=>{
     `;
     return ul;
 }
+const ListTheme= () => {
+    const ul = document.createElement('ul')
+    ul.classList.add('dropdown_li-theme')
+    ul.classList.add('dropdown_theme')
+    ul.innerHTML = `
+        <div class="dropdown_theme-item">
+            <span class="btn_icon">${svgDefaultTheme()}</span>
+            <span class="">Sistema</span>
+        </div>
+        <div class="dropdown_theme-item">
+            <span class="btn_icon">${svgLightTheme()}</span>
+            <span class="">Light</span>
+        </div>
+        <div class="dropdown_theme-item">
+            <span class="btn_icon">${svgDarkTheme()}</span>
+            <span class="">Dark</span>
+        </div>
+    `;
+    return ul;
+}
 const NavList = ()=>{
     const nav = document.createElement('nav');
     nav.classList.add('navigation_list');
     nav.innerHTML = `
         <ul class="navigation_ul navigation_app">
+            <li class="navigation_li-btn navigation_li-theme">
+                <div class="navigation_theme-btn">
+                    <span class="navigation_li-icon btn_icon">${svgDefaultTheme()}</span>
+                    <span class="navigation_li-name">Tema</span>
+                </div>
+                ${ListTheme().outerHTML}
+            </li>
             <li class="navigation_li navigation_li-app" data-page="not-found">
                 <span class="navigation_li-name">About Us</span>
             </li>
@@ -56,9 +83,6 @@ const NavList = ()=>{
             </li>
             <li class="navigation_li navigation_li-app" data-page="not-found">
                 <span class="navigation_li-name">FAQ</span>
-            </li>
-            <li class="navigation_li navigation_li-app" data-page="not-found">
-                <span class="navigation_li-name">Forum</span>
             </li>
             <li class="navigation_li navigation_li-app" data-page="not-found">
                 <span class="navigation_li-name">Settings</span>

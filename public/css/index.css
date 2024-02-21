@@ -3,9 +3,7 @@
 @import url("./components/classname.css");
 @import url("./components/dataset.css");
 
-html{
-  font-family: system-ui;
-}
+
 body{
   background: var(--bg-body);
   min-height: 100vh;

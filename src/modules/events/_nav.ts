@@ -13,7 +13,6 @@ export function getEvents(root: HTMLElement){
 
   const btnMenu = root.querySelector("#btn-show-menu") as HTMLButtonElement;
   const listMenu = root.querySelector('.navigation_list') as HTMLElement;
-
     btnMenu.addEventListener("click",()=>{
         console.log("click");
         listMenu.classList.toggle('navigation_list--active')
@@ -22,6 +21,7 @@ export function getEvents(root: HTMLElement){
     const pageApplication = root.querySelector('.navigation_app') as HTMLElement
     pageApplication.addEventListener('click', (e:MouseEvent) =>{
     const etarget = e.target as HTMLElement
+
     const isLiItem = etarget.tagName === 'LI' && etarget.classList.contains('dropdown_li')
     if(isLiItem){
       const dataset = (etarget.dataset.page) as string;
@@ -46,6 +46,12 @@ export function getEvents(root: HTMLElement){
       mainContainer.innerHTML = ''
       mainContainer.appendChild(getPage.page())
     }
+
+    const userTheme = etarget.tagName === 'LI' && etarget.classList.contains('navigation_li-theme')
+    if(userTheme){
+      
+    }
+
   })
   return;
 }
