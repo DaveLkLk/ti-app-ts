@@ -42,7 +42,11 @@
 }
     .box_item .form_search--active{
         box-shadow: var(--sct-card-shadow-active);
-    } 
+    }
+    .form_search input[type="search"]::placeholder{
+        font-style: italic;
+    }
+
 .box_item .box_search-indicator{
     grid-area: indicator;
     display: flex;
