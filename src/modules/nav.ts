@@ -1,5 +1,5 @@
 import '../../public/css/modules/nav.css'
-import { svgMenu } from "../components/Icons.ts";
+import { svgAnexos, svgDirectivos, svgMenu, svgTextCRUD, svgTextTransform } from "../components/Icons.ts";
 
 const NavTitle = () => {
     const div = document.createElement('div');
@@ -21,19 +21,19 @@ const ListApplication = ()=>{
     ul.classList.add('dropdown_app');
     ul.innerHTML = `
         <li class="dropdown_li" data-page="text-style">
-            <span class="dropdown_li-clr"></span>
+            <span class="dropdown_li-clr btn_menu">${svgTextTransform()}</span>
             <span class="dropdown_li-name">Tranform Text App</button>
         </li>
         <li class="dropdown_li" data-page="text-crud">
-            <span class="dropdown_li-clr"></span>
+            <span class="dropdown_li-clr btn_menu">${svgTextCRUD()}</span>
             <span class="dropdown_li-name">CRUD Text App</button>
         </li>
         <li class="dropdown_li" data-page="anexo-untels">
-            <span class="dropdown_li-clr"></span>
+            <span class="dropdown_li-clr btn_menu">${svgAnexos()}</span>
             <span class="dropdown_li-name">Anexos UNTELS</button>
         </li>
         <li class="dropdown_li" data-page="directivo-untels">
-            <span class="dropdown_li-clr"></span>
+            <span class="dropdown_li-clr btn_menu">${svgDirectivos()}</span>
             <span class="dropdown_li-name">Directivos UNTELS</button>
         </li>
     `;
