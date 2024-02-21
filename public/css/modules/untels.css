@@ -15,6 +15,8 @@
         justify-content: flex-start;
         align-items: center;
         padding: 1rem;
+        gap: .7rem;
+        overflow: hidden;
         max-width: var(--card-w);
         width: 100%;
         height: auto;
@@ -43,9 +45,10 @@
             inset -2px -2px 2px #3f4768bb;
     }
     .office_result-card .oficina{
-        font-size: 1rem;
+        font-size: .9rem;
+        text-wrap: balance;
         text-overflow: ellipsis;
-        padding: 1rem;
+        /* padding: 1rem; */
         border-radius: 10px;
         color: var(--clr-office);
         transition: color var(--tr-e-out);
@@ -56,22 +59,11 @@
     }
 
 @media screen and (max-width: 868px){
-  .office_group-search{
-    grid-template-areas:
-      "search indicator"
-      "form indicator";
-  }
   .office_result-card{
     margin: auto;
   }
 }
 @media  screen and (max-width: 568px){
-    .office_group-search{
-      grid-template-areas:
-        "search"
-        "indicator"
-        "form";
-    }
     .office_item .office_result{
       --card-w: 150px;
     }
@@ -79,5 +71,4 @@
       flex-direction: column;
       text-align: center;
     }
-    
-  }
+}

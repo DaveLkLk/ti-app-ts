@@ -170,6 +170,7 @@
     --clr-clay-800: #2e3e5e;
     --clr-clay-900: #2a3650;
     --clr-clay-950: #20283c;
+    --clr-clay-990: #111520;
   
   
     
@@ -191,18 +192,16 @@
   }
   ::-webkit-scrollbar{
     background: #1b192e;
-    cursor:pointer;
     width: 10px;
   }
   ::-webkit-scrollbar-thumb{
-    background: #364a9b;
+    background: #212e5ccc;
     transition: background .3s var(--tr-e-out);
     cursor: pointer;
     border-radius: 5px;
-    /* display: none; */
   }
   ::-webkit-scrollbar-thumb:hover{
-    background: #3650ba;
+    background: #293875;
     cursor: pointer;
   }
   ::-webkit-scrollbar-track{
@@ -242,7 +241,7 @@
   input{
     max-width: 100%;
   }
-  div > span {
+  div span {
     display: block;
   }
   
