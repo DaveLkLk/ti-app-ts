@@ -43,18 +43,19 @@ const ListTheme= () => {
     const ul = document.createElement('ul')
     ul.classList.add('dropdown_li-theme')
     ul.classList.add('dropdown_theme')
+    ul.id = 'dropdown-theme-select'
     ul.innerHTML = `
-        <div class="dropdown_theme-item">
+        <div class="dropdown_theme-item" id="theme-default" data-theme="default">
             <span class="btn_icon">${svgDefaultTheme()}</span>
-            <span class="">Sistema</span>
+            <span class="dropdown_btn-name">Sistema</span>
         </div>
-        <div class="dropdown_theme-item">
+        <div class="dropdown_theme-item" id="theme-light" data-theme="light">
             <span class="btn_icon">${svgLightTheme()}</span>
-            <span class="">Light</span>
+            <span class="dropdown_btn-name">Light</span>
         </div>
-        <div class="dropdown_theme-item">
+        <div class="dropdown_theme-item" id="theme-dark" data-theme="dark">
             <span class="btn_icon">${svgDarkTheme()}</span>
-            <span class="">Dark</span>
+            <span class="dropdown_btn-name">Dark</span>
         </div>
     `;
     return ul;
@@ -64,7 +65,7 @@ const NavList = ()=>{
     nav.classList.add('navigation_list');
     nav.innerHTML = `
         <ul class="navigation_ul navigation_app">
-            <li class="navigation_li-btn navigation_li-theme">
+            <li class="navigation_li-btn navigation_li-theme" data-class="navigation_li-theme">
                 <div class="navigation_theme-btn">
                     <span class="navigation_li-icon btn_icon">${svgDefaultTheme()}</span>
                     <span class="navigation_li-name">Tema</span>

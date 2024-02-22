@@ -251,6 +251,11 @@ html{
   div > span {
     display: block;
   }
+  span:has(svg){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
   input::-webkit-search-cancel-button{
     -webkit-appearance: none;

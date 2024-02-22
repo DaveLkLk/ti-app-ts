@@ -1,6 +1,19 @@
 import { pageManagerApp } from "../../controllers/main.ts";
 import { sectionNotFound } from "../../modules/404.ts";
 
+// esta funcion se encargara de:
+// identificar el tema seleccionado
+// guardarlo en localstorage
+// anclar el icono del tema en la navegacion principal
+
+// --- la funcion debe recibir los parametros:
+// 1. el target del mouseevent
+// 2. los elementos con el que se interactuara ?
+function eventThemeUser(target:HTMLElement){
+  const btnTheme = target.dataset.theme as string
+  return btnTheme
+}
+
 export function getEvents(root: HTMLElement){
   const mainContainer = root.querySelector('.main_container') as HTMLElement;
   // recuperar la seccion de localstorage
@@ -10,6 +23,9 @@ export function getEvents(root: HTMLElement){
     mainContainer.innerHTML = '';
     mainContainer.appendChild(prevPage?.page());
   }
+
+  const containerThemeBtn = root.querySelector('#dropdown-theme-select') as HTMLUListElement;
+  const navThemeBtn = root.querySelector('.navigation_li-theme') as HTMLLIElement;
 
   const btnMenu = root.querySelector("#btn-show-menu") as HTMLButtonElement;
   const listMenu = root.querySelector('.navigation_list') as HTMLElement;
@@ -49,9 +65,19 @@ export function getEvents(root: HTMLElement){
 
     const userTheme = etarget.tagName === 'LI' && etarget.classList.contains('navigation_li-theme')
     if(userTheme){
-      
+      const classElement = etarget.dataset.class as string
+      etarget.classList.toggle(`${classElement}--active`)
+      eventThemeUser(etarget)
     }
 
   })
+  document.addEventListener('click', (e:MouseEvent) =>{
+    const target = e.target as HTMLElement
+    const themeClicked = !navThemeBtn?.contains(target) && !containerThemeBtn?.contains(target);
+    if(themeClicked){
+      navThemeBtn?.classList.remove(`${navThemeBtn.dataset.class}--active`)
+    }
+  })
+  console.log(navigator.userAgent);
   return;
 }
