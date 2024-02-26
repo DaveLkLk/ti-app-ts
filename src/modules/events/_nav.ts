@@ -193,10 +193,10 @@ export function getEvents(root: HTMLElement){
       changeClassActive(containerThemeBtn, (containerThemeBtn.children[0] as HTMLElement))
     }
   })
-  window.addEventListener('resize', (evt) => {
-    console.log(evt);
+  // window.addEventListener('resize', (evt) => {
+  //   console.log(evt);
 
-  })
+  // })
     
   console.log(navigator.userAgent);
   return;

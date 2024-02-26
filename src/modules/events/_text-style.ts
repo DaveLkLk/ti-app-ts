@@ -159,6 +159,10 @@ export function getEvents(section:HTMLElement){
       this.text = txt,
       this.option = opt
     }
+    textDefault():string {
+      const txtCleared = clearText(this.text).SPACES;
+      return txtCleared;
+    }
     textNormal():string {
       const txtCleared = clearText(this.text).SPACES;
       const textResult = txtCleared.toLowerCase().replace(/^\w/, match => match.toUpperCase());
@@ -176,7 +180,8 @@ export function getEvents(section:HTMLElement){
         text_upper: (txt) => txt.toUpperCase(),
         text_lower: (txt) => txt.toLowerCase(),
         text_capital: () => this.textCapitalize(),
-        text_normal: () => this.textNormal()
+        text_normal: () => this.textNormal(),
+        text_default: () => this.textDefault()
       };
 
       const selectedOption = typeOptions[optValue];

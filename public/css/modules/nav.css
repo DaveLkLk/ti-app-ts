@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    --clr: var(--text-primary);
+    --clr: var(--text-active);
     color: var(--clr);
     font-size: 1.1rem;
   }
@@ -23,6 +23,7 @@
       border-radius: 20px;
       top: 0;bottom: 0;margin-block: auto;
       background: var(--clr);
+      transition: background var(--tr-e-out);
     }
     .title_page span{
       width: 100%;
@@ -32,6 +33,7 @@
       font-size: 1.7em;
       letter-spacing: 5px;
       font-family: roboto-medium, system-ui;
+      transition: color var(--tr-e-out);
     }
     .navigation_list{
       display: grid;

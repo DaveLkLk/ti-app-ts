@@ -16,6 +16,9 @@
     display: flex;
     flex-direction: column;
 }
+.error_description *{
+    transition: color var(--tr-e-out);
+}
 .error_type{
     color: var(--text-primary);
     font-size: 3rem;

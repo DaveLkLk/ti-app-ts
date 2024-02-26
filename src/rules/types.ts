@@ -81,6 +81,7 @@ export type TypeStyles = {
     text_upper?: TextTransformFunction;
     text_capital?: () => string;
     text_normal?: () => string;
+    text_default?: () => string;
     [key: string]: GeneralFunction | undefined;
   }
 

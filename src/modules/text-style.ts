@@ -45,6 +45,7 @@ function pageContentStyle(){
           <option value="text_lower">Minúsculas</option>
           <option value="text_capital">Títulos</option>
           <option value="text_normal">Oración</option>
+          <option value="text_default">Sin cambios</option>
         </select>
       </div>
       <div class="form_group">

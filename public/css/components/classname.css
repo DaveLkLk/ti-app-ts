@@ -191,7 +191,7 @@
     position: relative;
     border-radius: 50%;
     --clr-btn: var(--text-inactive);
-    transition: box-shadow var( --tr-e-out), filter var( --tr-e-out);
+    transition: box-shadow var( --tr-e-out);
   }
   .btn_lock:hover{
     --clr-btn: var(--text-primary)
@@ -204,6 +204,7 @@
   }
   .btn_lock--active{
     --clr-btn: var(--text-active);
+    box-shadow: var(--shadow-card-style-2);
   }
   .btn_lock--active svg:first-child{
     transform: scale(0);
@@ -279,7 +280,7 @@
   /* boton que solo cambia la clase activo */
   .btn_toggle{
     border-radius: 50%;
-    transition: transform var( --tr-e-out), box-shadow var( --tr-linear), filter var( --tr-linear);
+    transition: transform var( --tr-e-out), box-shadow var( --tr-linear);
     --clr-btn: var(--text-inactive);
   }
   .btn_toggle:hover{
@@ -290,6 +291,7 @@
   }
   .btn_toggle--active{
     --clr-btn: var( --text-active);
+    box-shadow: var(--shadow-card-style-2);
   }
   /* .btn_toggle--active:hover{
     filter: brightness(150%);
