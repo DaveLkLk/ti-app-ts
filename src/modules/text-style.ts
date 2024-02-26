@@ -21,7 +21,10 @@ function pageContentStyle(){
     <div class="section_title-content">
       <p data-for="txt-3">Guarda tus ajustes para futuras sesiones.</p>
       <p data-for="txt-3">Copia y Pega mejorado con atajos accesibles</p>
-      <p data-for="txt-3"><span data-for="cursive-3">Transform Text App</span> te permite mantener tus ajustes personalizados basado en el almacenamiento local o <code data-for="code-2">localStorage</code> del <a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer" title="Qué es localStorage - MDN Web Docs">objeto window en JavaScript.</a></p>
+      <p data-for="txt-3">Puedes mantener tus ajustes personalizados basado en el almacenamiento local o <a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer" title="Qué es localStorage - MDN Web Docs"><code data-for="code-2">localStorage</code>.</a></p>
+      <picture class="content_image">
+        <img class="content_image-logo" src="../../public/assets/js-localstorage-image.png">
+      </picture>
     </div>
   </div>
   <div class="section_grid">
@@ -29,8 +32,8 @@ function pageContentStyle(){
       <div class="form_group">
         <label class="label" for="text_input">Ingrese texto</label>
         <div class="form_group-row">
-          <input type="text" id="text_input" autofocus class="form_input text_input">
-          <button class="btn_paste btn_icon btn_change" data-type="button" id="btn_paste" type="button" title="Pegar último texto copiado">
+          <input type="text" id="text_input" placeholder="ingresa texto.." autofocus class="form_input text_input">
+          <button class="btn_copy-paste btn_icon" data-type="button" id="btn_paste" type="button" title="Pegar último texto copiado">
             ${svgPaste()}
           </button>
         </div>
@@ -94,7 +97,7 @@ function pageContentStyle(){
       <div class="form_group">
         <div class="form_group-row">
           <textarea class="form_output readonly" id="text_output" title="elemento de solo lectura" readonly placeholder="resultado.."></textarea>
-          <button type="button" data-type="button" class="btn_icon btn_change" id="btn_copy" title="Copiar texto">
+          <button type="button" data-type="button" class="btn_copy-paste btn_icon" id="btn_copy" title="Copiar texto">
             ${svgCopy()}
           </button>
         </div>

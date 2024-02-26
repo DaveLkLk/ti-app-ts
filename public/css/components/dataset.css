@@ -2,8 +2,8 @@
 span[data-for="button"]{
     cursor: pointer;
     transform: scale(1);
-    transform-origin: center center;
-    transition: all var(--tr-e-out);
+    /* transform-origin: center center; */
+    transition: transform var(--tr-e-out);
   }
   span[data-for="button"]:active{
     transform: scale(0.95)
@@ -17,22 +17,22 @@ span[data-for="button"]{
   /* ENFASIS DE TEXTOS */
   [data-for="title-1"]{
     font-size: 1.3rem;
-    letter-spacing: 2px;
+    text-wrap: balance;
     font-weight: bold;
-    color: #ffff;
+    color: var(--text-primary);
     margin-bottom: 2rem;
   }
-  [data-for="title-2"]{
+  /* [data-for="title-2"]{
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--clr-txt);
-  }
-  [data-for="title-3"]{
+  } */
+  /* [data-for="title-3"]{
     font-size: 1rem;
     font-weight: bold;
     color: var(--clr-txt);
-  }
-  [data-for="cursive-1"]{
+  } */
+  /* [data-for="cursive-1"]{
     font-size: 1.5rem;
     font-style: italic;
     color: var(--clr-txt);
@@ -46,16 +46,17 @@ span[data-for="button"]{
     font-size: 1rem;
     font-style: italic;
     color: var(--clr-blue-600);
-  }
-  [data-for="txt-1"]{
+  } */
+  /* [data-for="txt-1"]{
     font-size: 1.2rem;
     color: var(--clr-txt);
   }
   [data-for="txt-2"]{
     font-size: 1rem;
     color: var(--clr-txt);
-  }
+  } */
   [data-for="txt-3"]{
+    display: inline;
     font-size: 1rem;
     line-height: 1.5rem;
     color: var(--clr-txt);

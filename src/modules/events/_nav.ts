@@ -3,11 +3,21 @@ import { pageManagerApp } from "../../controllers/main.ts";
 import { sectionNotFound } from "../../modules/404.ts";
 import { addLocalStorage } from "../../rules/functions.ts";
 
+enum themeClass {
+  dark = 'dark',
+  light = 'light',
+  system = 'system'
+}
+interface ThemeUser {
+  isDarkActive: boolean;
+  class: string
+}
+
 const itemslocalStorage = {
   theme: 'theme-user',
   THEME_OPTIONS: {
-    default: {
-      value: 'default',
+    system: {
+      value: 'system',
       svg: svgDefaultTheme
     },
     light: {
@@ -17,13 +27,31 @@ const itemslocalStorage = {
     dark: {
       value: 'dark',
       svg: svgDarkTheme
-    }  
+    }
   },
-  THEME_POSITION: 'theme-position'
+  THEME_POSITION: 'theme-position',
+  body: {
+    dark: 'body_theme-dark',
+    light: 'body_theme-light',
+    system: 'body_theme-system'
+  }
+}
+const getLocalStorage = {
+  THEME: localStorage.getItem(itemslocalStorage.theme) as string,
+  THEME_POSITION: localStorage.getItem(itemslocalStorage.THEME_POSITION) as string
+}
+function changeIconWindow(isDarkTheme: boolean){
+  const pathIconDark = '../../../public/assets/astro-dark.png'
+  const pathIconLight = '../../../public/assets/astro-light.png'
+  const favicon = document.querySelector('link[rel="icon"]')
+  isDarkTheme
+  ? favicon?.setAttribute('href', pathIconLight)
+  : favicon?.setAttribute('href', pathIconDark)
+  console.log(isDarkTheme);
 }
 const changeClassActive = (container: HTMLUListElement, target: HTMLElement) => {
     const elements = Array.from(container.querySelectorAll<HTMLElement>(`.${target.dataset.class}`))
-    elements.forEach((element) => {
+    elements.forEach(element => {
       element.classList.remove(`${element.dataset.class}--active`)
     })
     target.classList.add(`${target.dataset.class}--active`)
@@ -40,8 +68,30 @@ function setIconThemeNav(target: HTMLSpanElement, theme: string){
   svgChange ? target.innerHTML = svgChange : null
 }
 function setTargetTheme(container:HTMLUListElement, position:number){
-  const target = container.children[position]
-  return target
+  return container.children[position]
+}
+// RETORNA UN OBJETO CON LA CLASE Y LA PREFERENCIA DEL TEMA SEGUN EL TEMA DE COLOR SELECCIONADO
+function findClassThemeBody(theme:string){
+  const themeOption = Object.keys(itemslocalStorage.THEME_OPTIONS).find(value => value === theme) as themeClass
+  const themeUser = itemslocalStorage.body[themeOption]
+  if(!themeOption || !themeUser){
+    console.error(`ERROR: no se reconoce <${theme}> como preferencia de color del usuario `);
+    return
+  }
+  const THEME_SYSTEM:ThemeUser = {
+    isDarkActive: false,
+    class: themeUser
+  }
+  const isSystemThemeDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+  if(themeOption === itemslocalStorage.THEME_OPTIONS.dark.value || isSystemThemeDark){
+    THEME_SYSTEM.isDarkActive = true
+  }
+  return THEME_SYSTEM;
+}
+// QUITA TODAS LAS CLASES DEL TEMA DE COLOR Y AÑADE LA CLASE SELECCIONADA
+export function setThemeClass(themeClass:string){
+  document.body.classList.remove(...document.body.classList)
+  document.body.classList.add(themeClass)
 }
 
 export function getEvents(root: HTMLElement){
@@ -100,12 +150,24 @@ export function getEvents(root: HTMLElement){
     const clickedBtnTheme = etarget.tagName === 'DIV' && etarget.classList.contains('dropdown_theme-item')
     if(clickedBtnTheme){
       const themeSelected = etarget.dataset.theme as string
-        addLocalStorage(itemslocalStorage.theme, themeSelected)
-        changeClassActive(containerThemeBtn, etarget);
+      const classBody = findClassThemeBody(themeSelected) as ThemeUser
+      setThemeClass(classBody.class)
         setIconThemeNav(navIconThemeDefault, themeSelected)
+        changeClassActive(containerThemeBtn, etarget);
+        addLocalStorage(itemslocalStorage.theme, themeSelected)
     }
 
   })
+  const preferenceThemeUser = window.matchMedia('(prefers-color-scheme: dark)')
+  preferenceThemeUser.addEventListener('change', (event) => {
+    if(getLocalStorage.THEME === itemslocalStorage.THEME_OPTIONS.system.value){
+      const classBody = findClassThemeBody(getLocalStorage.THEME) as ThemeUser
+      event.matches
+      ? (setThemeClass(classBody.class), changeIconWindow(true))
+      : changeIconWindow(false)
+    }
+    return
+  });
   document.addEventListener('click', (e:MouseEvent) =>{
     const target = e.target as HTMLElement
     const themeClicked = !navThemeBtn?.contains(target) && !containerThemeBtn?.contains(target);
@@ -114,19 +176,28 @@ export function getEvents(root: HTMLElement){
     }
   })
   document.addEventListener('DOMContentLoaded', ()=>{
-    const itemTheme = localStorage.getItem(itemslocalStorage.theme) as string
-    const positionTheme = localStorage.getItem(itemslocalStorage.THEME_POSITION) as string
+    const itemTheme = getLocalStorage.THEME as string
+    const positionTheme = getLocalStorage.THEME_POSITION as string
     if(itemTheme){
       setIconThemeNav(navIconThemeDefault, itemTheme)
       const target = setTargetTheme(containerThemeBtn, Number(positionTheme)) as HTMLElement
       positionTheme ? changeClassActive(containerThemeBtn, target) : null
+      const classBody = findClassThemeBody(itemTheme) as ThemeUser
+      setThemeClass(classBody.class)
     }
     if(!itemTheme){
-      addLocalStorage(itemslocalStorage.theme, itemslocalStorage.THEME_OPTIONS.default.value)
-
+      addLocalStorage(itemslocalStorage.theme, itemslocalStorage.THEME_OPTIONS.system.value)
+      addLocalStorage(itemslocalStorage.THEME_POSITION, '0')
+      const classBody = findClassThemeBody('system') as ThemeUser
+      setThemeClass(classBody.class)
+      changeClassActive(containerThemeBtn, (containerThemeBtn.children[0] as HTMLElement))
     }
   })
-  
+  window.addEventListener('resize', (evt) => {
+    console.log(evt);
+
+  })
+    
   console.log(navigator.userAgent);
   return;
 }
