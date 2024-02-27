@@ -389,6 +389,9 @@ body.body_theme-dark{
   --text-active: var(--clr-white-50);
   --text-inactive: var(--clr-white-500);
   --text-link: var(--clr-blue-600);
+
+  --radius-btn: 10px;
+
   
   /* NAVIGATION */
   --clr-text-drop: var(--clr-white-400);
