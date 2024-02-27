@@ -16,14 +16,14 @@
     padding: 3px 0 3px 1em;
     gap: 1em;
     padding: 1rem 2rem;
-    background: var(--clr-clay-950);
-    box-shadow: var(--sct-card-shadow);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-anexos-1);
     --size: 60px;
     --circle: 0.7;
-    --inactive: var(--clr-clay-800);
-    --active: var(--clr-clay-400);
-    --clr-circle: var(--clr-clay-300);
-    --clr-circle-active: var(--clr-clay-50);
+    --inactive: var(--text-inactive);
+    --active: var(--bg-invert-1);
+    --clr-circle: var(--bg-secondary);
+    --clr-circle-active: var(--bg-primary);
 }
     .box_search-config .label_toggle{
         display: flex;
@@ -31,11 +31,11 @@
     }
     .box_search-config span{
         pointer-events: none;
-        color: var(--clr-white-600);
+        color: var(--text-inactive);
         transition: color var(--tr-e-out);
     }
     .box_search-config:hover span{
-        color: var(--clr-clay-200);
+        color: var(--text-active);
     }
 .box_item .form_search{
     grid-area: form;
@@ -55,9 +55,9 @@
     justify-content: center;
     gap: .5rem;
     padding: 1rem;
-    background: var(--clr-clay-950);
-    box-shadow: var(--sct-card-shadow);
-    color: var(--clr-white-500);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-anexos-1);
+    color: var(--text-inactive);
     transition: all var(--tr-e-out);
 }
 .box_search-indicator .indicator_count{
@@ -68,7 +68,7 @@
     font-size: .8rem;
 }
 .box_search-indicator:hover{
-    color: var(--clr-clay-200);
+    color: var(--text-active);
 }
   /* BOX TOGGLE */
   .box-toggle{

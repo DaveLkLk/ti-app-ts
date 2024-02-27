@@ -19,9 +19,7 @@ function pageContentStyle(){
       <p data-for="title-1" class="title_header">Controla el formato del texto</p>
     </div>
     <div class="section_title-content">
-      <p data-for="txt-3">Guarda tus ajustes para futuras sesiones.</p>
-      <p data-for="txt-3">Copia y Pega mejorado con atajos accesibles</p>
-      <p data-for="txt-3">Puedes mantener tus ajustes personalizados basado en el almacenamiento local o <a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer" title="Qué es localStorage - MDN Web Docs"><code data-for="code-2">localStorage</code>.</a></p>
+      <p data-for="txt-3">Guarda tus ajustes para futuras sesiones. Copia y Pega mejorado con atajos accesibles. Puedes mantener tus ajustes personalizados basado en el almacenamiento local o <a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer" title="Qué es localStorage - MDN Web Docs"><code data-for="code-2">localStorage.</code></a></p>
       <picture class="content_image">
         <img class="content_image-logo" src="../../public/assets/js-localstorage-image.png">
       </picture>
@@ -97,7 +95,7 @@ function pageContentStyle(){
       </div>
       <div class="form_group">
         <div class="form_group-row">
-          <textarea class="form_output readonly" id="text_output" title="elemento de solo lectura" readonly placeholder="resultado.."></textarea>
+          <textarea class="form_output" data-class="form_output" id="text_output" title="elemento de solo lectura" readonly placeholder="resultado.."></textarea>
           <button type="button" data-type="button" class="btn_copy-paste btn_icon" id="btn_copy" title="Copiar texto">
             ${svgCopy()}
           </button>

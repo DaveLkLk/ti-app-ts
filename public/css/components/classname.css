@@ -1,6 +1,6 @@
 /* LABEL */
 .label{
-    color: var(--clr-primary);
+    color: var(--text-primary);
   }
   .label-sm{
     color: var(--text-secondary);
@@ -18,13 +18,11 @@
   }
   .label-btn{
     padding: .5rem;
-    color: var(--lbl-clr);
-    background: var(--lbl-bg);
-    border-color: var(--lbl-clr);
+    color: var(--text-tertiary);
+    background: transparent;
   }
   .label-btn:hover{
-    color: var(--clr-active);
-    border-color: var(--clr-active);
+    color: var(--text-primary);
   }
   /* ----------------------------------- */
   .text_title{
@@ -32,9 +30,10 @@
     font-size: 2.5rem;
     font-family: system-ui;
     letter-spacing: 3px;
-    color: var(--clr-primary);
+    color: var(--text-primary);
     word-spacing: 5px;
     line-height: 40px;
+    transition: color 1s linear;
   }
   .just-center{
     display: flex;
@@ -72,6 +71,7 @@
       width: 100%;
       padding: .5rem;
       font-size: 1rem;
+      background: var(--bg-primary);
       border: 1px solid var(--border-input);
       color: var(--text-tertiary);
       transition: color var(--tr-e-out), border-color var(--tr-e-out);
@@ -306,7 +306,7 @@
   /* BOTON DELETE */
   .btn_delete{
     cursor: pointer;
-    --clr-btn: var(--clr-red-800);
+    --clr-btn: var(--bg-invert-2);
     transition: all var( --tr-e-out);
   }
   .btn_delete:hover{
@@ -319,7 +319,7 @@
   /* BOTON GROUP DE CADA TEXTO */
   .btn_copy-paste{
     position: relative;
-    background: var(--clr-white-200);
+    background: var(--bg-btn-oncopy);
     --clr-btn: var(--bg-invert-1);
     transition: scale var( --tr-e-out), background var(--tr-e-out);
   }
@@ -333,18 +333,18 @@
 
   /* BUTTON FIJAR */
   .btn_fixed{
-    --clr-btn: var(--clr-white-800);
+    --clr-btn: var(--bg-invert-3);
     transition: transform var(--tr-e-out);
   }
   .btn_fixed:hover{
-    --clr-btn: var(--clr-white-300);
+    --clr-btn: var(--bg-invert-2);
   }
   .btn_fixed:active{
-    --clr-btn: var(--clr-white-100);
+    --clr-btn: var(--bg-invert-1);
     transform: rotate(20deg) scale(0.900);
   }
   .btn_fixed--active{
-    --clr-btn: var(--clr-white-100);
+    --clr-btn: var(--bg-invert-1);
     transform: rotate(20deg) scale(0.900);
   }
 

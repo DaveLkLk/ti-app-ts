@@ -16,7 +16,7 @@ export function createCardText(obj:CardTextParam) {
       <button class="btn_icon btn_fixed" id="${cardId}-fix" data-for="pinCard" title="fijar elemento">
         ${svgPin()}
       </button>
-      <button class="btn_icon btn_copy" type="button" data-for="copyContent" title="copiar contenido">
+      <button class="btn_icon btn_copy-paste" type="button" data-for="copyContent" title="copiar contenido">
         ${svgCopy()}
       </button>
       <button class="btn_icon btn_delete" id="${cardId}" data-for="deleteCard" title="eliminar título">

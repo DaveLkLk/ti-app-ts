@@ -20,18 +20,17 @@
         max-width: var(--card-w);
         width: 100%;
         height: auto;
-        background: var(--clr-clay-900);
-        box-shadow: 
-            -2px -2px 5px #1d202ca6,
-            2px 2px 5px #38425fbd;
-        transition: background var(--tr-e-out);
-        --clr-office: var(--clr-clay-300);
-        --bg-anexo: var(--clr-clay-950);
-        --clr-anexo: var(--clr-clay-200);
+        background: var(--bg-primary);
+        box-shadow: var(--shadow-anexos-1);
+        transition: background var(--tr-e-out), box-shadow var(--tr-e-out);
+        --clr-office: var(--text-inactive);
+        --bg-anexo: var(--bg-secondary);
+        --clr-anexo: var(--text-tertiary);
     }
     .office_result-card:hover{
-        background: var(--clr-clay-800);
-        --clr-office: var(--clr-clay-100);
+        background: var(--bg-secondary);
+        --clr-office: var(--text-primary);
+        box-shadow: var(--shadow-anexos-3);
     }
     .office_result-card .anexo{
         font-size: 2rem;
@@ -40,9 +39,7 @@
         background: var(--bg-anexo);
         color: var(--clr-anexo);
         border-radius: 10px;
-        box-shadow: 
-            inset 2px 2px 4px #1a1919d2,
-            inset -2px -2px 2px #3f4768bb;
+        box-shadow: var(--shadow-anexos-3);
     }
     .office_result-card .oficina{
         font-size: .9rem;
@@ -55,7 +52,7 @@
     }
     .office_result-card .not_found{
         font-size: 1.2rem;
-        color: var(--clr-white-400);
+        color: var(--text-inactive);
     }
 
 @media screen and (max-width: 868px){

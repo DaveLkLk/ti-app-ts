@@ -58,6 +58,7 @@ export function getEvents(section:HTMLElement){
         cardLenght: Array.from(groupCardText.children).length + 1
         }
         groupCardText.innerHTML += createCardText(objForm).outerHTML;
+        console.log(updateIndicators);
         setCountIndicator(updateIndicators)
         formCrud.reset();
     }

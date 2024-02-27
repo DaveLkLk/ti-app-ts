@@ -6,7 +6,7 @@ function pageTitleCRUD(){
     const div = document.createElement("div");
     div.classList.add('content_title')
     div.innerHTML = `
-        <h1 class="text_title">Gestión de textos almacenados</h1>
+        <h1 class="text_title">Crea, elimina y copia textos</h1>
     `;
     return div;
 }
@@ -21,19 +21,19 @@ function pageContentCRUD(){
         <div class="form_group">
           <label class="label" for="txt_content">Inserte texto:</label>
           <div class="form_group-row">
-            <input type="text" class="form_input" id="txt_content">
-            <button class="btn_paste btn_icon btn_change" id="btn-form_crud-paste" data-type="button" type="button" title="Pegar último texto copiado">
+            <input type="text" class="form_input" id="txt_content" placeholder="tu texto..">
+            <button class="btn_copy-paste btn_icon" id="btn-form_crud-paste" data-type="button" type="button" title="Pegar último texto copiado">
               ${svgPaste()}
             </button>
           </div>
         </div>
         <div class="form_group">
           <label class="label" for="txt_title">Inserte título del texto</label>
-          <input type="text" class="form_input" title="alias del texto a guardar" id="txt_title">
+          <input type="text" class="form_input" title="alias del texto a guardar" id="txt_title" placeholder="título..">
         </div>
         <div class="form_group">
           <label class="label" for="txt_group">Inserte grupo del texto</label>
-          <input type="text" class="form_input" title="necesario para agrupar titulos bajo un contexto" id="txt_group">
+          <input type="text" class="form_input" title="necesario para agrupar titulos bajo un contexto" id="txt_group" placeholder="grupo..">
         </div>
         <div class="form_group">
           <button class="btn_form btn_submit" type="submit" id="btn_txt-submit">GUARDAR</button>
@@ -47,7 +47,7 @@ function pageContentCRUD(){
       <form class="form_found">
         <div class="form_found-group found_options">
           <div class="found_options-group" data-title="buscar por">
-            <select id="found-select" class="found_opt found_select">
+            <select id="found-select" class="found_opt found_select" title="opcion de búsqueda">
               <option value="null" selected>ninguno</option>
               <option value="title">título</option>
               <option value="group">grupo</option>

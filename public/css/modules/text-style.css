@@ -22,7 +22,7 @@
     color: var(--text-link);
   }
   .section_title p[data-for="txt-3"] a{
-    transition: all var(--tr-e-out);
+    transition: color var(--tr-e-out);
     font-style: italic;
     font-weight: 500;
   }
@@ -48,17 +48,24 @@
   .content_text .form_output{
     --font: 32px;
     padding: 7px;
+    background: var(--bt-primary);
+    color: var(--text-secondary);
+    border: 1px solid var(--text-secondary);
+    font-size: 13px;
+    line-height: 13px;
     width: 100%;
     min-height: var(--font);
-    height: 32px;
+    height: var(--font);
     max-height: calc(var(--font) * 4);
-    overflow: hidden auto;
+    overflow: hidden hidden;
     resize: none;
     white-space: pre-wrap;
-    /* background: var(--txt-out-bg); */
-    border: 1px solid var(--text-secondary);
-    /* color: var(--txt-out-clr); */
+    transition: height var(--tr-e-out);
   }
+  .form_output.form_output--scrolling{
+    overflow-y: auto;
+  }
+
   /* MODAL DE CONFIGURACION */
   .content_text .form_text-process{
     position: relative;

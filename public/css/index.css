@@ -43,7 +43,7 @@ body{
   .main_container .main_content{
     display: grid;
     gap: 2rem;
-    padding:   2rem;
+    padding: 2rem;
     transition: height 2s linear;
   }
 

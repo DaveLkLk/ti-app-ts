@@ -2,7 +2,6 @@
 span[data-for="button"]{
     cursor: pointer;
     transform: scale(1);
-    /* transform-origin: center center; */
     transition: transform var(--tr-e-out);
   }
   span[data-for="button"]:active{
@@ -22,41 +21,9 @@ span[data-for="button"]{
     color: var(--text-primary);
     margin-bottom: 2rem;
   }
-  /* [data-for="title-2"]{
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--clr-txt);
-  } */
-  /* [data-for="title-3"]{
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--clr-txt);
-  } */
-  /* [data-for="cursive-1"]{
-    font-size: 1.5rem;
-    font-style: italic;
-    color: var(--clr-txt);
-  }
-  [data-for="cursive-2"]{
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--clr-txt);
-  }
-  [data-for="cursive-3"]{
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--clr-blue-600);
-  } */
-  /* [data-for="txt-1"]{
-    font-size: 1.2rem;
-    color: var(--clr-txt);
-  }
-  [data-for="txt-2"]{
-    font-size: 1rem;
-    color: var(--clr-txt);
-  } */
   [data-for="txt-3"]{
     display: inline;
+    text-wrap: balance;
     font-size: 1rem;
     line-height: 1.5rem;
     color: var(--clr-txt);
