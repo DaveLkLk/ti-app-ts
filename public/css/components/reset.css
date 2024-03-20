@@ -6,49 +6,12 @@ html{
 }
 
 :root{
-    /* estilos de boton */
-    --size-icon: 32px;
-    --size-menu: 45px;
-    --radius-lg: 20px;
-    --btn-submit-radius: 10px;
-    --btn-icon-radius: 5px;
-    /*  */
-    --clr-title: #ffffff;
-    --clr-input: #ffffff;
-    --clr-inactive: #adadad;
-    --clr-active: #ffffff;
-    /* navigation colors */
-    --clr-bg-item: #d0d0e7;
-    --clr-nav-item-hover: #ffffff;
   
     /* margenes */
     --container-gap: 1rem;
-    --padd-block: .5rem;
-    --padd-med: .5rem;
-    --padd-1: 1rem;
-    --padd-2: 1.5rem;
-  
     /* TRANSITION STYLE */
     --tr-e-out: 0.3s ease-in-out;
     --tr-linear: 0.3s linear;
-    /* ANIMATION BORDERED */
-    --border-pasive: #2e3852;
-    --border-active: #5174cd;
-  
-    --bg-fondo-shadow: -2px -2px 1px #17213aa8,
-      -5px -5px 10px #16213f,
-      2px 2px 1px #151b29a2,
-      5px 5px 10px #181e2fc9;
-    /* CONTAINER CHILDS */
-    --sct-card-bg: #20283c;
-    --sct-card-shadow: -3px -3px 2px #323b53,
-      -7px -7px 15px #323d57,
-      3px 3px 2px #151b29,
-      7px 7px 15px #181e2f;
-    --sct-card-shadow-active: -3px -3px 2px #37466923,
-      -7px -7px 15px #3d4b6da1,
-      3px 3px 2px #0e131fe0,
-      7px 7px 15px #1e273fbb;
     /* CONTAINER DE CADA GRUPO */
     --group-bg: #18469a;
     --group-clr: var(--clr-active);
@@ -176,7 +139,7 @@ html{
     --clr-black-700: #4f4f4f;
     --clr-black-800: #454545;
     --clr-black-900: #3d3d3d;
-    --clr-black-950: #151515;
+    --clr-black-950: #1b1b1b;
     --clr-black-1000: #000000;
   
     --clr-clay-50: #f5f6fa;
@@ -430,6 +393,18 @@ body.body_theme-dark{
   --shadow-card-crud-2: 0 0 10px var(--clr-black-600);
   --shadow-card-crud-3: 0 0 10px var(--clr-black-500);
   --border-items: var(--text-inactive);
+
+  /* ANEXOS UNTELS */
+  --bg-anx: var(--bg-primary);
+  --bg-anx-active: linear-gradient(to bottom, #000000, #383838c2);
+  --shadow-anexos-1: none;
+  --shadow-anexos-2:0 0 10px var(--clr-black-700);
+  --shadow-anexos-3:0 0 10px var(--clr-black-600);
+  --shadow-anx: var(--shadow-anexos-1);
+  --border-card-anx: 1px solid var(--clr-black-600);
+  --border-card-anx-active: 1px solid var(--clr-black-300);
+  --border-anexos: 1px solid var(--clr-black-600);
+
 }
 body.body_theme-light{
   /* PRINCIPAL */
@@ -495,6 +470,10 @@ body.body_theme-light{
   --shadow-anexos-1:0 0 10px var(--clr-white-200);
   --shadow-anexos-2:0 0 10px var(--clr-white-300);
   --shadow-anexos-3:0 0 10px var(--clr-white-400);
+  --shadow-anx: var(--shadow-anexos-1);
+  --border-card-anx: 1px solid var(--clr-white-50);
+  --border-card-anx-active: 1px solid var(--clr-white-300);
+
 }
 ::-webkit-scrollbar{
   background: var(--bg-scroll);
