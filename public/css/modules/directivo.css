@@ -7,24 +7,56 @@
     padding: 2rem 0 0;
 }
 .directivo_result-card{
+    position: relative;
     min-width: var(--size);
-    /* background: var(--bg-full); */
-    background: var(--bg-card-directivo);
+    /* box-shadow: var(--shadow-form); */
+    /* background: var(--bg-card-directivo); */
     padding: 1rem;
     color: var(--text-inactive);
-    box-shadow: var(--shadow-form);
     border-radius: 10px;
     filter: opacity(.7) grayscale(50%);
     transition: color var(--tr-e-out), box-shadow var(--tr-e-out), filter .2s ease-out;
     --size-icon: 20px;
     --clr-btn: grey;
+    border: 8px solid black;
 }
 .directivo_result-card:hover{
     color: var(--text-build-active);
     --clr-btn: var(--text-secondary);
-    box-shadow: var(--shadow-form);
+    /* box-shadow: var(--shadow-form); */
     filter: opacity(1);
 }
+.directivo_result-card:before,
+.directivo_result-card:after{
+    content: '';
+    position: absolute;
+    top: 0;bottom: 0;
+    left: -10px;right: 0;
+    margin-block: auto;
+    margin-inline: auto;
+    
+    border-radius: inherit;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    z-index: -2 !important;
+}
+
+.directivo_result-card:before{
+    background: repeating-conic-gradient(from var(--angle), red 0%, red 5%, transparent 5%, transparent 40%, red 50%);
+    /* background: blue; */
+    animation: border-card 4s linear infinite;
+    border-radius: inherit;
+    /* z-index: -1; */
+}
+.directivo_result-card:after{
+    background: repeating-conic-gradient(from var(--angle), blue 0%, blue 5%, transparent 5%, transparent 40%, blue 50%);
+    /* background: red; */
+    animation: border-card 4s linear infinite;
+    animation-delay: -1s;
+    /* z-index: -2; */
+}
+
+
 .directivo_result-card .directivo_tag{
     font-family: Calibri, system-ui;
     display: flex;
@@ -78,3 +110,17 @@ span.directivo-correo-general{
     text-align: end;
 }
 span.directivo-correo-personal{}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes border-card{
+0%{
+    --angle: 0deg;
+}
+100%{
+    --angle: 360deg;
+}
+}

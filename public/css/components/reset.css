@@ -216,6 +216,7 @@ html{
 
 body.body_theme-dark{
   /* PRINCIPAL */
+  --bg-body: var(--clr-white-980);
   --bg-primary: var(--clr-white-990);
   --bg-secondary: var(--clr-white-900);
   --bg-tertiary: var(--clr-white-800);
@@ -286,11 +287,15 @@ body.body_theme-dark{
     -3px -3px 7px var(--clr-white-400),
     3px 3px 10px var(--clr-white-990);
   --shadow-anx:
-    -3px -3px 7px var(--clr-white-960),
+    -1px -1px 2px var(--clr-white-800),
+    -3px -3px 10px -2px var(--clr-white-950),
+    1px 1px 1px var(--clr-white-990),
     3px 3px 10px var(--clr-white-990);
   --shadow-anx-active:
+    -1px -1px 2px var(--clr-white-990),
     -3px -3px 10px var(--clr-white-990),
-    3px 3px 7px var(--clr-white-900);
+    1px 1px 1px var(--clr-white-800),
+    3px 3px 10px -2px var(--clr-white-950);
   --shadow-indicator:
     inset -3px -3px 7px var(--clr-white-950),
     inset 3px 3px 7px var(--clr-white-970);
@@ -302,8 +307,11 @@ body.body_theme-dark{
   --text-build-name: var(--clr-blue-500);
   --text-build-inactive: var(--clr-white-500);
   --text-build-active: var(--clr-white-200);
+  --bg-card-menu: #333333;
   --bg-card-directivo: #1a1a1a;
 }
+
+
 body.body_theme-light{
   /* PRINCIPAL */
   --bg-primary: var(--clr-white-50);
