@@ -3,6 +3,7 @@
   display:grid;
   grid-template-columns: 300px 1fr;
   gap: 2rem;
+  --size-icon: 35px;
 }
   .crud_form-container .crud_form{
     max-width: 300px;
@@ -77,7 +78,7 @@
       }
     .crud_found .btn_found{
       --clr-btn: var(--text-inactive);
-      border: 1px solid var(--clr-btn);
+      /* border: 1px solid var(--clr-btn); */
       padding: 5px;
       transition: transform var(--tr-e-out), border-color var(--tr-e-out);
     }

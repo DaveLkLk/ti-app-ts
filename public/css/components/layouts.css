@@ -9,22 +9,20 @@
     grid-area: search;
     display: grid;
     align-items: center;
-    padding: 3px 0 3px 1em;
     gap: 1em;
     padding: 1rem 2rem;
-    background: var(--bg-primary);
-    box-shadow: var(--shadow-anexos-1);
-    border: var(--border-card-anx);
-    transition: border-color var(--tr-e-out);
+    box-shadow: var(--shadow-indicator);
+    border-radius: 20px;
+    transition: box-shadow var(--tr-e-out);
     --size: 60px;
     --circle: 0.7;
-    --inactive: var(--clr-blue-300);
-    --active: var(--bg-invert-1);
-    --clr-circle: var(--clr-blue-500);
-    --clr-circle-active: var(--bg-text-drop);
+    --inactive: var(--clr-white-950);
+    --active: var(--clr-white-700);
+    --clr-circle: var(--clr-white-700);
+    --clr-circle-active: var(--clr-white-100);
 }
 .box_search-config:hover{
-    border: var(--border-card-anx-active);
+    box-shadow: var(--shadow-form-active);
 }
     .box_search-config .label_toggle{
         display: flex;
@@ -40,18 +38,14 @@
     }
 .box_item .form_search{
     grid-area: form;
-    background: var(--bg-primary);
-    box-shadow: var(--shadow-anx);
-    border: var(--border-card-anx);
-    transition: border var(--border-card-anx);
+    box-shadow: var(--shadow-indicator);
+    border-radius: 20px;
+    transition: box-shadow var(--tr-e-out);
     --size-icon: 32px;
 }
 .box_item .form_search:hover{
-    border: var(--border-card-anx-active);
+    box-shadow: var(--shadow-form-active);
 }
-    .box_item .form_search--active{
-        box-shadow: var(--sct-card-shadow-active);
-    }
     .form_search input[type="search"]::placeholder{
         font-style: italic;
     }
@@ -69,8 +63,8 @@
           width: 100%;
           padding: .5rem;
           font-size: 1rem;
-          background: var(--bg-secondary);
-          border: 1px solid var(--border-input);
+          background: var(--bg-card);
+          border: var(--border-card-anx);
           color: var(--text-tertiary);
           transition: color var(--tr-e-out), border-color var(--tr-e-out);
         }
@@ -78,6 +72,9 @@
         .form_group .form_input:focus{
           color: var(--text-primary);
           border: var(--border-card-anx-active);
+        }
+        .form_group .form_input::placeholder{
+          color: var(--text-tertiary);
         }
       
       .form_group-row{
@@ -119,10 +116,14 @@
     gap: .5rem;
     padding: 1rem;
     background: var(--bg-primary);
-    box-shadow: var(--shadow-anexos-1);
+    box-shadow: var(--shadow-indicator);
     color: var(--text-inactive);
-    border: var(--border-card-anx);
-    transition: all var(--tr-e-out);
+    border-radius: 20px;
+    transition: box-shadow var(--tr-e-out), color var(--tr-e-out), background var(--tr-e-out);
+}
+.box_search-indicator:hover{
+    color: var(--text-active);
+    box-shadow: var(--shadow-form-active);
 }
 .box_search-indicator .indicator_count{
     text-align: center;
@@ -130,10 +131,6 @@
 }
 .box_search-indicator p{
     font-size: .8rem;
-}
-.box_search-indicator:hover{
-    color: var(--text-active);
-    border: var(--border-card-anx-active);
 }
   /* BOX TOGGLE */
   .box-toggle{

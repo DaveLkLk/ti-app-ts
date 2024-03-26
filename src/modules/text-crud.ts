@@ -6,7 +6,7 @@ function pageTitleCRUD(){
     const div = document.createElement("div");
     div.classList.add('content_title')
     div.innerHTML = `
-        <h1 class="text_title">Crea, elimina y copia textos</h1>
+        <h1 class="text_title">Crea, elimina y agrupa textos</h1>
     `;
     return div;
 }
@@ -17,7 +17,7 @@ function pageContentCRUD(){
     <div class="section_crud crud_form-container">
     <!-- INSERTAR TEXTO -->
     <div class="crud_form">
-      <form class="form-panel form_txt-crud">
+      <form class="form-panel form_text-crud">
         <div class="form_group">
           <label class="label" for="txt_content">Inserte texto:</label>
           <div class="form_group-row">
@@ -58,7 +58,7 @@ function pageContentCRUD(){
           <input type="search" id="found-search" class="found_opt found_inp" placeholder="buscar por..">
         </div>
         <div class="form_found-group found_submit">
-          <button type="submit" class="btn_icon btn_found">
+          <button type="submit" class="btn_icon btn_found" title="buscar">
             ${svgLupa()}
           </button>
         </div>

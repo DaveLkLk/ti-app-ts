@@ -44,7 +44,7 @@ export const setClipboard = async (text:string)=>{
   let stateResponse:ClipBoard = {}
   try{
     await navigator.clipboard.writeText(text)
-    stateResponse.msg = 'Texto copiado al portapapeles'
+    stateResponse.msg = ('Texto copiado al portapapeles')
     stateResponse.success = true
     return stateResponse;
   }catch(err){

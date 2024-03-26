@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
+    --size-icon: 35px;
   }
   .content_text .section_title{
     background: var(--bg-card-style);
@@ -77,20 +78,21 @@
     z-index: 2;
     display: grid;
     gap: .5em;
-    padding: var(--padd-1);
-    border-radius: var(--radius-lg) var(--radius-lg) 0 var(--radius-lg);
+    padding: var(--container-gap);
+    border-radius: 10px 10px 0 10px;
     box-shadow: var( --shadow-card-style-2);
-    background: var(--bg-primary);
-  
+    background: var(--bg-card);
     transform: scale(0);
     transform-origin: bottom right;
     transition: transform var(--tr-e-out);
+    --size-icon: 30px;
   }
   .content_text #btn_styles.btn_expand--active + .config-style-group{
     transform: scale(1); 
   }
   .content_text .config-style-item{
-    display: flex;
+    /* cambiar por funccionalidades en JS */
+    display: none;
     gap: .5em;
     padding: .5em;
   }

@@ -64,7 +64,7 @@ function pageContentStyle(){
           </button>
           <div id="cfg-styles" class="config-style-group" data-active="btn_style--active">
             <div class="form_group-rowcenter">
-              <span class="label-sm">Mantener estilos:</span>
+              <span class="label-sm">Mantener cambios:</span>
               <button id="btn_lock_styles" data-class="btn_lock" class="btn_icon btn_lock" type="button"  title="estilos desbloqueado" >
                 ${svgUnlock()}
                 ${svgLock()}

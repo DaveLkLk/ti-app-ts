@@ -1,4 +1,4 @@
-import { svgCopy, svgDelete, svgPin } from '../components/Icons.ts';
+import { svgBuilding, svgConfig, svgCopy, svgDelete, svgEmail, svgPin, svgUser } from '../components/Icons.ts';
 import { generateId } from '../rules/functions.ts'
 import { CardTextParam, DirectivoCard, OfficeCardParam } from '../rules/types.ts';
 
@@ -50,19 +50,34 @@ export function createOfficeCard(obj:OfficeCardParam){
 }
 export function createDirectiveCard(obj:DirectivoCard){
   const tagId = generateId();
+  const email1 = obj.correo?.general;
+  const email2 = obj.correo?.personal === null 
+    ? 'vacio'
+    : `<a target="_blank" href="mailto:${obj.correo?.personal}">${obj.correo?.personal}</a>`;
   const div = document.createElement('div');
   div.classList.add('directivo_result-card')
   div.title = 'id: '+obj.id
   div.id = `directivo-card-${tagId}`;
   div.innerHTML = `
-    <div class="directivo_container">
-      <span id="directivo-name">${obj.nombre}</span>
-      <span id="directivo-cargo">${obj.cargo}</span>
-      <span id="directivo-dependencia">${obj.dependencia}</span>
+    <div class="directivo_data">
+      <span class="directivo_tag directivo-name">
+        <icon class="btn_icon">${svgUser()}</icon> ${obj.nombre}</span>
+      <span class="directivo_tag directivo-cargo">
+        <icon class="btn_icon">${svgConfig()}</icon> ${obj.cargo}</span>
+      <hr/>
+      <span class="directivo_tag directivo-dependencia">
+        <icon class="btn_icon">${svgBuilding()}</icon>
+        ${obj.dependencia}</span>
     </div>
-    <div>
-      <span id="directivo-correo-general">${obj.correo?.general}</span>
-      <span id="directivo-correo-personal">${obj.correo?.personal == null ? 'vacio' : obj.correo.personal}</span>
+    <div class="directivo_email">
+      <span class="directivo_tag directivo-correo-general" title="clic para copiar">
+        <icon class="btn_icon">${svgEmail()}</icon>
+        <a target="_blank" href="mailto:${email1}">${email1}</a>
+      </span>
+      <span class="directivo_tag directivo-correo-personal" title="clic para copiar">
+        <icon class="btn_icon">${svgEmail()}</icon>
+        ${email2}
+      </span>
     </div>
   `;
 // DEFINIR LA SALIDA QUE TENDRA ESTE OBJETO 
