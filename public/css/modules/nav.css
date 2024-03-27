@@ -165,7 +165,7 @@
     max-width: 15rem;
     padding: .5rem;
     border-radius: 10px;
-    background: var(--bg-primary);
+    background: var(--bg-body);
     box-shadow: var(--shadow-nav);
   }
   .navigation_li:hover .dropdown_ul{

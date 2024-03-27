@@ -127,7 +127,8 @@ export function getEvents(section: HTMLElement){
             resultClipBoard.success 
                 ? createAlert(divAlert, (resultClipBoard.msg as string), ALERT_TYPE.TEMP.success, [], 1100)
                 : createAlert(divAlert, (resultClipBoard.err as string), ALERT_TYPE.TEMP.error, [], 1000)
-        }else{
+        }
+        else if((e.target as HTMLElement).tagName && (e.target as HTMLElement).tagName === 'SPAN'){
             createAlert(divAlert, "No se encontró email", ALERT_TYPE.TEMP.info, [], 1300)
         }
     }

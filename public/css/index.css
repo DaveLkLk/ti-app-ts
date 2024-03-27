@@ -27,7 +27,7 @@ body{
     align-items: center;
     box-shadow: 0 2px 2px -2px var(--clr-nav-item);
     padding: .5rem 1rem;
-    background: var(--bg-primary);
+    background: var(--bg-body);
     height: auto;
     max-height: 62px;
   }
