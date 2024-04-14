@@ -29,14 +29,22 @@ form[class*="form_text"]{
   /* ----------------------------------- */
   .text_title{
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: system-ui;
     letter-spacing: 3px;
-    color: var(--text-primary);
     word-spacing: 5px;
     line-height: 40px;
     transition: color 1s linear;
+    color: var(--clr-blue-500);
+    /* color: var(--bg-primary); */
+    -webkit-text-stroke: 1px grey;
+    user-select: none;
+    text-shadow:
+    2px 4px 1px #434399,
+    2px 5px 5px #33338a;
   }
+
+
   .just-center{
     display: flex;
     justify-content: center;
