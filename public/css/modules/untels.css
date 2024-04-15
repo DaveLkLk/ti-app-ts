@@ -20,7 +20,7 @@
         max-width: var(--card-w);
         width: 100%;
         height: auto;
-        background: var(--bg-primary);
+        background: var(--bg-body);
         box-shadow: var(--shadow-anx);
         --bg-anexo: var(--bg-primary);
         --clr-text: var(--text-inactive);
