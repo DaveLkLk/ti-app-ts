@@ -1,11 +1,116 @@
 .directivo_result{
+    --size: 300px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(var(--size), 1fr));
+    gap: 1.5rem;
+    row-gap: 2rem;
     padding: 2rem 0 0;
 }
 .directivo_result-card{
-    border: 1px solid grey;
-    padding: 1rem;
-    color: grey;
+    min-width: var(--size);
+    transform: scale(.950);
+    padding: 3px;
+    color: var(--text-inactive);
+    border-radius: 10px;
+    filter: var(--filter-props);
+    transition:
+        color var(--tr-e-out),
+        filter .2s ease-out,
+        transform var(--tr-e-out),
+        box-shadow var(--tr-e-out);
+    --size-icon: 20px;
+    --clr-btn: grey;
+    --time: 5s;
+    --clr-border: var(--clr-border-card-1);
 }
+.directivo_result-card:hover{
+    background: repeating-conic-gradient(from var(--angle), var(--clr-border) 0%, var(--clr-border) 5%, transparent 5%, transparent 40%, var(--clr-border) 50%);
+    color: var(--text-build-active);
+    --clr-btn: var(--text-secondary);
+    animation: border-card var(--time) linear infinite;
+    filter: opacity(1);
+    box-shadow: var(--shadow-card-animate);
+    transform: scale(1);
+}
+.directivo_result-card:hover .card_animate{
+    border-color: transparent;
+}
+.directivo_result-card .card_animate{
+    position: relative;
+    border-radius: 5px;
+    height: 100%;
+    background: var(--bg-card-directivo);
+    border: 1px solid var(--bg-card);
+    padding: 1rem;
+    transition: border-color var(--tr-e-out);
+}
+
+.directivo_result-card .directivo_tag{
+    font-family: Calibri, system-ui;
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+span.directivo_tag icon{
+    margin-right: 3px;
+}
+hr{
+    display: block;
+    width: 50%;
+    margin: .5rem 0;
+    height: 1px;
+    background: var(--clr-white-900);
+}
+.directivo_data{
+    padding: 1rem;
+    border-radius: 10px;
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-indicator);
+}
+span.directivo-name{
+    margin-bottom: .7rem;
+    font-size: 1.4rem;
+    text-wrap: balance;
+    color: var(--text-build-name);
+    --size-icon: 30px;
+    --clr-btn: var(--text-build-name);
+}
+span.directivo-cargo{
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+span.directivo-dependencia{
+    font-style: italic;
+    font-size: 1.05rem;
+    width: 100%;
+}
+.directivo_email{
+    margin: .5rem 0 0 0;
+    padding: 1em;
+    --clr-btn: var(--clr-blue-400);
+    color: var(--clr-blue-500);
+}
+.directivo_email span{
+    width: max-content;
+    cursor: pointer;
+}
+span.directivo-correo-general{
+    text-align: left;
+}
+span.directivo-correo-personal a{
+    width: max-content;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes border-card{
+0%{ --angle: 0deg; }
+100%{ --angle: 360deg; }
+}
+@keyframes bg-card{
+    0%, 100%{ --clr-border: var(--clr-border-card-1); }
+    50%{ --clr-border: var(--clr-border-card-2); }
+    }

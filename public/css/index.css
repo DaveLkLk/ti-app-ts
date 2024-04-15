@@ -3,21 +3,21 @@
 @import url("./components/classname.css");
 @import url("./components/dataset.css");
 
-
 body{
+  height: 100dvh;
   background: var(--bg-body);
-  min-height: 100vh;
+  transition: background var(--tr-e-out);
 }
 
 /* CONTAINER DE PAGINA */
 .container{
   position: relative;
   max-width: 1450px;
+  min-height: 100dvh;
   margin: auto;
-  display: grid;
   padding: 0;
-  gap: var(--container-gap);
 }
+
   .container .navigation_container{
     position: sticky;
     top: 0;
@@ -27,56 +27,35 @@ body{
     align-items: center;
     box-shadow: 0 2px 2px -2px var(--clr-nav-item);
     padding: .5rem 1rem;
-    background: #19193f1c;
-    backdrop-filter: blur(7px);
+    background: var(--bg-body);
+    height: auto;
+    max-height: 62px;
   }
   /* CONTENEDOR DE CADA SECCION (APLICATIVO INTEGRADO) */
   .container .main_container{
+    margin: 2rem auto 3rem;
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
     gap: var(--container-gap);
-
+    height: max-content;
+    
   }
   /* CADA SECCION INTEGRADA */
   .main_container .main_content{
     display: grid;
     gap: 2rem;
-    padding: 2rem;
+    padding: 1.5rem;
     transition: height 2s linear;
+    height: 100%;
   }
-
+  .container footer{
+    position: relative;
+}
 /* ----------------------------------------------------------------------- */
-
 @media screen and (max-width: 868px){
-  .navigation_container{
-    flex-direction: column;
-  }
-  .navigation_title{
-    width: 100%;
-  }
-  .navigation_title .btn_show{
-    visibility: visible;
-    transform: scale(1);
-  }
-  .navigation_list{
-    display: grid;
-    grid-template-rows: 0fr;
-    padding: 0;
-    transition: grid-template-rows .5s linear, padding .5s linear, margin .5s linear;
-  }
-  .navigation_list--active{
-    grid-template-rows: 1fr;
-    margin-top: 2rem;
-    padding: 1rem;
-  }
-  .navigation_list--active .navigation_ul{
-    overflow: visible;
-  }
-
-  .navigation_ul{
-    overflow: hidden;
-    flex-direction: column;
+  .container .navigation_container{
+    max-height: 100%;
   }
   .main_container{
     grid-template-columns: 1fr;

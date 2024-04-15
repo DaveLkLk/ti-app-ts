@@ -1,7 +1,7 @@
 import { createAlert, ALERT_TYPE, MESSAGE_TYPE } from "../../components/alert";
 import { getDependency, getName } from "../../data/directivos";
 import { createDirectiveCard } from "../../layouts/Layout";
-import { addLocalStorage } from "../../rules/functions";
+import { addLocalStorage, setClipboard } from "../../rules/functions";
 
 export const anexoLocalStorage = {
     SEARCH_DINAMYC: 'search-drt-dinamyc',
@@ -64,6 +64,7 @@ export function getEvents(section: HTMLElement){
         matchingItems && matchingItems.forEach((item:any) => {
             resultSearch.innerHTML += createDirectiveCard(item).outerHTML;
         });
+        emailContext() /* AQUI SE LLAMA A LA FUNCION PARA DETECTAR LOS EMAILS MOSTRADOS POR EVENTO*/
     }
 
     const dynamicStorage = () => localStorage.getItem(anexoLocalStorage.SEARCH_DINAMYC)
@@ -105,7 +106,9 @@ export function getEvents(section: HTMLElement){
 
         if(switchDynamic === true) return
         if(switchDynamic === false){
-            switchDependency ? searchActive(typeRequest.dpd) : searchActive(typeRequest.nm)
+            switchDependency 
+                ? searchActive(typeRequest.dpd)
+                : searchActive(typeRequest.nm)
         }
     })
     InpSearch.addEventListener('input', ()=>{
@@ -115,5 +118,25 @@ export function getEvents(section: HTMLElement){
             switchDependency ? searchActive(typeRequest.dpd) : searchActive(typeRequest.nm)
         }
     })
+    // DETECTAR EL CLIC AL EMAIL PARA COPIARLO AL PORTAPAPELES
+    async function emailClicked (e:MouseEvent){
+        e.preventDefault()
+        if((e.target as HTMLElement).tagName && (e.target as HTMLElement).tagName === 'A'){
+            const textValue = (e.target as HTMLAnchorElement).textContent as string
+            const resultClipBoard = await setClipboard(textValue)
+            resultClipBoard.success 
+                ? createAlert(divAlert, (resultClipBoard.msg as string), ALERT_TYPE.TEMP.success, [], 1100)
+                : createAlert(divAlert, (resultClipBoard.err as string), ALERT_TYPE.TEMP.error, [], 1000)
+        }
+        else if((e.target as HTMLElement).tagName && (e.target as HTMLElement).tagName === 'SPAN'){
+            createAlert(divAlert, "No se encontró email", ALERT_TYPE.TEMP.info, [], 1300)
+        }
+    }
+    function emailContext(){
+        const emailGroupContainer = Array.from(document.querySelectorAll<HTMLDivElement>('.directivo_email'))
+        emailGroupContainer.forEach((emailContainer) => {
+            emailContainer.addEventListener('click', emailClicked)
+        })
+    }
     return
 }

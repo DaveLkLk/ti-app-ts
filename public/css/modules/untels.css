@@ -1,7 +1,5 @@
 .content_office{
     width: 100%;
-    display: grid;
-    gap: 2rem;
 }
 
 .office_item .office_result{
@@ -9,6 +7,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(var(--card-w), 100%), 1fr));
     gap: 1rem;
+    row-gap: 1.5rem;
+    padding: 2rem 0 1rem;
 }
     .office_result-card{
         display: flex;
@@ -20,42 +20,40 @@
         max-width: var(--card-w);
         width: 100%;
         height: auto;
-        background: var(--clr-clay-900);
-        box-shadow: 
-            -2px -2px 5px #1d202ca6,
-            2px 2px 5px #38425fbd;
-        transition: background var(--tr-e-out);
-        --clr-office: var(--clr-clay-300);
-        --bg-anexo: var(--clr-clay-950);
-        --clr-anexo: var(--clr-clay-200);
+        background: var(--bg-card);
+        box-shadow: var(--shadow-anx);
+        --bg-anexo: var(--bg-primary);
+        --clr-text: var(--text-inactive);
+        opacity: .7;
+        border-radius: 10px;
+        transition: background var(--tr-e-out), box-shadow .1s ease-out, scale .1s ease-out, opacity var(--tr-e-out);
     }
     .office_result-card:hover{
-        background: var(--clr-clay-800);
-        --clr-office: var(--clr-clay-100);
+        --clr-text: var(--text-primary);
+        box-shadow: var(--shadow-anx-active);
+        scale: 1.05;
+        opacity: 1;
     }
     .office_result-card .anexo{
         font-size: 2rem;
         font-weight: bolder;
         padding: 1rem;
-        background: var(--bg-anexo);
-        color: var(--clr-anexo);
+        color: var(--clr-text);
         border-radius: 10px;
-        box-shadow: 
-            inset 2px 2px 4px #1a1919d2,
-            inset -2px -2px 2px #3f4768bb;
+        box-shadow: var(--shadow-indicator);
+        transition: border var(--tr-e-out);
     }
     .office_result-card .oficina{
         font-size: .9rem;
         text-wrap: balance;
         text-overflow: ellipsis;
-        /* padding: 1rem; */
         border-radius: 10px;
-        color: var(--clr-office);
-        transition: color var(--tr-e-out);
+        color: var(--clr-text);
+        transition: color var(--tr-linear);
     }
     .office_result-card .not_found{
         font-size: 1.2rem;
-        color: var(--clr-white-400);
+        color: var(--text-inactive);
     }
 
 @media screen and (max-width: 868px){

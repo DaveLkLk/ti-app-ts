@@ -1,10 +1,11 @@
-/* LABEL */
+form[class*="form_text"]{
+  box-shadow: var(--shadow-card-style-2);
+}
 .label{
-    color: var(--clr-title);
-    font-weight: bold;
+    color: var(--text-primary);
   }
   .label-sm{
-    color: var(--clr-inactive);
+    color: var(--text-secondary);
     font-size: .9rem;
   }
   .label-line{
@@ -19,38 +20,31 @@
   }
   .label-btn{
     padding: .5rem;
-    color: var(--lbl-clr);
-    background: var(--lbl-bg);
-    border-color: var(--lbl-clr);
+    color: var(--text-tertiary);
+    background: transparent;
   }
   .label-btn:hover{
-    color: var(--clr-active);
-    border-color: var(--clr-active);
+    color: var(--text-primary);
   }
   /* ----------------------------------- */
   .text_title{
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: system-ui;
-    text-shadow: 0 0 10px #5265c6e9;
-    letter-spacing: 5px;
-    color: var(--clr-title);
+    letter-spacing: 3px;
     word-spacing: 5px;
     line-height: 40px;
+    transition: color 1s linear;
+    /* color: var(--clr-blue-200); */
+    color: var(--bg-invert-1);
+    -webkit-text-stroke: 1px var(--clr-blue-200);
+    user-select: none;
   }
+
+
   .just-center{
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
-  .just-end{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  .just-start{
-    display: flex;
-    justify-content: flex-start;
     align-items: center;
   }
   
@@ -58,63 +52,15 @@
     /* 1 - CONTENIDO + ICONO */
   /* CLASE PARA CONTENIDO + ICONO */
   /* FORM PANEL DEFAULT */
-  .form-panel{
-    min-width: 300px;
-    display:grid;
-    padding: 2rem;
-    gap: 1rem;
-    background: var(--sct-card-bg);
-    box-shadow: var(--sct-card-shadow);
-  }
-  .form_group{
-    display: grid;
-    gap:1rem;
-  }
-    .form_group .form_input{
-      width: 100%;
-      padding: .5rem;
-      font-size: 1rem;
-      background: var(--form-inp-bg);
-      color: var(--clr-white-500);
-      transition: color var(--tr-e-out);
-    }
-    .form_group .form_input:hover,
-    .form_group .form_input:focus{
-      color: var(--clr-white-100);
-    }
   
-  .form_group-row{
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: .5rem;
-    align-items: flex-start;
-  }
-  .form_group-rowcenter{
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: .5rem;
-    align-items: center;
-  }
-  .form_group-col3{
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    gap: .5rem;
-    align-items: center;
-  }
-  .form_group-col4{
-    display: grid;
-    grid-template-columns: 1fr auto auto auto;
-    gap: .5rem;
-    align-items: center;
-  }
   
   /* BUTTONS ICON STYLE */
   .btn_form{
     margin: auto;
     width: 100%;
-    max-width: 12rem;
+    max-width: 15rem;
     padding: 1rem;
-    border-radius: var(--btn-submit-radius);
+    border-radius: 10px;
   }
   
   .btn_menu{
@@ -132,19 +78,26 @@
     transition: fill var(--tr-linear);
   }
   .btn_icon{
+    display: grid;
+    place-items: center;
+    width: var(--size-icon);
+    height: var(--size-icon);
+    border-radius: 5px;
+  }
+  .btn_icon svg{
+    width: calc(var(--size-icon) * 0.7) !important;
+    height: calc(var(--size-icon) * 0.7) !important;
+    background: transparent;
+    fill: var(--clr-btn);
+    transition: fill var(--tr-linear), scale var(--tr-linear);
+  }
+  .btn_item{
     display: flex;
     justify-content: center;
     align-items: center;
     width: var(--size-icon);
     height: var(--size-icon);
-    border-radius: var(--btn-icon-radius);
-  }
-  .btn_icon svg{
-    width: calc(var(--size-icon) * 0.7);
-    height: calc(var(--size-icon) * 0.7);
-    background: transparent;
-    fill: var(--clr-btn);
-    transition: fill var(--tr-linear), transform var(--tr-e-out), filter var(--tr-e-out);
+    border-radius: 5px;
   }
   .btn_item svg{
     width: calc(var(--size-icon) * 0.6);
@@ -165,12 +118,12 @@
   .btn_show{
     visibility: hidden;
     transform: scale(0);
-    --clr-btn: var(--clr-clay-400);
+    --clr-btn: var(--clr-button);
     scale: 1;
     transition: visibility var(--tr-e-out), transform var(--tr-e-out), scale var(--tr-e-out);
   }
   .btn_show:hover{
-    --clr-btn: var(--clr-clay-200);
+    --clr-btn: var(--clr-button-active);
   }
   .btn_show:active{
     scale: 0.95;
@@ -180,11 +133,11 @@
   .btn_lock{
     position: relative;
     border-radius: 50%;
-    --clr-btn: var(--btn-lock-clr);
-    transition: box-shadow var( --tr-e-out), filter var( --tr-e-out);
+    --clr-btn: var(--text-inactive);
+    transition: box-shadow var( --tr-e-out);
   }
   .btn_lock:hover{
-    --clr-btn: var(--btn-lock-clr-hover)
+    --clr-btn: var(--text-primary)
   }
   .btn_lock svg:last-child{
     position: absolute;
@@ -193,11 +146,8 @@
     transform: scale(0);
   }
   .btn_lock--active{
-    box-shadow: var(--btn-lock-shadow);
-    --clr-btn: var(--btn-lock-clr-active);
-  }
-  .btn_lock--active:hover{
-    filter: var(--btn-lock-active-filter);
+    --clr-btn: var(--text-active);
+    box-shadow: var(--shadow-card-style-2);
   }
   .btn_lock--active svg:first-child{
     transform: scale(0);
@@ -205,96 +155,75 @@
   .btn_lock--active svg:last-child{
     transform: scale(1);
   }
-  /* boton de copiar y pegar */
-  .btn_change{
-    background: var(--btn-change-bg);
-    --clr-btn: var( --btn-change-clr);
-    transition: background var(--tr-linear);
-  }
-  .btn_change:hover{
-    background: var(--btn-change-bg-hover);
-    --clr-btn: var( --btn-change-clr-hover);
-  }
-  .btn_change:active{
-    transition: none;
-    background: var(--btn-change-bg-active);
-    --clr-btn: var( --btn-change-clr-hover);
-  }
   /* boton de enviar del formulario*/
   .btn_submit{
-    background: var(--btn-submit-bg);
-    color: var( --btn-submit-clr);
+    background: var(--bg-invert-1);
+    color: var( --text-invert);
     transition: var(--btn-submit-tr);
   }
   .btn_submit:hover{
-    background: var(--btn-submit-bg-hover);
+    background: var(--bg-invert-2);
   }
   .btn_submit:active{
-    /* opacity: 0.8; */
     transform: scale(0.980);
   }
   /* boton para expandir contenido */
   .btn_expand{
-    background: var(--btn-expand-bg);
-    --clr-btn: var( --btn-expand-clr);
-    transition: transform var(--tr-e-out);
+    background: transparent;
+    --clr-btn: var( --text-tertiary);
+    transition: transform var(--tr-linear);
   }
   .btn_expand:hover{
-    --clr-btn: var( --btn-expand-clr-hover);
+    --clr-btn: var( --text-primary);
   }
   .btn_expand--active{
-    --clr-btn: var( --btn-expand-clr-active);
-    transform: rotate(135deg) scale(1.5);
+    --clr-btn: var( --text-primary);
+    transform: rotate(135deg) scale(1.3);
   }
   
   /* boton de estilos de fuente */
-  .btn_item{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: var(--size-icon);
-    height: var(--size-icon);
-    border-radius: var(--btn-icon-radius);
-  }
+  
   .btn_style{
-    background: var(--btn-style-bg);
-    border: 1px solid var(--btn-style-bdr);
-    --clr-btn: var( --btn-style-clr);
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    --clr-btn: var( --text-inactive);
     transition: border-color var(--tr-e-out), background var(--tr-e-out), box-shadow var(--tr-e-out);
   }
   .btn_style:hover{
-    border-color: var(--btn-style-bdr-hover);
-    --clr-btn: var( --btn-style-clr-hover);
+    border-color: var(--text-secondary);
+    --clr-btn: var( --text-secondary);
   }
   .btn_style--active{
-    background: var(--btn-style-bg-active);
-    border-color: var(--btn-style-bdr-active);
-    --clr-btn: var( --btn-style-clr-active);
+    background: var(--bg-invert-3);
+    border-color: var(--bg-invert-3);
+    --clr-btn: var( --text-invert);
   }
   .btn_style--active:hover{
     box-shadow: var(--btn-style-hover-shadow);
-    --clr-btn: var( --btn-style-clr-active);
+    background: var(--bg-invert-1);
+    border-color: var(--bg-invert-1);
+    --clr-btn: var(--text-invert);
   }
   
   /* boton que solo cambia la clase activo */
   .btn_toggle{
     border-radius: 50%;
-    transition: transform var( --tr-e-out), box-shadow var( --tr-linear), filter var( --tr-linear);
-    --clr-btn: var(--btn-toggle-clr);
+    transition: transform var( --tr-e-out), box-shadow var( --tr-linear);
+    --clr-btn: var(--text-inactive);
   }
   .btn_toggle:hover{
-    --clr-btn: var( --btn-toggle-clr-hover);
+    --clr-btn: var( --text-secondary);
   }
   .btn_toggle:active{
     transform: scale(0.7);
   }
   .btn_toggle--active{
-    --clr-btn: var( --btn-toggle-clr-active);
-    box-shadow: var( --btn-toggle-shadow-active);
+    --clr-btn: var( --text-active);
+    box-shadow: var(--shadow-card-style-2);
   }
-  .btn_toggle--active:hover{
+  /* .btn_toggle--active:hover{
     filter: brightness(150%);
-  }
+  } */
   /* BOTON CONGIG */
   .btn_config{
     --clr-btn: var(--btn-config-clr);
@@ -305,7 +234,7 @@
   /* BOTON DELETE */
   .btn_delete{
     cursor: pointer;
-    --clr-btn: var(--clr-red-800);
+    --clr-btn: var(--bg-invert-2);
     transition: all var( --tr-e-out);
   }
   .btn_delete:hover{
@@ -316,34 +245,37 @@
     --clr-btn: var(--clr-red-400);
   }
   /* BOTON GROUP DE CADA TEXTO */
-  .btn_copy{
-    --clr-btn: var(--clr-blue-800);
-    transition: transform var( --tr-e-out);
+  .btn_copy-paste{
+    position: relative;
+    background: var(--bg-btn-oncopy);
+    --clr-btn: var(--bg-invert-1);
+    transition: scale var( --tr-e-out), background var(--tr-e-out);
   }
-  .btn_copy:hover{
-    --clr-btn: var(--clr-blue-500);
+  .btn_copy-paste:hover{
+    background: var(--bg-invert-1);
+    --clr-btn: var(--bg-primary);
   }
-  .btn_copy:active{
-    --clr-btn: var(--clr-blue-400);
-    transform: scale(0.85)
+  .btn_copy-paste:active{
+    scale: 0.60;
   }
+
   /* BUTTON FIJAR */
   .btn_fixed{
-    --clr-btn: var(--clr-white-800);
+    --clr-btn: var(--bg-invert-3);
     transition: transform var(--tr-e-out);
   }
   .btn_fixed:hover{
-    --clr-btn: var(--clr-white-300);
+    --clr-btn: var(--bg-invert-1);
   }
   .btn_fixed:active{
-    --clr-btn: var(--clr-white-100);
+    --clr-btn: var(--bg-invert-1);
     transform: rotate(20deg) scale(0.900);
   }
   .btn_fixed--active{
-    --clr-btn: var(--clr-white-100);
+    --clr-btn: var(--bg-invert-1);
     transform: rotate(20deg) scale(0.900);
   }
-  
+
   
   /* OUTPUT - TEXT */
   .txt_bold{

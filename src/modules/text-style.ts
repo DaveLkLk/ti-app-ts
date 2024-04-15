@@ -19,9 +19,10 @@ function pageContentStyle(){
       <p data-for="title-1" class="title_header">Controla el formato del texto</p>
     </div>
     <div class="section_title-content">
-      <p data-for="txt-3">Guarda tus ajustes para futuras sesiones.</p>
-      <p data-for="txt-3">Copia y Pega mejorado con atajos accesibles</p>
-      <p data-for="txt-3"><span data-for="cursive-3">Transform Text App</span> te permite mantener tus ajustes personalizados basado en el almacenamiento local o <code data-for="code-2">localStorage</code> del <a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer" title="Qué es localStorage - MDN Web Docs">objeto window en JavaScript.</a></p>
+      <p data-for="txt-3">Guarda tus ajustes para futuras sesiones. Copia y Pega mejorado con atajos accesibles. Puedes mantener tus ajustes personalizados basado en el almacenamiento local o <a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer" title="Qué es localStorage - MDN Web Docs"><code data-for="code-2">localStorage.</code></a></p>
+      <picture class="content_image">
+        <img class="content_image-logo" src="../../public/assets/js-localstorage-image.png">
+      </picture>
     </div>
   </div>
   <div class="section_grid">
@@ -29,8 +30,8 @@ function pageContentStyle(){
       <div class="form_group">
         <label class="label" for="text_input">Ingrese texto</label>
         <div class="form_group-row">
-          <input type="text" id="text_input" autofocus class="form_input text_input">
-          <button class="btn_paste btn_icon btn_change" data-type="button" id="btn_paste" type="button" title="Pegar último texto copiado">
+          <input type="text" id="text_input" placeholder="ingresa texto.." autofocus class="form_input text_input">
+          <button class="btn_copy-paste btn_icon" data-type="button" id="btn_paste" type="button" title="Pegar último texto copiado">
             ${svgPaste()}
           </button>
         </div>
@@ -42,6 +43,7 @@ function pageContentStyle(){
           <option value="text_lower">Minúsculas</option>
           <option value="text_capital">Títulos</option>
           <option value="text_normal">Oración</option>
+          <option value="text_default">Sin cambios</option>
         </select>
       </div>
       <div class="form_group">
@@ -62,7 +64,7 @@ function pageContentStyle(){
           </button>
           <div id="cfg-styles" class="config-style-group" data-active="btn_style--active">
             <div class="form_group-rowcenter">
-              <span class="label-sm">Mantener estilos:</span>
+              <span class="label-sm">Mantener cambios:</span>
               <button id="btn_lock_styles" data-class="btn_lock" class="btn_icon btn_lock" type="button"  title="estilos desbloqueado" >
                 ${svgUnlock()}
                 ${svgLock()}
@@ -93,8 +95,8 @@ function pageContentStyle(){
       </div>
       <div class="form_group">
         <div class="form_group-row">
-          <textarea class="form_output readonly" id="text_output" title="elemento de solo lectura" readonly placeholder="resultado.."></textarea>
-          <button type="button" data-type="button" class="btn_icon btn_change" id="btn_copy" title="Copiar texto">
+          <textarea class="form_output" data-class="form_output" id="text_output" title="elemento de solo lectura" readonly placeholder="resultado.."></textarea>
+          <button type="button" data-type="button" class="btn_copy-paste btn_icon" id="btn_copy" title="Copiar texto">
             ${svgCopy()}
           </button>
         </div>

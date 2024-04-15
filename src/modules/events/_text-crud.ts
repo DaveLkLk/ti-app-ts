@@ -7,7 +7,7 @@ import { ObjectParam } from "../../rules/types.ts";
 
 export function getEvents(section:HTMLElement){
   const divAlert = document.querySelector('.alert') as HTMLElement;
-  const formCrud = section.querySelector('.form_txt-crud') as HTMLFormElement;
+  const formCrud = section.querySelector('.form_text-crud') as HTMLFormElement;
   const groupCardText = section.querySelector('.group_data-content') as HTMLElement;
   const indicatorCount = section.querySelector('#indicator-count') as HTMLElement;
 //   const indicatorGroup = section.querySelector('#indicator-title') as HTMLElement;
@@ -58,6 +58,7 @@ export function getEvents(section:HTMLElement){
         cardLenght: Array.from(groupCardText.children).length + 1
         }
         groupCardText.innerHTML += createCardText(objForm).outerHTML;
+        console.log(updateIndicators);
         setCountIndicator(updateIndicators)
         formCrud.reset();
     }

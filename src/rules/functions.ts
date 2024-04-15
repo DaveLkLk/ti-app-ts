@@ -44,7 +44,7 @@ export const setClipboard = async (text:string)=>{
   let stateResponse:ClipBoard = {}
   try{
     await navigator.clipboard.writeText(text)
-    stateResponse.msg = 'Texto copiado al portapapeles'
+    stateResponse.msg = ('Texto copiado al portapapeles')
     stateResponse.success = true
     return stateResponse;
   }catch(err){
@@ -136,7 +136,9 @@ export function generateId() {
 }
 export function setCountIndicator(obj:ObjectParam){
     const listCardTxt = obj.childrens ? Array.from(obj.childrens()) : []
-    obj.setcount ? obj.setcount.textContent = listCardTxt.length.toString() : null
+    console.log(listCardTxt);
+    console.log(obj);
+    obj.setcount?.element ? obj.setcount.element.textContent = listCardTxt.length.toString() : null
 }
 export function deleteCardTxt(container:HTMLElement, id:string){
   const cardToDelete = document.getElementById(id);

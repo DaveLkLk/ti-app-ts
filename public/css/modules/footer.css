@@ -1,0 +1,30 @@
+.footer_container{
+    display: grid;
+    padding: 1rem;
+    align-content: center;
+    justify-content: flex-end;
+}
+.ts_overlay{
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+}
+.ts_overlay:before{
+    border-radius: inherit;
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--bg-ts);
+    transition: background .3s ease-in;
+}
+.ts_overlay:hover:before{
+    background: var(--bg-ts-active);
+}
+.ts_overlay svg{
+    position: relative;
+    --size: 70px;
+    width: var(--size);
+    height: var(--size);
+}

@@ -99,11 +99,27 @@ export function getEvents(section:HTMLElement){
     textOutput.value = result;
     clearSpaceActive(btnClearSpace, textOutput);
     // estilos al textarea de salida
+    console.clear()
+    console.log("scrollheight",textOutput.scrollHeight);
+    console.log("offsetheight",textOutput.offsetHeight);
+    console.log("clientheight",textOutput.clientHeight);
+
     textOutput.style.height = 'auto';
     textOutput.style.height = (textOutput.scrollHeight) + 'px';
+    if(textOutput.offsetHeight <= 38){
+      textOutput.style.height = 'auto';
+      textOutput.style.height = '34px';
+    }
+    if(textOutput.offsetHeight >= 128){
+      console.log("Boolean - scrollheight",textOutput.offsetHeight > 128);
+      textOutput.classList.add(`${textOutput.dataset.class}--scrolling`)
+      return
+    }
+    textOutput.classList.remove(`${textOutput.dataset.class}--scrolling`)
   })
   
-  formText.addEventListener('reset', () =>{
+  formText.addEventListener('reset', (e) =>{
+    e.preventDefault()
     textOutput.value = '';
     textOutput.style.height = '32px';
   
@@ -115,7 +131,8 @@ export function getEvents(section:HTMLElement){
       elementAnimation(formElements(section).input, 'text_input--active', 900)
       createAlert(divAlert, MESSAGE_TYPE.CLEAR_NULL, ALERT_TYPE.TEMP.info, formElements(section).formData, 1000)
     }else{
-      createAlert(divAlert, MESSAGE_TYPE.FORM_CLEAR, ALERT_TYPE.TEMP.default, formElements(section).formData, 700)
+      createAlert(divAlert, MESSAGE_TYPE.FORM_CLEAR, ALERT_TYPE.TEMP.default, formElements(section).formData, 700);
+      formElements(section).input.value = '';
       }
   })
    // mejorar aqui
@@ -159,6 +176,10 @@ export function getEvents(section:HTMLElement){
       this.text = txt,
       this.option = opt
     }
+    textDefault():string {
+      const txtCleared = clearText(this.text).SPACES;
+      return txtCleared;
+    }
     textNormal():string {
       const txtCleared = clearText(this.text).SPACES;
       const textResult = txtCleared.toLowerCase().replace(/^\w/, match => match.toUpperCase());
@@ -176,7 +197,8 @@ export function getEvents(section:HTMLElement){
         text_upper: (txt) => txt.toUpperCase(),
         text_lower: (txt) => txt.toLowerCase(),
         text_capital: () => this.textCapitalize(),
-        text_normal: () => this.textNormal()
+        text_normal: () => this.textNormal(),
+        text_default: () => this.textDefault()
       };
 
       const selectedOption = typeOptions[optValue];

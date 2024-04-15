@@ -1,8 +1,5 @@
-  /* LAYOUT BUSQUEDA ANEXOS Y DIRECTIVOS */
-  .box_item{
-    /* margin: auto; */
+.box_item{
     display: grid;
-    /* grid-auto-columns: max-content; */
     grid-template-areas:
         "search form indicator";
     transition: grid-template-areas .5s linear;
@@ -10,20 +7,23 @@
 }
 .box_search-config{
     grid-area: search;
-    transition: grid-area .5s linear;
     display: grid;
     align-items: center;
-    padding: 3px 0 3px 1em;
     gap: 1em;
     padding: 1rem 2rem;
-    background: var(--clr-clay-950);
-    box-shadow: var(--sct-card-shadow);
+    box-shadow: var(--shadow-anx);
+    background: var(--bg-card-menu);
+    border-radius: 20px;
+    transition: box-shadow var(--tr-e-out);
     --size: 60px;
     --circle: 0.7;
-    --inactive: var(--clr-clay-800);
-    --active: var(--clr-clay-400);
-    --clr-circle: var(--clr-clay-300);
-    --clr-circle-active: var(--clr-clay-50);
+    --inactive: var(--clr-white-950);
+    --active: var(--clr-white-700);
+    --clr-circle: var(--clr-white-700);
+    --clr-circle-active: var(--clr-white-100);
+}
+.box_search-config:hover{
+    box-shadow: var(--shadow-anx-active);
 }
     .box_search-config .label_toggle{
         display: flex;
@@ -31,21 +31,84 @@
     }
     .box_search-config span{
         pointer-events: none;
-        color: var(--clr-white-600);
+        color: var(--text-inactive);
         transition: color var(--tr-e-out);
     }
     .box_search-config:hover span{
-        color: var(--clr-clay-200);
+        color: var(--text-active);
     }
 .box_item .form_search{
     grid-area: form;
+    box-shadow: var(--shadow-anx);
+    background: var(--bg-card-menu);
+    border-radius: 20px;
+    transition: box-shadow var(--tr-e-out);
+    --size-icon: 32px;
 }
-    .box_item .form_search--active{
-        box-shadow: var(--sct-card-shadow-active);
-    }
+.box_item .form_search:hover{
+    box-shadow: var(--shadow-anx-active);
+}
     .form_search input[type="search"]::placeholder{
         font-style: italic;
     }
+    .form-panel{
+        min-width: 300px;
+        display:grid;
+        padding: 2rem;
+        gap: 1rem;
+      }
+      .form_group{
+        display: grid;
+        gap:1rem;
+      }
+        .form_group .form_input{
+          width: 100%;
+          padding: .5rem;
+          font-size: 1rem;
+          background: var(--bg-card);
+          border: var(--border-card-anx);
+          border-radius: 10px;
+          color: var(--text-tertiary);
+          transition: color var(--tr-e-out), border-color var(--tr-e-out);
+        }
+        .form_group .form_input:hover,
+        .form_group .form_input:focus{
+          color: var(--text-primary);
+          border: var(--border-card-anx-active);
+        }
+        .form_group .form_input::placeholder{
+          color: var(--text-tertiary);
+        }
+      
+      .form_group-row{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: .5rem;
+        align-items: center;
+      }
+      .form_group-row:has(textarea){
+        align-items: flex-start;
+      }
+    
+      .form_group-rowcenter{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: .5rem;
+        align-items: center;
+      }
+      .form_group-col3{
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: .5rem;
+        align-items: center;
+      }
+      .form_group-col4{
+        display: grid;
+        grid-template-columns: 1fr auto auto auto;
+        gap: .5rem;
+        align-items: center;
+      }
+
 
 .box_item .box_search-indicator{
     grid-area: indicator;
@@ -55,10 +118,15 @@
     justify-content: center;
     gap: .5rem;
     padding: 1rem;
-    background: var(--clr-clay-950);
-    box-shadow: var(--sct-card-shadow);
-    color: var(--clr-white-500);
-    transition: all var(--tr-e-out);
+    background: var(--bg-card-menu);
+    box-shadow: var(--shadow-anx);
+    color: var(--text-inactive);
+    border-radius: 20px;
+    transition: box-shadow var(--tr-e-out), color var(--tr-e-out), background var(--tr-e-out);
+}
+.box_search-indicator:hover{
+    color: var(--text-active);
+    box-shadow: var(--shadow-anx-active);
 }
 .box_search-indicator .indicator_count{
     text-align: center;
@@ -66,9 +134,6 @@
 }
 .box_search-indicator p{
     font-size: .8rem;
-}
-.box_search-indicator:hover{
-    color: var(--clr-clay-200);
 }
   /* BOX TOGGLE */
   .box-toggle{
