@@ -65,7 +65,7 @@
           width: 100%;
           padding: .5rem;
           font-size: 1rem;
-          background: var(--bg-secondary);
+          background: var(--bg-card);
           border: var(--border-card-anx);
           border-radius: 10px;
           color: var(--text-tertiary);

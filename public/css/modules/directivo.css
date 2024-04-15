@@ -12,7 +12,7 @@
     padding: 3px;
     color: var(--text-inactive);
     border-radius: 10px;
-    filter: opacity(.7) grayscale(50%);
+    filter: var(--filter-props);
     transition:
         color var(--tr-e-out),
         filter .2s ease-out,
@@ -29,9 +29,7 @@
     --clr-btn: var(--text-secondary);
     animation: border-card var(--time) linear infinite;
     filter: opacity(1);
-    box-shadow:
-        -7px -7px 20px -15px var(--clr-border),
-        5px 5px 20px -15px var(--clr-border);
+    box-shadow: var(--shadow-card-animate);
     transform: scale(1);
 }
 .directivo_result-card:hover .card_animate{
@@ -90,7 +88,7 @@ span.directivo-dependencia{
     margin: .5rem 0 0 0;
     padding: 1em;
     --clr-btn: var(--clr-blue-400);
-    color: var(--clr-blue-400);
+    color: var(--clr-blue-500);
 }
 .directivo_email span{
     width: max-content;

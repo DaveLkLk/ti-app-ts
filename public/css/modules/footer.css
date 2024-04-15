@@ -16,11 +16,11 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: #030303c9;
+    background: var(--bg-ts);
     transition: background .3s ease-in;
 }
 .ts_overlay:hover:before{
-    background: #03030354;
+    background: var(--bg-ts-active);
 }
 .ts_overlay svg{
     position: relative;

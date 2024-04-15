@@ -80,6 +80,11 @@ export function createDirectiveCard(obj:DirectivoCard){
           ${email2}
         </span>
       </div>
+      <div class="directivo_location">
+        <span>Código: ${obj.codigo}</span>
+        <span>Pabellón: ${obj.pabellon}</span>
+        <span>Piso: ${obj.piso}</span>
+      </div>
     </div>
   `;
 // DEFINIR LA SALIDA QUE TENDRA ESTE OBJETO 

@@ -8,7 +8,6 @@
     --size-icon: 35px;
   }
   .content_text .section_title{
-    background: var(--bg-card-style);
     padding: 2rem 3rem;
     box-shadow: var(--shadow-card-style);
     --clr-txt: var(--text-tertiary);

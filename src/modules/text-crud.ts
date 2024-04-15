@@ -6,7 +6,7 @@ function pageTitleCRUD(){
     const div = document.createElement("div");
     div.classList.add('content_title')
     div.innerHTML = `
-        <h1 class="text_title">Crea, elimina y agrupa textos</h1>
+        <h1 class="text_title">Grupo de Textos</h1>
     `;
     return div;
 }

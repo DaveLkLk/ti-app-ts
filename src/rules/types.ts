@@ -71,7 +71,10 @@ export type TypeStyles = {
     cargo: string;
     telefono?: string;
     anexo?: number;
-    correo?: {general?: string;personal?: string;}
+    correo?: {general?: string;personal?: string;};
+    codigo: string;
+    pabellon: string,
+    piso: number
   }
 
   type TextTransformFunction = (txt: string) => string;

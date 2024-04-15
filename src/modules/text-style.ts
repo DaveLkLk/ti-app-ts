@@ -21,7 +21,7 @@ function pageContentStyle(){
     <div class="section_title-content">
       <p data-for="txt-3">Guarda tus ajustes para futuras sesiones. Copia y Pega mejorado con atajos accesibles. Puedes mantener tus ajustes personalizados basado en el almacenamiento local o <a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage" target="_blank" rel="noopener noreferrer" title="Qué es localStorage - MDN Web Docs"><code data-for="code-2">localStorage.</code></a></p>
       <picture class="content_image">
-        <img class="content_image-logo" src="../../public/assets/js-localstorage-image.png">
+        <img class="content_image-logo" src="/assets/js-localstorage-image.png">
       </picture>
     </div>
   </div>
