@@ -35,13 +35,10 @@ form[class*="form_text"]{
     word-spacing: 5px;
     line-height: 40px;
     transition: color 1s linear;
-    color: var(--clr-blue-500);
-    /* color: var(--bg-primary); */
-    -webkit-text-stroke: 1px grey;
+    /* color: var(--clr-blue-200); */
+    color: var(--bg-invert-1);
+    -webkit-text-stroke: 1px var(--clr-blue-200);
     user-select: none;
-    text-shadow:
-    2px 4px 1px #434399,
-    2px 5px 5px #33338a;
   }
 
 

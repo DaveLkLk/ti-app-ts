@@ -24,7 +24,7 @@
         box-shadow: var(--shadow-anx);
         --bg-anexo: var(--bg-primary);
         --clr-text: var(--text-inactive);
-        opacity: .6;
+        opacity: .7;
         border-radius: 10px;
         transition: background var(--tr-e-out), box-shadow .1s ease-out, scale .1s ease-out, opacity var(--tr-e-out);
     }

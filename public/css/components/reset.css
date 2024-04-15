@@ -365,6 +365,12 @@ body.body_theme-dark{
   --bg-card-menu: #333333;
   --bg-card-directivo: #0f0f0f;
   --clr-border-card-1: var(--clr-blue-800);
+  --filter-props: opacity(.7) grayscale(60%);
+  --shadow-card-animate: -7px -7px 20px -15px var(--clr-border-card-1),
+  5px 5px 20px -15px var(--clr-border-card-1);
+ /* FOOTER */
+ --bg-ts: #050505a2;
+ --bg-ts-active: #0303034d;
 }
 
 
@@ -441,30 +447,36 @@ body.body_theme-light{
    -3px -3px 7px var(--clr-white-400),
    3px 3px 10px var(--clr-white-990);
  --shadow-anx:
-   -1px -1px 2px var(--clr-white-800),
-   -3px -3px 10px -2px var(--clr-white-950),
-   1px 1px 1px var(--clr-white-990),
-   3px 3px 10px var(--clr-white-990);
+   -1px -1px 2px var(--clr-white-100),
+   -3px -3px 10px -2px var(--clr-white-50),
+   1px 1px 1px var(--clr-white-100),
+   3px 3px 10px var(--clr-white-400);
  --shadow-anx-active:
-   -1px -1px 2px var(--clr-white-990),
-   -3px -3px 10px var(--clr-white-990),
-   1px 1px 1px var(--clr-white-800),
-   3px 3px 10px -2px var(--clr-white-950);
+   -1px -1px 2px var(--clr-white-100),
+   -3px -3px 10px var(--clr-white-200),
+   1px 1px 1px var(--clr-white-300),
+   3px 3px 10px -2px var(--clr-white-50);
  --shadow-indicator:
-   inset -3px -3px 7px var(--clr-white-950),
-   inset 3px 3px 7px var(--clr-white-970);
+   inset -3px -3px 7px var(--clr-white-100),
+   inset 3px 3px 7px var(--clr-white-300);
  --border-clr-active: var(--clr-clay-400);
  --border-card-anx: 1px solid var(--clr-white-800);
  --border-card-anx-active: 1px solid var(--clr-white-400);
  --border-anexos: 1px solid var(--clr-white-600);
 /* DIRECTIVOS */
- --text-build-name: var(--clr-blue-500);
+ --text-build-name: var(--clr-blue-600);
  --text-build-inactive: var(--clr-white-500);
- --text-build-active: var(--clr-white-200);
- --bg-card-menu: #333333;
- --bg-card-directivo: #0f0f0f;
+ --text-build-active: var(--clr-white-800);
+ --bg-card-menu: var(--clr-white-50);
+ --bg-card-directivo: var(--clr-white-200);
  --clr-border-card-1: var(--clr-blue-800);
+ --filter-props: opacity(.8) grayscale(80%);
+ --shadow-card-animate: none;
 
+
+ /* FOOTER */
+ --bg-ts: #05050541;
+ --bg-ts-active: #03030318;
 }
 ::-webkit-scrollbar{
   background: var(--bg-scroll);
