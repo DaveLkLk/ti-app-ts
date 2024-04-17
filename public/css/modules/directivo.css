@@ -64,7 +64,7 @@ hr{
 .directivo_data{
     padding: 1rem;
     border-radius: 10px;
-    background: var(--bg-primary);
+    background: var(--bg-body);
     box-shadow: var(--shadow-indicator);
 }
 span.directivo-name{
@@ -90,15 +90,19 @@ span.directivo-dependencia{
     --clr-btn: var(--clr-blue-400);
     color: var(--clr-blue-500);
 }
-.directivo_email span{
-    width: max-content;
-    cursor: pointer;
-}
-span.directivo-correo-general{
-    text-align: left;
-}
-span.directivo-correo-personal a{
-    width: max-content;
+    .directivo_email span{
+        width: max-content;
+        cursor: pointer;
+    }
+    span.directivo-correo-general{
+        text-align: left;
+    }
+    span.directivo-correo-personal a{
+        width: max-content;
+    }
+
+.directivo_location{
+    border: 1px solid red;
 }
 
 @property --angle {

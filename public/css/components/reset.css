@@ -468,7 +468,7 @@ body.body_theme-light{
  --text-build-inactive: var(--clr-white-500);
  --text-build-active: var(--clr-white-800);
  --bg-card-menu: var(--clr-white-50);
- --bg-card-directivo: var(--clr-white-200);
+ --bg-card-directivo: var(--clr-white-100);
  --clr-border-card-1: var(--clr-blue-800);
  --filter-props: opacity(.8) grayscale(80%);
  --shadow-card-animate: none;
