@@ -73,8 +73,8 @@ export type TypeStyles = {
     anexo?: number;
     correo?: {general?: string;personal?: string;};
     codigo: string;
-    pabellon: string,
-    piso: number
+    pabellon: string;
+    piso: string;
   }
 
   type TextTransformFunction = (txt: string) => string;
