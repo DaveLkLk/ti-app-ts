@@ -48,10 +48,30 @@ export function createOfficeCard(obj:OfficeCardParam){
   `;
   return div
 }
+
+function objLocation(obj:DirectivoCard, param: string){
+  interface paramItems{
+    codigo: string;
+    pabellon: string;
+    piso: string;
+    [key: string]: string
+  }
+  if(param === '' || param === null) return 
+  const items:paramItems = {
+    codigo: obj.codigo,
+    pabellon: obj.pabellon,
+    piso: obj.piso,
+  }
+  const validateItems: boolean = Object.keys(items).includes(param)
+  if(validateItems){
+    items[param] === undefined ? items[param] = 'vacio' : null
+    return items[param]
+  }
+}
 export function createDirectiveCard(obj:DirectivoCard){
   const tagId = generateId();
   const email1 = obj.correo?.general;
-  const email2 = obj.correo?.personal === null 
+  const email2 = obj.correo?.personal === null
     ? '<span class="null">vacio</span>'
     : `<a target="_blank" href="mailto:${obj.correo?.personal}">${obj.correo?.personal}</a>`;
   const div = document.createElement('div');
@@ -81,12 +101,13 @@ export function createDirectiveCard(obj:DirectivoCard){
         </span>
       </div>
       <div class="directivo_location">
-        <span>Código: ${obj.codigo}</span>
-        <span>Pabellón: ${obj.pabellon}</span>
-        <span>Piso: ${obj.piso}</span>
+        <span class="d-location-item dl-code">Código: ${objLocation(obj, 'codigo')}</span>
+        <span class="d-location-item dl-pabellon">Pabellón: ${objLocation(obj, 'pabellon')}</span>
+        <span class="d-location-item dl-piso">Piso: ${objLocation(obj, 'piso')}</span>
       </div>
     </div>
   `;
-// DEFINIR LA SALIDA QUE TENDRA ESTE OBJETO 
+// DEFINIR LA SALIDA QUE TENDRA ESTE OBJETO
+
   return div;
 }

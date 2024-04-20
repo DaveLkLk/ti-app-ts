@@ -319,14 +319,14 @@ body.body_theme-dark{
   --shadow-animate: -2px 3px 12px var(--clr-clay-500);
 
   /* TEXT-STYLE */
-  --bg-card-style: var(--bg-primary);
+  --bg-card-style: var(--bg-body);
   --bg-btn-oncopy: var(--bg-secondary);
   --border-input: var(--clr-white-500);
   --shadow-card-style: 0 0 10px var(--clr-white-700);
   --shadow-card-style-2: 0 0 5px var(--clr-white-600);
 
   /* TEXT-CRUD */
-  --bg-card-crud: var(--bg-primary);
+  --bg-card-crud: var(--bg-body);
   --shadow-card-crud: 0 0 10px var(--clr-white-700);
   --shadow-card-crud-2: 0 0 10px var(--clr-white-600);
   --shadow-card-crud-3: 0 0 10px var(--clr-white-500);
@@ -343,14 +343,14 @@ body.body_theme-dark{
     3px 3px 10px var(--clr-white-990);
   --shadow-anx:
     -1px -1px 2px var(--clr-white-800),
-    -3px -3px 10px -2px var(--clr-white-950),
+    -3px -3px 10px -2px var(--clr-white-900),
     1px 1px 1px var(--clr-white-990),
     3px 3px 10px var(--clr-white-990);
   --shadow-anx-active:
-    -1px -1px 2px var(--clr-white-990),
-    -3px -3px 10px var(--clr-white-990),
-    1px 1px 1px var(--clr-white-800),
-    3px 3px 10px -2px var(--clr-white-950);
+    -1px -1px 1px var(--clr-white-990),
+    -3px -3px 10px var(--clr-white-980),
+    inset -1px -1px 1px var(--clr-white-900),
+    inset -3px -3px 5px -2px var(--clr-white-960);
   --shadow-indicator:
     inset -3px -3px 7px var(--clr-white-950),
     inset 3px 3px 7px var(--clr-white-970);
@@ -468,7 +468,7 @@ body.body_theme-light{
  --text-build-inactive: var(--clr-white-500);
  --text-build-active: var(--clr-white-800);
  --bg-card-menu: var(--clr-white-50);
- --bg-card-directivo: var(--clr-white-200);
+ --bg-card-directivo: var(--clr-white-100);
  --clr-border-card-1: var(--clr-blue-800);
  --filter-props: opacity(.8) grayscale(80%);
  --shadow-card-animate: none;

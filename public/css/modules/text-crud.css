@@ -11,7 +11,7 @@
   }
 
   .crud_response-container .crud_response-item{
-    background: var(--bg-primary);
+    background: var(--bg-body);
   }
     .crud_response-item.crud_found{
       box-shadow: var(--shadow-card-crud);
@@ -47,7 +47,7 @@
         position: absolute;
         top: -9px;
         left: 7px;
-        background: var(--bg-primary);
+        background: var(--bg-body);
         font-size: .65rem;
         padding: 0 5px;
         transition: color var(--tr-e-out);
@@ -65,10 +65,10 @@
     .crud_found .form_found-group .found_select{
         transition: color var(--tr-e-out);
         border-radius: inherit;
-        background: var(--bg-primary);
+        background: var(--bg-body);
       }
     .crud_found .form_found-group .found_inp{
-        background: var(--bg-primary);
+        background: var(--bg-secondary);
         border: 1px solid var(--clr-found);
         border-radius: var(--radius-btn);
         color: var(--clr-found);
@@ -78,7 +78,6 @@
       }
     .crud_found .btn_found{
       --clr-btn: var(--text-inactive);
-      /* border: 1px solid var(--clr-btn); */
       padding: 5px;
       transition: transform var(--tr-e-out), border-color var(--tr-e-out);
     }
