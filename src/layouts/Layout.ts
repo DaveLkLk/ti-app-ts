@@ -1,4 +1,4 @@
-import { svgBuilding, svgConfig, svgCopy, svgDelete, svgEmail, svgPin, svgUser } from '../components/Icons.ts';
+import { svgBuilding, svgConfig, svgCopy, svgDelete, svgEmail, svgLocation, svgPin, svgUser } from '../components/Icons.ts';
 import { generateId } from '../rules/functions.ts'
 import { CardTextParam, DirectivoCard, OfficeCardParam } from '../rules/types.ts';
 
@@ -64,7 +64,7 @@ function objLocation(obj:DirectivoCard, param: string){
   }
   const validateItems: boolean = Object.keys(items).includes(param)
   if(validateItems){
-    items[param] === undefined ? items[param] = 'vacio' : null
+    items[param] === undefined ? items[param] = '?' : null
     return items[param]
   }
 }
@@ -100,10 +100,13 @@ export function createDirectiveCard(obj:DirectivoCard){
           ${email2}
         </span>
       </div>
-      <div class="directivo_location">
-        <span class="d-location-item dl-code">Código: ${objLocation(obj, 'codigo')}</span>
-        <span class="d-location-item dl-pabellon">Pabellón: ${objLocation(obj, 'pabellon')}</span>
+      <hr/>
+      <div class="directivo_location" title="ubicación de la unidad orgánica">
+        <span class="d-location-item dl-pabellon">
+          <icon class="btn_icon">${svgLocation()}</icon>
+          Pabellón: ${objLocation(obj, 'pabellon')}</span>
         <span class="d-location-item dl-piso">Piso: ${objLocation(obj, 'piso')}</span>
+        <span class="d-location-item dl-code">Ambiente: ${objLocation(obj, 'codigo')}</span>
       </div>
     </div>
   `;

@@ -17,10 +17,10 @@
     transition: box-shadow var(--tr-e-out);
     --size: 60px;
     --circle: 0.7;
-    --inactive: var(--clr-white-950);
-    --active: var(--clr-white-700);
-    --clr-circle: var(--clr-white-700);
-    --clr-circle-active: var(--clr-white-100);
+    --inactive: var(--clr-white-800);
+    --active: var(--clr-blue-500);
+    --clr-circle: var(--clr-white-400);
+    --clr-circle-active: var(--clr-blue-50);
 }
 .box_search-config:hover{
     box-shadow: var(--shadow-anx-active);
