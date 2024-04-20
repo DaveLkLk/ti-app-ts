@@ -271,7 +271,7 @@ html{
 
 body.body_theme-dark{
   /* PRINCIPAL */
-  --bg-body: var(--clr-white-980);
+  --bg-body: var(--clr-white-970);
   --bg-primary: var(--clr-white-990);
   --bg-secondary: var(--clr-white-900);
   --bg-tertiary: var(--clr-white-800);
@@ -333,12 +333,12 @@ body.body_theme-dark{
   --border-items: var(--text-inactive);
 
   /* ANEXOS UNTELS */
-  --bg-anx: var(--bg-primary);
+  --bg-anx: var(--clr-white-970);
   /* --bg-anx-active: var(--clr-white-960); */
   --shadow-form:
     -3px -3px 7px var(--clr-white-800),
     3px 3px 10px var(--clr-white-990);
-    --shadow-form-active:
+  --shadow-form-active:
     -3px -3px 7px var(--clr-white-400),
     3px 3px 10px var(--clr-white-990);
   --shadow-anx:
@@ -348,9 +348,9 @@ body.body_theme-dark{
     3px 3px 10px var(--clr-white-990);
   --shadow-anx-active:
     -1px -1px 1px var(--clr-white-990),
-    -3px -3px 10px var(--clr-white-980),
-    inset -1px -1px 1px var(--clr-white-900),
-    inset -3px -3px 5px -2px var(--clr-white-960);
+    -3px -3px 3px var(--clr-white-980),
+    1px 1px 3px var(--clr-white-950),
+    3px 5px 10px -2px  var(--clr-white-960);
   --shadow-indicator:
     inset -3px -3px 7px var(--clr-white-950),
     inset 3px 3px 7px var(--clr-white-970);
@@ -369,7 +369,7 @@ body.body_theme-dark{
   --shadow-card-animate: -7px -7px 20px -15px var(--clr-border-card-1),
   5px 5px 20px -15px var(--clr-border-card-1);
  /* FOOTER */
- --bg-ts: #050505a2;
+ --bg-ts: #050505bd;
  --bg-ts-active: #0303034d;
 }
 
@@ -438,7 +438,7 @@ body.body_theme-light{
  --border-items: var(--text-inactive);
 
  /* ANEXOS UNTELS */
- --bg-anx: var(--bg-primary);
+ --bg-anx: var(--clr-white-50);
  /* --bg-anx-active: var(--clr-white-960); */
  --shadow-form:
    -3px -3px 7px var(--clr-white-800),

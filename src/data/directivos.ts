@@ -245,7 +245,7 @@ const arrDirectivos = [
     telefono: "(01) 7158878",
     anexo: 170,
     correo: { general: "otic@untels.edu.pe", personal: "edaga@untels.edu.pe" },
-    codigo: "B3-3",
+    codigo: "B3-3, B3-4",
     pabellon: "B",
     piso: "3"
   },
