@@ -37,7 +37,7 @@ export const anexosDirectivos = [
   { id: 36, office: "Estudios Generales - Jefatura", anexo: 114 },
   { id: 37, office: "Estudios Generales - Secretaria", anexo: 115 },
   { id: 38, office: "Extensión Universitaria", anexo: 113 },
-  { id: 39, office: "FIG - Ingeniería y Gestión", anexo: 186 },
+  { id: 39, office: "Decanato", anexo: 186 },
   { id: 40, office: "Fondo Editorial", anexo: 165 },
   { id: 41, office: "Grados y Títulos - Responsable", anexo: 162 },
   { id: 42, office: "Grados y Títulos - Secretaria", anexo: 139 },
