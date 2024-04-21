@@ -37,7 +37,7 @@ form[class*="form_text"]{
     transition: color 1s linear;
     /* color: var(--clr-blue-200); */
     color: var(--bg-invert-1);
-    -webkit-text-stroke: 1px var(--clr-blue-200);
+    /* -webkit-text-stroke: 1px var(--clr-blue-200); */
     user-select: none;
   }
 

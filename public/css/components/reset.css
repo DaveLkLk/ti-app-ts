@@ -469,9 +469,9 @@ body.body_theme-light{
  --bg-button-active: var(--clr-white-300);
  --clr-nav-item: var(--clr-white-500);
  --clr-nav-item-hover: var(--clr-blue-400);
- --clr-button: var(--clr-white-100);
+ --clr-button: var(--clr-white-900);
  --clr-button-active: var(--clr-blue-500);
- --clr-icon: var(--clr-white-500);
+ --clr-icon: var(--clr-white-600);
  --clr-icon-active: var(--clr-white-970);
  --shadow-nav: 0 0 5px var(--clr-white-800);
 
