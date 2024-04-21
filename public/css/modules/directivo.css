@@ -120,10 +120,11 @@ span.directivo-dependencia{
 .d-location-item{
     font-size: .9rem;
     font-style: italic;
+    display: flex;
+    gap: 2px;
 }
 .dl-pabellon{
     font-size: 1rem;
-    display: flex;
 }
 .dl-piso{
     text-align: end;
