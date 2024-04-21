@@ -6,7 +6,7 @@ const NavTitle = () => {
     div.classList.add('navigation_title');
     div.innerHTML = `
         <button class="title_page" type="submit">
-            <span>TI</span>
+            <span>OTIC</span>
         </button>
         <button class="btn_menu btn_show" type="button" id="btn-show-menu">
             ${svgMenu()}
