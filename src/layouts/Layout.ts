@@ -1,4 +1,4 @@
-import { svgBuilding, svgConfig, svgCopy, svgDelete, svgEmail, svgLocation, svgPin, svgUser } from '../components/Icons.ts';
+import { svgBuilding, svgConfig, svgCopy, svgDelete, svgEmail, svgLocation, svgPabellonDoor, svgPin, svgPisoPabellon, svgUser } from '../components/Icons.ts';
 import { generateId } from '../rules/functions.ts'
 import { CardTextParam, DirectivoCard, OfficeCardParam } from '../rules/types.ts';
 
@@ -105,12 +105,15 @@ export function createDirectiveCard(obj:DirectivoCard){
         <span class="d-location-item dl-pabellon">
           <icon class="btn_icon">${svgLocation()}</icon>
           Pabellón: ${objLocation(obj, 'pabellon')}</span>
-        <span class="d-location-item dl-piso">Piso: ${objLocation(obj, 'piso')}</span>
-        <span class="d-location-item dl-code">Ambiente: ${objLocation(obj, 'codigo')}</span>
+        <span class="d-location-item dl-piso">
+          <icon class="btn_icon">${svgPisoPabellon()}</icon>
+          Piso: ${objLocation(obj, 'piso')}</span>
+        <span class="d-location-item dl-code">
+          <icon class="btn_icon">${svgPabellonDoor()}</icon>
+          Ambiente: ${objLocation(obj, 'codigo')}</span>
       </div>
     </div>
   `;
-// DEFINIR LA SALIDA QUE TENDRA ESTE OBJETO
 
   return div;
 }

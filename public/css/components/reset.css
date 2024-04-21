@@ -354,6 +354,8 @@ body.body_theme-dark{
   --shadow-indicator:
     inset -3px -3px 7px var(--clr-white-950),
     inset 3px 3px 7px var(--clr-white-970);
+    --shadow-filter: inset -1px -1px 3px grey, inset 2px 2px 5px black;
+    --shadow-filter-active: -1px -1px 3px grey, 2px 2px 5px black;
   --border-clr-active: var(--clr-clay-400);
   --border-card-anx: 1px solid var(--clr-white-800);
   --border-card-anx-active: 1px solid var(--clr-white-400);
@@ -459,6 +461,8 @@ body.body_theme-light{
  --shadow-indicator:
    inset -3px -3px 7px var(--clr-white-100),
    inset 3px 3px 7px var(--clr-white-300);
+ --shadow-filter: inset -1px -1px 7px var(--clr-white-100), inset 3px 3px 7px -1px var(--clr-white-300);
+ --shadow-filter-active: -1px -1px 4px var(--clr-white-100), 2px 2px 5px var(--clr-white-600);
  --border-clr-active: var(--clr-clay-400);
  --border-card-anx: 1px solid var(--clr-white-800);
  --border-card-anx-active: 1px solid var(--clr-white-400);

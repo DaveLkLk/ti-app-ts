@@ -1,7 +1,7 @@
 import '../../public/css/modules/untels.css';
 import '../../public/css/components/layouts.css';
 import { getEvents } from "./events/_untels.ts";
-import { svgLupa } from "../components/Icons.ts"
+import { svgEyes, svgLupa } from "../components/Icons.ts"
 import { LabelBtnToggle } from '../components/btnToggle.ts';
 
 function pageTitleAnexo(){
@@ -24,6 +24,9 @@ function pageContentAnexo(){
       </div>
       <form class="form_search form-panel" id="office-form-search" data-class="form_search">
         <div class="form_group">
+          <button type="button" class="btn-view-anexos" title="Mostrar todos los anexos">
+            <icon class="btn_icon">${svgEyes()}</icon>
+          </button>
           <div class="form_group-row">
             <input type="search" id="office-inp-search" placeholder="buscar.." class="form_input" autocomplete="off" title="escribe aqui..">
             <button class="btn_icon btn_fixed" type="submit" id="office-btn-search" title="buscar.." data-class="btn_fixed">
