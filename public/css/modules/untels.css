@@ -22,7 +22,6 @@
         height: auto;
         background: var(--bg-primary);
         box-shadow: var(--shadow-anx);
-        --bg-anexo: var(--bg-primary);
         --clr-text: var(--text-inactive);
         opacity: .7;
         border-radius: 10px;

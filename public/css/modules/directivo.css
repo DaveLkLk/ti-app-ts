@@ -102,7 +102,7 @@ span.directivo-dependencia{
     }
 
 .directivo_location{
-    border: 1px solid red;
+    border: 1px solid transparent;
 }
 
 @property --angle {
