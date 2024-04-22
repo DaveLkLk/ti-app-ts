@@ -1,0 +1,18 @@
+.main_config-container{
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr) 3fr;
+    border: 1px solid white;
+}
+.main-config-panel{
+    line-height: 2rem;
+    color: var(--bg-invert-2);
+    padding: 1rem;
+}
+.main-config-panel,
+.main-config-content{
+    border: 1px solid red;
+
+}
+/* MODELO UI DE LA INTERFAZ
+    https://dribbble.com/shots/23897250-Profile-settings-page
+*/

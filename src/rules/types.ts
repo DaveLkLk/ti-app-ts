@@ -8,6 +8,7 @@ export type PageApp = {
     ANX: Page;
     DRCTV: Page;
     NOT_FOUND: Page;
+    CONFIG?: Page;
 }
 
 export interface AnyInputs {
