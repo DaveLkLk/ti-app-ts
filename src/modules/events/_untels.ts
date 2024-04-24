@@ -1,7 +1,8 @@
-import { getOffice, getAnexo } from "../../data/anexos.ts";
+import { getOffice, getAnexo, getAllAnexos } from "../../data/anexos.ts";
 import { createOfficeCard } from "../../layouts/Layout.ts";
 import { createAlert, MESSAGE_TYPE, ALERT_TYPE } from "../../components/alert.ts";
 import { addLocalStorage } from "../../rules/functions.ts";
+import { svgEyes, svgEyesActive } from "../../components/Icons.ts";
 
 
 export const anexoLocalStorage = {
@@ -23,6 +24,7 @@ export function getEvents(section:HTMLElement){
     const searchToggle = section.querySelector('#search-anx-dinamyc') as HTMLElement
     const searchAnexoToggle = section.querySelector('#search-anexo') as HTMLElement
     const officeResponse = section.querySelector('.office_result') as HTMLElement
+    const btnFilterAnexos = section.querySelector('.btn-view-anexos') as HTMLButtonElement
     
     let switchToggle = false
     let switchAnx = false
@@ -68,6 +70,30 @@ export function getEvents(section:HTMLElement){
             officeResponse.innerHTML += createOfficeCard(item).outerHTML;
         });
     }
+    function changeFilterAnexo(isActive: boolean){
+        const svgFilter = btnFilterAnexos.querySelector('icon') as HTMLElement
+        if(isActive){
+            btnFilterAnexos.classList.remove('--active')
+            svgFilter.innerHTML = svgEyes()
+            officeResponse.innerHTML = '';
+            officeIndicator.textContent = '-'
+            return
+        }
+        if(!isActive){
+            btnFilterAnexos.classList.add('--active')
+            svgFilter.innerHTML = svgEyesActive()
+            createAlert(divAlert,'Se muestran todos los anexos', ALERT_TYPE.TEMP.success, [], 2500)
+            text.value = '';
+            officeResponse.innerHTML = '';
+            getAllAnexos().forEach((anx: any) =>{
+                officeResponse.innerHTML += createOfficeCard(anx).outerHTML
+            })
+            officeIndicator.textContent = String(getAllAnexos().length)
+            return
+        }else{
+            console.log('error de filtro');
+        }
+    }
 
     const toggleStorage = () => localStorage.getItem(anexoLocalStorage.SEARCH_DINAMYC)
     const anxStorage = () => localStorage.getItem(anexoLocalStorage.SEARCH_ANEXO)
@@ -79,7 +105,6 @@ export function getEvents(section:HTMLElement){
         searchAnexoToggle.classList.toggle(`${searchToggle.dataset.class}--active`)
         switchAnx = true
     }
-
 
     searchToggle.addEventListener('click', ()=>{
         searchToggle.classList.toggle(`${searchToggle.dataset.class}--active`)
@@ -109,6 +134,7 @@ export function getEvents(section:HTMLElement){
 
         if(switchToggle === true) return
         if(switchToggle === false){
+            changeFilterAnexo(true)
             switchAnx ? searchActive(typeRequest.anx) : searchActive(typeRequest.ofc)
         }
     })
@@ -116,8 +142,14 @@ export function getEvents(section:HTMLElement){
         if(switchToggle === false){
             return
         }else{
+            changeFilterAnexo(true)
             switchAnx ? searchActive(typeRequest.anx) : searchActive(typeRequest.ofc)
         }
+    })
+
+    btnFilterAnexos.addEventListener('click', ()=>{
+        const isActive = btnFilterAnexos.classList.contains('--active')
+        isActive ? changeFilterAnexo(isActive) : changeFilterAnexo(isActive)
     })
     return
 }

@@ -17,10 +17,10 @@
     transition: box-shadow var(--tr-e-out);
     --size: 60px;
     --circle: 0.7;
-    --inactive: var(--clr-white-950);
-    --active: var(--clr-white-700);
-    --clr-circle: var(--clr-white-700);
-    --clr-circle-active: var(--clr-white-100);
+    --inactive: var(--clr-white-800);
+    --active: var(--clr-blue-500);
+    --clr-circle: var(--clr-white-400);
+    --clr-circle-active: var(--clr-blue-50);
 }
 .box_search-config:hover{
     box-shadow: var(--shadow-anx-active);
@@ -59,7 +59,14 @@
       }
       .form_group{
         display: grid;
-        gap:1rem;
+        gap: .5rem;
+      }
+      #office-form-search.form-panel .form_group{
+        grid-template-columns: auto 1fr;
+        gap:.7rem;
+      }
+      #directivo-form-search.form-panel .form_group{
+        grid-template-columns: 1fr;
       }
         .form_group .form_input{
           width: 100%;
@@ -79,7 +86,17 @@
         .form_group .form_input::placeholder{
           color: var(--text-tertiary);
         }
-      
+      .btn-view-anexos{
+        --clr-btn: var(--bg-invert-3);
+        padding: .3rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow-filter);
+      }
+      .btn-view-anexos.--active{
+        --clr-btn: var(--bg-invert-1);
+
+        box-shadow: var(--shadow-filter-active);
+      }
       .form_group-row{
         display: grid;
         grid-template-columns: 1fr auto;

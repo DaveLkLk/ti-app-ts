@@ -3,6 +3,7 @@ import { sectionTextCRUD } from "../modules/text-crud.ts";
 import { sectionStyleText } from "../modules/text-style.ts";
 import { sectionAnexoUNTELS } from "../modules/untels.ts";
 import { sectionDirectivoUNTELS } from "../modules/directivos.ts";
+import { sectionPageConfiguration } from "../modules/config.ts";
 
 import { anexoLocalStorage } from "../modules/events/_untels.ts";
 import { stylesLocalStorage } from "../modules/events/_text-style.ts";
@@ -30,6 +31,10 @@ const pagesApp:PageApp = {
     NOT_FOUND: {
         id: 'not-found',
         page: sectionNotFound
+    },
+    CONFIG: {
+        id: 'config-page',
+        page: sectionPageConfiguration
     }
 }
 export function pageManagerApp(dataset:string){

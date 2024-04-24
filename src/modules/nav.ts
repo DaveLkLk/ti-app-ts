@@ -6,7 +6,7 @@ const NavTitle = () => {
     div.classList.add('navigation_title');
     div.innerHTML = `
         <button class="title_page" type="submit">
-            <span>TI</span>
+            <span>OTIC</span>
         </button>
         <button class="btn_menu btn_show" type="button" id="btn-show-menu">
             ${svgMenu()}
@@ -88,7 +88,7 @@ const NavList = ()=>{
             <li class="navigation_li navigation_li-app" data-page="not-found">
                 <span class="navigation_li-name">FAQ</span>
             </li>
-            <li class="navigation_li navigation_li-app" data-page="not-found">
+            <li class="navigation_li navigation_li-app" data-page="config-page">
                 <span class="navigation_li-name">Settings</span>
             </li>
         </ul>

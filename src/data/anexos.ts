@@ -102,9 +102,13 @@ return str
 })
 .join('')
 }
+export function getAllAnexos(){
+  const data = anexosDirectivos
+  return data;
+}
 export function getOffice(str:string){
-const inputFilter = anexosDirectivos.filter(card => deleteAccentMark(card.office.toLowerCase()).includes(str.trim()))
-return inputFilter; 
+  const inputFilter = anexosDirectivos.filter(card => deleteAccentMark(card.office.toLowerCase()).includes(str.trim()))
+  return inputFilter; 
 }
 export function getAnexo(anx:number){
 const anxStr = String(anx)

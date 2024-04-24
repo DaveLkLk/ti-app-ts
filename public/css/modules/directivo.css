@@ -101,8 +101,37 @@ span.directivo-dependencia{
         width: max-content;
     }
 
+    .directivo_email + hr{
+        margin: 0 auto 1rem;
+        width: 80%;
+        height: 1px;
+        opacity: .7;
+    }
 .directivo_location{
     border: 1px solid transparent;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-columns: max-content;
+    align-items: center;
+    padding: .5rem 1rem;
+    gap: .5rem;
+    background: var(--bg-body);
+    border-radius: 10px;
+}
+.d-location-item{
+    font-size: .9rem;
+    font-style: italic;
+    display: flex;
+    gap: 2px;
+}
+.dl-pabellon{
+    font-size: 1rem;
+}
+.dl-piso{
+    text-align: end;
+}
+.dl-code{
+    grid-column: 1/3;
 }
 
 @property --angle {
@@ -117,4 +146,4 @@ span.directivo-dependencia{
 @keyframes bg-card{
     0%, 100%{ --clr-border: var(--clr-border-card-1); }
     50%{ --clr-border: var(--clr-border-card-2); }
-    }
+}
