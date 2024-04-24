@@ -1,11 +1,11 @@
 import '../../public/css/modules/config.css'
 import { svgChevronDown, svgConfig } from '../components/Icons';
-
+import { titleList, createTitleComponent, getEvents } from './events/_config';
 
 function pageConfigPanel(){
-    const div = document.createElement('div');
-    div.classList.add('main-config-panel')
-    div.innerHTML = `
+    const main = document.createElement('main');
+    main.classList.add('main-config-panel')
+    main.innerHTML = `
         <h2 class="config_panel-title">
         <icon class="btn_icon">${svgConfig()}</icon>
         Settings</h2>
@@ -21,15 +21,13 @@ function pageConfigPanel(){
             </li>
         </ul>
     `;
-    return div;
+    return main;
 }
 function pageConfigContent(){
-    const div = document.createElement('div')
-    div.classList.add('main-config-content')
-    div.innerHTML = `
-        <h4>loremm ipsum dolor sit consectetur ad abismal imploree</h4>
-    `;
-    return div;
+    const section = document.createElement('section')
+    section.classList.add('main-config-content')
+    section.appendChild(createTitleComponent(titleList.DEFAULT))
+    return section;
 }
 
 export function sectionPageConfiguration(){
@@ -38,5 +36,6 @@ export function sectionPageConfiguration(){
     section.classList.add('main_config-container')
     section.appendChild(pageConfigPanel())
     section.appendChild(pageConfigContent())
+    getEvents(section)
     return section;
 } 
