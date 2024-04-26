@@ -20,18 +20,16 @@
         max-width: var(--card-w);
         width: 100%;
         height: auto;
-        opacity: .7;
         border-radius: 10px;
         background: var(--bg-anx);
         box-shadow: var(--shadow-anx);
         --clr-text: var(--text-inactive);
-        transition: background var(--tr-e-out), box-shadow .1s ease-out, scale .1s ease-out, opacity var(--tr-e-out);
+        transition: background var(--tr-e-out), box-shadow .1s ease-out, scale .1s ease-out;
     }
     .office_result-card:hover{
         --clr-text: var(--text-primary);
         box-shadow: var(--shadow-anx-active);
         scale: 1.05;
-        opacity: 1;
     }
     .office_result-card .anexo{
         font-size: 2rem;

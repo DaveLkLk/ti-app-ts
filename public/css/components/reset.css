@@ -436,6 +436,12 @@ body.body_theme-dark{
  /* FOOTER */
  --bg-ts: #050505bd;
  --bg-ts-active: #0303034d;
+ /* CONFIG */
+ --bg-panel: var(--clr-white-960);
+ --bg-menu: var(--clr-white-950);
+ --bg-list: var(--clr-white-900);
+ --clr-list: var(--clr-white-500);
+ --clr-list-active: var(--clr-white-100);
 }
 
 

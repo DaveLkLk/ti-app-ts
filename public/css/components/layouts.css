@@ -57,13 +57,16 @@
         padding: 2rem;
         gap: 1rem;
       }
-      #directivo-form-search.form-panel .form_group{
-        grid-template-columns: 1fr;
+      .form_group{
+        display: grid;
+        gap: .5rem;
       }
       #office-form-search.form-panel .form_group{
-        display: grid;
         grid-template-columns: auto 1fr;
         gap:.7rem;
+      }
+      #directivo-form-search.form-panel .form_group{
+        grid-template-columns: 1fr;
       }
         .form_group .form_input{
           width: 100%;
