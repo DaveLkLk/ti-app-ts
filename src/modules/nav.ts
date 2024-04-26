@@ -88,7 +88,7 @@ const NavList = ()=>{
             <li class="navigation_li navigation_li-app" data-page="not-found">
                 <span class="navigation_li-name">FAQ</span>
             </li>
-            <li class="navigation_li navigation_li-app" data-page="config-page">
+            <li class="navigation_li navigation_li-app" data-page="not-found">
                 <span class="navigation_li-name">Settings</span>
             </li>
         </ul>
