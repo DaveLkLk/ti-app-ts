@@ -1,6 +1,6 @@
 import '../../public/css/modules/config.css'
 import { svgChevronDown, svgConfig } from '../components/Icons';
-import { titleList, createTitleComponent, getEvents } from './events/_config';
+import { getEvents, createHomeModule } from './events/_config';
 
 function pageConfigPanel(){
     const main = document.createElement('main');
@@ -10,13 +10,16 @@ function pageConfigPanel(){
         <icon class="btn_icon">${svgConfig()}</icon>
         Settings</h2>
         <ul class="config_panel-ul">
-            <li class="config_panel-li" data-action="process">
+            <li class="config_panel-li" data-action="module-home">
+                <span>Inicio<icon class="btn_icon">${svgChevronDown()}</icon></span>
+            </li>
+            <li class="config_panel-li" data-action="module-pages">
                 <span>Pages<icon class="btn_icon">${svgChevronDown()}</icon></span>
             </li>
-            <li class="config_panel-li" data-action="process">
+            <li class="config_panel-li" data-action="module-ui">
                 <span>UI<icon class="btn_icon">${svgChevronDown()}</icon></span>
             </li>
-            <li class="config_panel-li" data-action="process">
+            <li class="config_panel-li" data-action="module-api">
                 <span>APIs<icon class="btn_icon">${svgChevronDown()}</icon></span>
             </li>
         </ul>
@@ -26,7 +29,7 @@ function pageConfigPanel(){
 function pageConfigContent(){
     const section = document.createElement('section')
     section.classList.add('main-config-content')
-    section.appendChild(createTitleComponent(titleList.DEFAULT))
+    section.innerHTML = createHomeModule()
     return section;
 }
 

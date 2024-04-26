@@ -41,6 +41,8 @@
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
+        pointer-events: none;
+        user-select: none;
     }
         .config_panel-li icon{
             transform: rotate(-90deg);
