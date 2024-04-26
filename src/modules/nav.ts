@@ -1,12 +1,12 @@
 import '../../public/css/modules/nav.css'
-import { svgAnexos, svgChevronDown, svgDarkTheme, svgDefaultTheme, svgDirectivos, svgLightTheme, svgMenu, svgTextCRUD, svgTextTransform } from "../components/Icons.ts";
+import { svgAnexos, svgDarkTheme, svgDefaultTheme, svgDirectivos, svgLightTheme, svgMenu, svgTextCRUD, svgTextTransform } from "../components/Icons.ts";
 
 const NavTitle = () => {
     const div = document.createElement('div');
     div.classList.add('navigation_title');
     div.innerHTML = `
         <button class="title_page" type="submit">
-            <span>OTIC</span>
+            <span>TI</span>
         </button>
         <button class="btn_menu btn_show" type="button" id="btn-show-menu">
             ${svgMenu()}
@@ -45,15 +45,15 @@ const ListTheme= () => {
     ul.classList.add('dropdown_theme')
     ul.id = 'dropdown-theme-select'
     ul.innerHTML = `
-        <div class="dropdown_theme-item" id="theme-default" data-theme="system" data-class="dropdown_theme-item">
+        <div class="dropdown_theme-item" id="theme-default" data-theme="default">
             <span class="btn_icon">${svgDefaultTheme()}</span>
             <span class="dropdown_btn-name">Sistema</span>
         </div>
-        <div class="dropdown_theme-item" id="theme-light" data-theme="light" data-class="dropdown_theme-item">
+        <div class="dropdown_theme-item" id="theme-light" data-theme="light">
             <span class="btn_icon">${svgLightTheme()}</span>
             <span class="dropdown_btn-name">Light</span>
         </div>
-        <div class="dropdown_theme-item" id="theme-dark" data-theme="dark" data-class="dropdown_theme-item">
+        <div class="dropdown_theme-item" id="theme-dark" data-theme="dark">
             <span class="btn_icon">${svgDarkTheme()}</span>
             <span class="dropdown_btn-name">Dark</span>
         </div>
@@ -67,7 +67,7 @@ const NavList = ()=>{
         <ul class="navigation_ul navigation_app">
             <li class="navigation_li-btn navigation_li-theme" data-class="navigation_li-theme">
                 <div class="navigation_theme-btn">
-                    <span class="btn_icon" id="navigation-li-icon">${svgDefaultTheme()}</span>
+                    <span class="navigation_li-icon btn_icon">${svgDefaultTheme()}</span>
                     <span class="navigation_li-name">Tema</span>
                 </div>
                 ${ListTheme().outerHTML}
@@ -79,16 +79,13 @@ const NavList = ()=>{
                 <span class="navigation_li-name">Docs</span>
             </li>
             <li class="navigation_li">
-            <div class="navigation_li-name nav_expand">
-                <span class="navigation--name">Applications</span>
-                <span class="btn_icon">${svgChevronDown()}</span>
-            </div>
+            <span class="navigation_li-name">Applications</span>
             ${ListApplication().outerHTML}
             </li>
             <li class="navigation_li navigation_li-app" data-page="not-found">
                 <span class="navigation_li-name">FAQ</span>
             </li>
-            <li class="navigation_li navigation_li-app" data-page="not-found">
+            <li class="navigation_li navigation_li-app" data-page="config-page">
                 <span class="navigation_li-name">Settings</span>
             </li>
         </ul>
