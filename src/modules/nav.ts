@@ -45,15 +45,15 @@ const ListTheme= () => {
     ul.classList.add('dropdown_theme')
     ul.id = 'dropdown-theme-select'
     ul.innerHTML = `
-        <div class="dropdown_theme-item" id="theme-default" data-theme="system">
+        <div class="dropdown_theme-item" data-class="dropdown_theme-item" id="theme-default" data-theme="system">
             <span class="btn_icon">${svgDefaultTheme()}</span>
             <span class="dropdown_btn-name">Sistema</span>
         </div>
-        <div class="dropdown_theme-item" id="theme-light" data-theme="light">
+        <div class="dropdown_theme-item" data-class="dropdown_theme-item" id="theme-light" data-theme="light">
             <span class="btn_icon">${svgLightTheme()}</span>
             <span class="dropdown_btn-name">Light</span>
         </div>
-        <div class="dropdown_theme-item" id="theme-dark" data-theme="dark">
+        <div class="dropdown_theme-item" data-class="dropdown_theme-item" id="theme-dark" data-theme="dark">
             <span class="btn_icon">${svgDarkTheme()}</span>
             <span class="dropdown_btn-name">Dark</span>
         </div>

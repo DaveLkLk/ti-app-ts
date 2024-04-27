@@ -59,8 +59,6 @@ const changeClassActive = (container: HTMLUListElement, target: HTMLElement) => 
 }
 function setThemeUser(element:string){
     const findValue = Object.values(itemslocalStorage.THEME_OPTIONS)
-    console.log(findValue);
-    console.log(element);
     const themeOption = findValue.find(option => option.value === element)
     return themeOption ? themeOption.svg() : null
 }
@@ -153,7 +151,6 @@ export function getEvents(root: HTMLElement){
       const themeSelected = etarget.dataset.theme as string
       console.log(themeSelected);
       const classBody = findClassThemeBody(themeSelected) as ThemeUser
-      console.log(classBody.class);
       setThemeClass(classBody.class)
         setIconThemeNav(navIconThemeDefault, themeSelected)
         changeClassActive(containerThemeBtn, etarget);
