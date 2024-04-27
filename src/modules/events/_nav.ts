@@ -47,7 +47,6 @@ function changeIconWindow(isDarkTheme: boolean){
   isDarkTheme
   ? favicon?.setAttribute('href', pathIconLight)
   : favicon?.setAttribute('href', pathIconDark)
-  console.log(isDarkTheme);
 }
 const changeClassActive = (container: HTMLUListElement, target: HTMLElement) => {
     const elements = Array.from(container.querySelectorAll<HTMLElement>(`.${target.dataset.class}`))
@@ -60,6 +59,8 @@ const changeClassActive = (container: HTMLUListElement, target: HTMLElement) => 
 }
 function setThemeUser(element:string){
     const findValue = Object.values(itemslocalStorage.THEME_OPTIONS)
+    console.log(findValue);
+    console.log(element);
     const themeOption = findValue.find(option => option.value === element)
     return themeOption ? themeOption.svg() : null
 }
@@ -150,7 +151,9 @@ export function getEvents(root: HTMLElement){
     const clickedBtnTheme = etarget.tagName === 'DIV' && etarget.classList.contains('dropdown_theme-item')
     if(clickedBtnTheme){
       const themeSelected = etarget.dataset.theme as string
+      console.log(themeSelected);
       const classBody = findClassThemeBody(themeSelected) as ThemeUser
+      console.log(classBody.class);
       setThemeClass(classBody.class)
         setIconThemeNav(navIconThemeDefault, themeSelected)
         changeClassActive(containerThemeBtn, etarget);

@@ -45,7 +45,7 @@ const ListTheme= () => {
     ul.classList.add('dropdown_theme')
     ul.id = 'dropdown-theme-select'
     ul.innerHTML = `
-        <div class="dropdown_theme-item" id="theme-default" data-theme="default">
+        <div class="dropdown_theme-item" id="theme-default" data-theme="system">
             <span class="btn_icon">${svgDefaultTheme()}</span>
             <span class="dropdown_btn-name">Sistema</span>
         </div>
@@ -67,7 +67,7 @@ const NavList = ()=>{
         <ul class="navigation_ul navigation_app">
             <li class="navigation_li-btn navigation_li-theme" data-class="navigation_li-theme">
                 <div class="navigation_theme-btn">
-                    <span class="navigation_li-icon btn_icon">${svgDefaultTheme()}</span>
+                    <span class="btn_icon" id="navigation-li-icon">${svgDefaultTheme()}</span>
                     <span class="navigation_li-name">Tema</span>
                 </div>
                 ${ListTheme().outerHTML}
