@@ -92,7 +92,11 @@ export function setThemeClass(themeClass:string){
   document.body.classList.remove(...document.body.classList)
   document.body.classList.add(themeClass)
 }
-
+// EXPORTA EL CONTAINER DE NAVEGACION
+export function navPages(navUL: HTMLUListElement){
+  // console.log(navUL);
+  return navUL;
+}
 export function getEvents(root: HTMLElement){
   const mainContainer = root.querySelector('.main_container') as HTMLElement;
   // recuperar la seccion de localstorage
@@ -107,7 +111,8 @@ export function getEvents(root: HTMLElement){
   const navThemeBtn = root.querySelector('.navigation_li-theme') as HTMLLIElement;
   const navIconThemeDefault = root.querySelector('#navigation-li-icon') as HTMLDivElement
   const btnMenu = root.querySelector("#btn-show-menu") as HTMLButtonElement;
-  const listMenu = root.querySelector('.navigation_list') as HTMLElement;
+  const listMenu = root.querySelector('.navigation_list') as HTMLUListElement;
+  navPages(listMenu)
     btnMenu.addEventListener("click",()=>{
         console.log("click");
         listMenu.classList.toggle('navigation_list--active')

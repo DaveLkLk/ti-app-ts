@@ -439,9 +439,13 @@ body.body_theme-dark{
  /* CONFIG */
  --bg-panel: var(--clr-white-960);
  --bg-menu: var(--clr-white-950);
- --bg-list: var(--clr-white-900);
+ --bg-list-hover: var(--clr-white-800);
+ --bg-list-active: var(--clr-white-900);
+ --bg-box-toggle: var(--clr-white-960);
+ --bg-box-toggle-hover: var(--clr-white-900);
  --clr-list: var(--clr-white-500);
- --clr-list-active: var(--clr-white-100);
+ --clr-list-hover: var(--clr-white-100);
+ --clr-list-active: var(--clr-white-200);
 }
 
 
