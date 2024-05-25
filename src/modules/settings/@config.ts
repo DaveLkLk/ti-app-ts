@@ -1,40 +1,10 @@
+import { DefaultAPP, ModulePages } from "../interface/interface";
+import { createHomeModule, 
+        createPagesModule, 
+        createUIModule, 
+        createAPIModule } from "../../views/settings/header";
+import { Config_Panel } from "../interface/interface";
 
-
-// INTERFACE DISPLAYeLEMENTS
-export interface AttrElement {
-    id: string;
-    container: HTMLElement | HTMLUListElement;
-    attr: string;
-    typeattr: string;
-}
-export interface DisplayElementsApp {
-    li: HTMLLIElement;
-    navUL: HTMLUListElement;
-}
-export interface DisplayElementApp {
-    idList?: string;
-    nav: HTMLUListElement;
-    container: HTMLElement;
-}
-interface AppProperties {
-    isactive: boolean;
-    id: string;
-    list: string;
-    item_storage: string;
-}
-interface DefaultAPP {
-    TEXT_APP: AppProperties;
-    TEXT_CRUD: AppProperties;
-    ANEXOS: AppProperties;
-    DIRECTIVOS: AppProperties;
-}
-export interface MenuConfig {
-    e: MouseEvent;
-    ulMenu: HTMLUListElement;
-    content: HTMLElement;
-    alert: HTMLDivElement;
-    nav: HTMLUListElement;
-}
 export const defaultAPP: DefaultAPP = {
     TEXT_APP: {
         isactive: false,
@@ -78,112 +48,85 @@ export const titleList = {
     }
 }
 
-function searchAttrElement(obj: AttrElement){
-    let targetMatch = null;
-    const objSearch = {
-        data: 'data',
-        id: 'id'
+export const CONFIG_PANEL_NAV:Config_Panel = {
+    HOME: {
+        dataclass: 'config_panel-li',
+        datashow: 'active',
+        dataaction: 'module-home',
+        html: createHomeModule,
+        li: (container: HTMLUListElement) => container.querySelector<HTMLLIElement>('li[data-action="module-home"]') as HTMLLIElement,  
+    },
+    PAGES: {
+        dataclass: 'config_panel-li',
+        datashow: 'active',
+        dataaction: 'module-pages',
+        html: createPagesModule,
+        li: (container: HTMLUListElement) => container.querySelector('li[data-action="module-pages"]') as HTMLLIElement,  
+    },
+    UI: {
+        dataclass: 'config_panel-li',
+        datashow: 'hidden',
+        dataaction: 'module-ui',
+        html: createUIModule,
+        li: (container: HTMLUListElement) => container.querySelector('li[data-action="module-ui"]') as HTMLLIElement,  
+    },
+    API: {
+        dataclass: 'config_panel-li',
+        datashow: 'hidden',
+        dataaction: 'module-api',
+        html: createAPIModule,
+        li: (container: HTMLUListElement) => container.querySelector('li[data-action="module-api"]') as HTMLLIElement,  
     }
-    if(obj.attr === objSearch.data){
-        targetMatch = obj.container.querySelector(`[data-${obj.typeattr}="${obj.id}"]`) as HTMLElement
-    } 
-    if(obj.attr === objSearch.id){
-        targetMatch = obj.container.querySelector(`#${obj.id}`) as HTMLElement
+};
+
+export const CONFIG_PAGES_MODULE: ModulePages = {
+    TEXT_APP: {
+        btn_id: 'toggle-text-style',
+        btn_element: (container:HTMLDivElement)=> container.querySelector(`#toggle-text-style`) as HTMLDivElement,
+        btn_class: 'box-toggle',
+        div_btn_active: 'false',
+        app_element: (nav:HTMLUListElement) => nav.querySelector('li[data-page="text-style"]') as HTMLLIElement,
+        app_class: 'dropdown_li',
+        app_active: (nav:HTMLUListElement)=> nav.querySelector<HTMLLIElement>('li[data-page="text-style"]')?.dataset.active as string,
+        item: 'text-style'
+    },
+    TEXT_CRUD: {
+        btn_id: 'toggle-text-crud',
+        btn_element: (container:HTMLDivElement)=> container.querySelector(`#toggle-text-crud`) as HTMLDivElement,
+        btn_class: 'box-toggle',
+        div_btn_active: 'false',
+        app_element: (nav:HTMLUListElement) => nav.querySelector('li[data-page="text-crud"]') as HTMLLIElement,
+        app_class: 'dropdown_li',
+        app_active: (nav:HTMLUListElement)=> nav.querySelector<HTMLLIElement>('li[data-page="text-crud"]')?.dataset.active as string,
+        item: 'text-crud'
+    },
+    ANEXOS: {
+        btn_id: 'toggle-anexo-untels',
+        btn_element: (container:HTMLDivElement)=> container.querySelector(`#toggle-anexo-untels`) as HTMLDivElement,
+        btn_class: 'box-toggle',
+        div_btn_active: 'true',
+        app_element: (nav:HTMLUListElement) => nav.querySelector('li[data-page="anexo-untels"]') as HTMLLIElement,
+        app_class: 'dropdown_li',
+        app_active: (nav:HTMLUListElement)=> nav.querySelector<HTMLLIElement>('li[data-page="anexo-untels"]')?.dataset.active as string,
+        item: 'anexo-untels',
+    },
+    DIRECTIVOS: {
+        btn_id: 'toggle-directivo-untels',
+        btn_element: (container:HTMLDivElement)=> container.querySelector(`#toggle-directivo-untels`) as HTMLDivElement,
+        btn_class: 'box-toggle',
+        div_btn_active: 'true',
+        app_element: (nav:HTMLUListElement) => nav.querySelector('li[data-page="directivo-untels"]') as HTMLLIElement,
+        app_class: 'dropdown_li',
+        app_active: (nav:HTMLUListElement)=> nav.querySelector<HTMLLIElement>('li[data-page="directivo-untels"]')?.dataset.active as string,
+        item: 'directivo-untels',
     }
-    return targetMatch
 }
-
-export function managerShowApp(isLoaded: boolean, typeModule: string, obj: DisplayElementApp){
-    
-}
-export function validateExistItemStorage(){
-    const getItemStorage = Object.values(defaultAPP).map((item:AppProperties) =>{
-        if(localStorage.getItem(item.item_storage) === null) return false;
-        if(localStorage.getItem(item.item_storage) === undefined) return false;
-        return true;
-    })
-    console.log(getItemStorage);
-    return getItemStorage
-}
-
-export function clickedToggleContainer(toggleContainer: HTMLElement, nav: HTMLUListElement){
-    toggleContainer.addEventListener('click', e => {
-        const target = e.target as HTMLDivElement
-        const toggleBTN = target.dataset.class !== undefined && target.classList.contains(`${target.dataset.class}`)
-        toggleBTN ? changeClassTarget(target, nav) : null
-        
-    })
-}
-function changeClassTarget(target: HTMLDivElement, nav: HTMLUListElement){
-    const appIDExist = Object.values(defaultAPP).find((i:AppProperties) =>i.id === target.id ? i : null) as AppProperties | undefined
-    let toggleActive = `${target.dataset.class}--active`
-    const isClassActive = ()=> target.classList.contains(toggleActive)
-
-    console.log(appIDExist);
-    if(appIDExist !== null && appIDExist !== undefined){
-        const itemStorage = localStorage.getItem(appIDExist.item_storage)
-        console.log(itemStorage);
-        const isNullStorage = itemStorage === null
-        if(isNullStorage) localStorage.setItem(appIDExist.item_storage, String(!isClassActive()))
-        if(!isNullStorage && itemStorage === 'true') localStorage.setItem(appIDExist.item_storage, 'false')
-        if(!isNullStorage && itemStorage === 'false') localStorage.setItem(appIDExist.item_storage, 'true')
-        
-        const navItem = searchAttrElement({id: appIDExist.list, container: nav, attr: 'data', typeattr:'page'}) as HTMLLIElement
-        if(isClassActive() && typeof navItem === 'object'){
-            target.classList.remove(toggleActive)
-            navItem.style.display = 'none'
-            return
-        }
-        if(!(isClassActive()) && typeof navItem === 'object'){
-            target.classList.add(toggleActive)
-            navItem.style.display = 'flex'
-            return
-        }
-        return
+export function ControlErrorModulePages(itemLS: string | null, isContentValid: boolean){
+    let isERROR = false;
+    let msg = ''
+    if(itemLS === null && !isContentValid){
+        isERROR = true;
+        msg = 'ERROR no existe ningun elemento que rendereizar'
     }
-
-}
-
-export function setDefaultStorageItem(){
-    Object.values(defaultAPP).forEach((item: AppProperties) => {
-        localStorage.setItem(item.item_storage, String(item.isactive))
-    })
-}
-// AL PARECER AL RENDERIZAR SIN INFORMACION DE LA CLASE DEL DIV CONTAINER DLE CONTENT CONFIG, CAUSA UN ERROR DE NO RENDERIZACION DEL CONTENIDO DEL ELEMENTO 
-function filterBoxToggle(id: string, container: HTMLElement){
-    const btnToggleContainer = container.querySelector('div.mc-content-grid') as HTMLDivElement
-    const btnToggle = btnToggleContainer.querySelector(`#${id}`) as HTMLDivElement
-    return btnToggle
-}
-export function changeDisplayElementApp(isPreviewLoaded: boolean, obj: DisplayElementApp){
-    if(isPreviewLoaded){
-    Object.values(defaultAPP).find((item:AppProperties) =>{
-        const btnToggle = filterBoxToggle(item.id, obj.container)
-        if(item.isactive && item.id === btnToggle.id){
-            btnToggle.classList.add(`${btnToggle.dataset.class}--active`)
-        }
-        // ACTUALIZA LOS CAMBIOS DESDE LOCALSTORAGE O DESDE LA CONFIGURACION POR DEFECTO
-        setListApp(obj)
-    })
-    return
-}
-    
-}
-
-function setListApp(obj: DisplayElementApp){
-    Object.values(defaultAPP).find((item: AppProperties) => {
-        const itemStorage = localStorage.getItem(item.item_storage)
-        const appUL = searchAttrElement({id: item.list, container: obj.nav, attr: 'data', typeattr:'page'})
-        if(itemStorage === null || appUL === null) setDefaultStorageItem()
-        if(itemStorage === 'true' && appUL !== null){
-            appUL.style.display = 'flex';
-            return
-        }
-        else if(itemStorage === 'false' && appUL !== null){
-            appUL.style.display = 'none';
-            return
-        }
-    })
-    
-    return
+    return {isERROR, msg};
 }

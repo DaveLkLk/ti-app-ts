@@ -1,6 +1,6 @@
 import '../../public/css/modules/directivo.css'
 import '../../public/css/components/layouts.css';
-import { getEvents } from "./events/_directivos.ts";
+import { getEvents } from "../modules/events/_directivos.ts";
 import { svgLupa } from "../components/Icons.ts";
 import { LabelBtnToggle } from "../components/btnToggle.ts";
 

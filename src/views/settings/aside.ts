@@ -1,9 +1,6 @@
-import '../../public/css/modules/config.css'
-import '../../public/css/components/label-toggle.css'
-import { svgChevronDown, svgConfig } from '../components/Icons';
-import { getEvents, createHomeModule } from './events/_config';
+import { svgConfig, svgChevronDown } from "../../components/Icons";
 
-function pageConfigPanel(){
+export function pageConfigPanel(){
     const main = document.createElement('main');
     main.classList.add('main-config-panel')
     main.innerHTML = `
@@ -27,19 +24,3 @@ function pageConfigPanel(){
     `;
     return main;
 }
-function pageConfigContent(){
-    const section = document.createElement('section')
-    section.classList.add('main-config-content')
-    section.innerHTML = createHomeModule()
-    return section;
-}
-
-export function sectionPageConfiguration(){
-    const section = document.createElement('section')
-    section.classList.add('main_content')
-    section.classList.add('main_config-container')
-    section.appendChild(pageConfigPanel())
-    section.appendChild(pageConfigContent())
-    getEvents(section)
-    return section;
-} 

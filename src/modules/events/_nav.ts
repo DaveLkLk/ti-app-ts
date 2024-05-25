@@ -1,7 +1,9 @@
 import { svgDarkTheme, svgDefaultTheme, svgLightTheme } from "../../components/Icons.ts";
 import { pageManagerApp } from "../../controllers/main.ts";
-import { sectionNotFound } from "../../modules/404.ts";
+import { sectionNotFound } from "../../pages/404.ts";
 import { addLocalStorage } from "../../rules/functions.ts";
+import { ItemsModulePages } from "../interface/interface.ts";
+import { CONFIG_PAGES_MODULE } from "../settings/@config.ts";
 
 enum themeClass {
   dark = 'dark',
@@ -39,6 +41,25 @@ const itemslocalStorage = {
 const getLocalStorage = {
   THEME: localStorage.getItem(itemslocalStorage.theme) as string,
   THEME_POSITION: localStorage.getItem(itemslocalStorage.THEME_POSITION) as string
+}
+function setShowListApplications(nav:HTMLUListElement, isFirstLoaded: boolean){
+  const arrPagesApp = Object.values(CONFIG_PAGES_MODULE)
+  const storeModulesPages = JSON.parse(localStorage.getItem('show-modules-page') || '[]') as string[];
+  arrPagesApp.forEach((module:ItemsModulePages) => {
+      const isShowApp = storeModulesPages.filter((item) => item === module.item);
+      isShowApp[0] === null || isShowApp[0] === undefined 
+          ? (module.app_element(nav) as HTMLLIElement).dataset.hidden = 'true'
+          : (module.app_element(nav) as HTMLLIElement).dataset.hidden = 'false';
+  })
+  if(isFirstLoaded){
+    return arrPagesApp.forEach((module:ItemsModulePages) => {
+      const datasetActive = module.div_btn_active
+      const elementLI = module.app_element(nav) as HTMLLIElement
+      datasetActive === 'true'
+        ? elementLI.dataset.hidden = 'false'
+        : elementLI.dataset.hidden = 'true'
+    })
+  }
 }
 function changeIconWindow(isDarkTheme: boolean){
   const pathIconDark = '../../../public/assets/astro-dark.png'
@@ -111,7 +132,10 @@ export function getEvents(root: HTMLElement){
         console.log("click");
         listMenu.classList.toggle('navigation_list--active')
     })
-    
+  // SE CMUESTRAN LASAPLICACIONES POR DEFECTO
+    const menuApplications = listMenu.querySelector('.dropdown_ul.dropdown_app') as HTMLUListElement
+  setShowListApplications(menuApplications, true)
+
     const pageApplication = root.querySelector('.navigation_app') as HTMLElement
     pageApplication.addEventListener('click', (e:MouseEvent) =>{
     const etarget = e.target as HTMLElement
@@ -148,7 +172,6 @@ export function getEvents(root: HTMLElement){
     const clickedBtnTheme = etarget.tagName === 'DIV' && etarget.classList.contains('dropdown_theme-item')
     if(clickedBtnTheme){
       const themeSelected = etarget.dataset.theme as string
-      console.log(themeSelected);
       const classBody = findClassThemeBody(themeSelected) as ThemeUser
       setThemeClass(classBody.class)
         setIconThemeNav(navIconThemeDefault, themeSelected)

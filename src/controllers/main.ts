@@ -1,9 +1,9 @@
-import { sectionNotFound } from "../modules/404.ts";
-import { sectionTextCRUD } from "../modules/text-crud.ts";
-import { sectionStyleText } from "../modules/text-style.ts";
-import { sectionAnexoUNTELS } from "../modules/untels.ts";
-import { sectionDirectivoUNTELS } from "../modules/directivos.ts";
-import { sectionPageConfiguration } from "../modules/config.ts";
+import { sectionNotFound } from "../pages/404.ts";
+import { sectionTextCRUD } from "../pages/text-crud.ts";
+import { sectionStyleText } from "../pages/text-style.ts";
+import { sectionAnexoUNTELS } from "../pages/untels.ts";
+import { sectionDirectivoUNTELS } from "../pages/directivos.ts";
+import { sectionPageConfiguration } from "../pages/config.ts";
 
 import { anexoLocalStorage } from "../modules/events/_untels.ts";
 import { stylesLocalStorage } from "../modules/events/_text-style.ts";

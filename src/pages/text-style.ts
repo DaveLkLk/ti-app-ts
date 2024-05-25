@@ -1,6 +1,6 @@
 import '../../public/css/modules/text-style.css'
 import { svgAdd, svgBold, svgCopy, svgItalic, svgLock, svgMagic, svgPaste, svgTached, svgUnderline, svgUnlock } from "../components/Icons.ts";
-import { getEvents } from "./events/_text-style.ts";
+import { getEvents } from "../modules/events/_text-style.ts";
 
 function pageTitleStyle(){
     const div = document.createElement("div");
