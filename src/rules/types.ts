@@ -50,6 +50,7 @@ export type TypeStyles = {
   export interface ObjectBtnToggle {
     span?: string;
     btnId: string;
+    dataActive?: string;
   }
   export interface StorageParam {
     key?: string;

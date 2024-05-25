@@ -1,6 +1,6 @@
 import '../../public/css/modules/text-crud.css'
 import { svgConfig, svgLupa, svgPaste } from "../components/Icons.ts";
-import { getEvents } from "./events/_text-crud.ts";
+import { getEvents } from "../modules/events/_text-crud.ts";
 
 function pageTitleCRUD(){
     const div = document.createElement("div");

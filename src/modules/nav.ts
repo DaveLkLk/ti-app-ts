@@ -1,5 +1,5 @@
 import '../../public/css/modules/nav.css'
-import { svgAnexos, svgChevronDown, svgDarkTheme, svgDefaultTheme, svgDirectivos, svgLightTheme, svgMenu, svgTextCRUD, svgTextTransform } from "../components/Icons.ts";
+import { svgAnexos, svgDarkTheme, svgDefaultTheme, svgDirectivos, svgLightTheme, svgMenu, svgTextCRUD, svgTextTransform } from "../components/Icons.ts";
 
 const NavTitle = () => {
     const div = document.createElement('div');
@@ -45,15 +45,15 @@ const ListTheme= () => {
     ul.classList.add('dropdown_theme')
     ul.id = 'dropdown-theme-select'
     ul.innerHTML = `
-        <div class="dropdown_theme-item" id="theme-default" data-theme="system" data-class="dropdown_theme-item">
+        <div class="dropdown_theme-item" data-class="dropdown_theme-item" id="theme-default" data-theme="system">
             <span class="btn_icon">${svgDefaultTheme()}</span>
             <span class="dropdown_btn-name">Sistema</span>
         </div>
-        <div class="dropdown_theme-item" id="theme-light" data-theme="light" data-class="dropdown_theme-item">
+        <div class="dropdown_theme-item" data-class="dropdown_theme-item" id="theme-light" data-theme="light">
             <span class="btn_icon">${svgLightTheme()}</span>
             <span class="dropdown_btn-name">Light</span>
         </div>
-        <div class="dropdown_theme-item" id="theme-dark" data-theme="dark" data-class="dropdown_theme-item">
+        <div class="dropdown_theme-item" data-class="dropdown_theme-item" id="theme-dark" data-theme="dark">
             <span class="btn_icon">${svgDarkTheme()}</span>
             <span class="dropdown_btn-name">Dark</span>
         </div>
@@ -79,16 +79,13 @@ const NavList = ()=>{
                 <span class="navigation_li-name">Docs</span>
             </li>
             <li class="navigation_li">
-            <div class="navigation_li-name nav_expand">
-                <span class="navigation--name">Applications</span>
-                <span class="btn_icon">${svgChevronDown()}</span>
-            </div>
+            <span class="navigation_li-name">Applications</span>
             ${ListApplication().outerHTML}
             </li>
             <li class="navigation_li navigation_li-app" data-page="not-found">
                 <span class="navigation_li-name">FAQ</span>
             </li>
-            <li class="navigation_li navigation_li-app" data-page="not-found">
+            <li class="navigation_li navigation_li-app" data-page="config-page">
                 <span class="navigation_li-name">Settings</span>
             </li>
         </ul>

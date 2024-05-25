@@ -34,6 +34,7 @@ export const MESSAGE_TYPE = {
     SUCCESS: 'Datos guardados satisfactoriamente!',
     NO_SELECT: 'Seleccione una opción!',
     ESPERANDO: 'Procesando solicitud...',
+    IN_PROCESS: 'Módulo en proceso...',
     LOADING: 'Cargando datos...',
     CLAVE_INVALID: 'Contraseña inválida',
     LOGIN: 'Inicio de sesion exitoso',
@@ -93,8 +94,7 @@ export function createAlert(
   timeTemp:number = 3000)
 {
     inputDisabled(elementsForm)
-    const alert = container
-
+    const alert = container;
     const buttonExiste = document.querySelector('.alert button')
     const messageExiste = document.querySelector('.alert p')
     if(buttonExiste && messageExiste){
@@ -131,7 +131,6 @@ export function createAlert(
         alert.classList.remove(ALERT_TYPE.ACTIVE)
       // limpiar timeouts si existen
         if(timeOutID) clearTimeout(timeOutID)
-      // 
         setTimeout(()=>{
             alert.classList.remove(classAlert)
         }, 310)

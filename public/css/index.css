@@ -12,7 +12,7 @@ body{
 /* CONTAINER DE PAGINA */
 .container{
   position: relative;
-  max-width: 1450px;
+  max-width: 1350px;
   min-height: 100dvh;
   margin: auto;
   padding: 0;

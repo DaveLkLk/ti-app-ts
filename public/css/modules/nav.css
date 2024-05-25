@@ -171,7 +171,8 @@
   .navigation_li:hover .dropdown_ul{
     display: grid;
   }
-  .dropdown_ul .dropdown_li{
+  .dropdown_ul .dropdown_li,
+  .dropdown_ul .dropdown_li[data-hidden="false"]{
     width: 100%;
     display: flex;
     cursor: pointer;
@@ -184,6 +185,9 @@
     --clr: var(--clr-text-drop);
     --clr-link: var(--clr);
     --clr-btn: var(--clr);
+  }
+  .dropdown_ul .dropdown_li[data-hidden="true"]{
+    display: none;
   }
   .dropdown_ul .dropdown_li:hover{
     background-color: var(--bg-text-drop);

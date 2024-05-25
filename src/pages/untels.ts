@@ -1,6 +1,6 @@
 import '../../public/css/modules/untels.css';
 import '../../public/css/components/layouts.css';
-import { getEvents } from "./events/_untels.ts";
+import { getEvents } from "../modules/events/_untels.ts";
 import { svgEyes, svgLupa } from "../components/Icons.ts"
 import { LabelBtnToggle } from '../components/btnToggle.ts';
 
