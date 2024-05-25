@@ -96,7 +96,6 @@
         transition: background .3s linear, color .3s linear;
     }
     .content-grid-item:hover{
-        /* background: var(--bg-box-toggle-hover); */
         color: var(--clr-list-active);
     }
     .content-grid-item .label_toggle{
@@ -104,7 +103,16 @@
         align-items: center;
         justify-content: space-between;
         user-select: none;
+        --inactive: var(--bg-box-toggle-inactive)
     }
 /* MODELO UI DE LA INTERFAZ
     https://dribbble.com/shots/23897250-Profile-settings-page
 */
+@media screen and (max-width: 645px) {
+    .main_config-container{
+        grid-template-columns: 1fr;
+    }
+    .config_panel-li icon{
+        transform: rotate(0deg);
+    }
+}

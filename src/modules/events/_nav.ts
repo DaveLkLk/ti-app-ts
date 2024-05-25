@@ -129,8 +129,7 @@ export function getEvents(root: HTMLElement){
   const btnMenu = root.querySelector("#btn-show-menu") as HTMLButtonElement;
   const listMenu = root.querySelector('.navigation_list') as HTMLUListElement;
     btnMenu.addEventListener("click",()=>{
-        console.log("click");
-        listMenu.classList.toggle('navigation_list--active')
+        listMenu.classList.toggle(`${listMenu.dataset.class}--active`)
     })
   // SE CMUESTRAN LASAPLICACIONES POR DEFECTO
     const menuApplications = listMenu.querySelector('.dropdown_ul.dropdown_app') as HTMLUListElement
@@ -195,6 +194,11 @@ export function getEvents(root: HTMLElement){
     const themeClicked = !navThemeBtn?.contains(target) && !containerThemeBtn?.contains(target);
     if(themeClicked){
       navThemeBtn?.classList.remove(`${navThemeBtn.dataset.class}--active`)
+    }
+    const isNavClicked = root.querySelector('.navigation_container')?.contains(target) as boolean
+    const isBtnMenuClicked = target.tagName === 'BUTTON' && target.id === 'btn-show-menu' 
+    if(!isNavClicked && !isBtnMenuClicked){
+      listMenu.classList.remove(`${listMenu.dataset.class}--active`)
     }
   })
   document.addEventListener('DOMContentLoaded', ()=>{

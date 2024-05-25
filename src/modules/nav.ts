@@ -8,7 +8,7 @@ const NavTitle = () => {
         <button class="title_page" type="submit">
             <span>OTIC</span>
         </button>
-        <button class="btn_menu btn_show" type="button" id="btn-show-menu">
+        <button class="btn_menu btn_show" type="button" id="btn-show-menu" title="Mostrar/Ocultar Menú">
             ${svgMenu()}
         </button>
     `;
@@ -63,6 +63,7 @@ const ListTheme= () => {
 const NavList = ()=>{
     const nav = document.createElement('nav');
     nav.classList.add('navigation_list');
+    nav.dataset.class = 'navigation_list';
     nav.innerHTML = `
         <ul class="navigation_ul navigation_app">
             <li class="navigation_li-btn navigation_li-theme" data-class="navigation_li-theme">
@@ -96,6 +97,7 @@ const NavList = ()=>{
 export const NavPage = () => {
     const Header = document.createElement('header');
     Header.classList.add('navigation_container');
+    Header.dataset.class = 'navigation_container';
     Header.innerHTML = `
         ${NavTitle().outerHTML}
         ${NavList().outerHTML}
