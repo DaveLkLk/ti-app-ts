@@ -113,6 +113,27 @@ export function setThemeClass(themeClass:string){
   document.body.classList.remove(...document.body.classList)
   document.body.classList.add(themeClass)
 }
+// ESTABLECE LA CLASE ACTIVO A LA PAGINA SELECCIONADA
+function setActiveListApp(target: HTMLLIElement | null, container:HTMLUListElement, isClicked:boolean){
+  const listApllications = Array.from(container.querySelectorAll<HTMLLIElement>('li.navigation_li[name="list-app"]'))
+  const datasetFound = target?.getAttribute('name') === 'list-app'
+  const list = target !== null
+  if(isClicked && list && datasetFound){
+    const index = listApllications.indexOf(target)
+    listApllications.forEach(li => li.classList.remove('navigation_li--active'))
+    target.classList.add('navigation_li--active');
+    return localStorage.setItem('index-nav', String(index))
+  }
+  else if(!isClicked){
+    const itemLI = localStorage.getItem('index-nav') as string
+    const isFoundLI = listApllications.find((li:HTMLLIElement, i) => i === Number(itemLI)? li : null)
+    if(isFoundLI !== undefined){
+      isFoundLI.classList.add('navigation_li--active');
+    }
+    return
+  }
+}
+// ******************** SE CARGAN LAS CARACTERISTICAS DEL COMPONENTE ****************
 export function getEvents(root: HTMLElement){
   const mainContainer = root.querySelector('.main_container') as HTMLElement;
   // recuperar la seccion de localstorage
@@ -131,13 +152,16 @@ export function getEvents(root: HTMLElement){
     btnMenu.addEventListener("click",()=>{
         listMenu.classList.toggle(`${listMenu.dataset.class}--active`)
     })
-  // SE CMUESTRAN LASAPLICACIONES POR DEFECTO
-    const menuApplications = listMenu.querySelector('.dropdown_ul.dropdown_app') as HTMLUListElement
+  // SE MUESTRAN LAS APLICACIONES POR DEFECTO
+  const menuApplications = listMenu.querySelector('.dropdown_ul.dropdown_app') as HTMLUListElement
   setShowListApplications(menuApplications, true)
-
-    const pageApplication = root.querySelector('.navigation_app') as HTMLElement
+  
+  const pageApplication = root.querySelector('.navigation_app') as HTMLUListElement
+  setActiveListApp(null,pageApplication,false)
     pageApplication.addEventListener('click', (e:MouseEvent) =>{
     const etarget = e.target as HTMLElement
+    const isLiApp = e.target as HTMLLIElement
+    setActiveListApp(isLiApp,pageApplication,true)
 
     const isLiItem = etarget.tagName === 'LI' && etarget.classList.contains('dropdown_li')
     if(isLiItem){

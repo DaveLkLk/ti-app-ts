@@ -217,10 +217,19 @@ html{
   --filter-props: opacity(.8) grayscale(80%);
   --shadow-card-animate: none;
 
-
   /* FOOTER */
   --bg-ts: #05050541;
   --bg-ts-active: #03030318;
+   /* CONFIG */
+   --bg-panel: var(--clr-white-100);
+   --bg-menu: var(--clr-white-100);
+   --bg-list-hover: var(--clr-white-200);
+   --bg-list-active: var(--clr-white-300);
+   --bg-box-toggle: var(--clr-white-300);
+   --bg-box-toggle-inactive: var(--clr-white-600);
+   --clr-list: var(--clr-white-800);
+   --clr-list-hover: var(--clr-white-990);
+   --clr-list-active: var(--clr-white-950);
   }
 }
 
@@ -570,7 +579,7 @@ body.body_theme-light{
   --bg-list-active: var(--clr-white-300);
   --bg-box-toggle: var(--clr-white-300);
   --bg-box-toggle-inactive: var(--clr-white-600);
-  --clr-list: var(--clr-white-700);
+  --clr-list: var(--clr-white-800);
   --clr-list-hover: var(--clr-white-990);
   --clr-list-active: var(--clr-white-950);
 }

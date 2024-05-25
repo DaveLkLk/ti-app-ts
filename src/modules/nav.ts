@@ -73,20 +73,20 @@ const NavList = ()=>{
                 </div>
                 ${ListTheme().outerHTML}
             </li>
-            <li class="navigation_li navigation_li-app" data-page="not-found">
+            <li class="navigation_li navigation_li-app" name="list-app" data-page="not-found">
                 <span class="navigation_li-name">About Us</span>
             </li>
-            <li class="navigation_li navigation_li-app" data-page="not-found">
+            <li class="navigation_li navigation_li-app" name="list-app" data-page="not-found">
                 <span class="navigation_li-name">Docs</span>
             </li>
-            <li class="navigation_li">
+            <li class="navigation_li" name="list-app">
             <span class="navigation_li-name">Applications</span>
             ${ListApplication().outerHTML}
             </li>
-            <li class="navigation_li navigation_li-app" data-page="not-found">
+            <li class="navigation_li navigation_li-app" name="list-app" data-page="not-found">
                 <span class="navigation_li-name">FAQ</span>
             </li>
-            <li class="navigation_li navigation_li-app" data-page="config-page">
+            <li class="navigation_li navigation_li-app" name="list-app" data-page="config-page">
                 <span class="navigation_li-name">Settings</span>
             </li>
         </ul>

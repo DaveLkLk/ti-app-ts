@@ -135,7 +135,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    /* right:0; */
+    right:0;
     height: 2px;
     width: 0;
     margin: auto;
@@ -147,6 +147,9 @@
   }
   .navigation_li:hover .navigation_li-name::before{
     width: 100%;
+  }
+  .navigation_li--active .navigation_li-name{
+    --clr-nav-item: var(--clr-nav-item-hover);
   }
   .navigation_li-name.nav_expand{
     display: flex;
