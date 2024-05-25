@@ -8,7 +8,7 @@ const NavTitle = () => {
         <button class="title_page" type="submit">
             <span>OTIC</span>
         </button>
-        <button class="btn_menu btn_show" type="button" id="btn-show-menu">
+        <button class="btn_menu btn_show" type="button" id="btn-show-menu" title="Mostrar/Ocultar Menú">
             ${svgMenu()}
         </button>
     `;
@@ -63,6 +63,7 @@ const ListTheme= () => {
 const NavList = ()=>{
     const nav = document.createElement('nav');
     nav.classList.add('navigation_list');
+    nav.dataset.class = 'navigation_list';
     nav.innerHTML = `
         <ul class="navigation_ul navigation_app">
             <li class="navigation_li-btn navigation_li-theme" data-class="navigation_li-theme">
@@ -72,20 +73,20 @@ const NavList = ()=>{
                 </div>
                 ${ListTheme().outerHTML}
             </li>
-            <li class="navigation_li navigation_li-app" data-page="not-found">
+            <li class="navigation_li navigation_li-app" name="list-app" data-page="not-found">
                 <span class="navigation_li-name">About Us</span>
             </li>
-            <li class="navigation_li navigation_li-app" data-page="not-found">
+            <li class="navigation_li navigation_li-app" name="list-app" data-page="not-found">
                 <span class="navigation_li-name">Docs</span>
             </li>
-            <li class="navigation_li">
+            <li class="navigation_li" name="list-app">
             <span class="navigation_li-name">Applications</span>
             ${ListApplication().outerHTML}
             </li>
-            <li class="navigation_li navigation_li-app" data-page="not-found">
+            <li class="navigation_li navigation_li-app" name="list-app" data-page="not-found">
                 <span class="navigation_li-name">FAQ</span>
             </li>
-            <li class="navigation_li navigation_li-app" data-page="config-page">
+            <li class="navigation_li navigation_li-app" name="list-app" data-page="config-page">
                 <span class="navigation_li-name">Settings</span>
             </li>
         </ul>
@@ -96,6 +97,7 @@ const NavList = ()=>{
 export const NavPage = () => {
     const Header = document.createElement('header');
     Header.classList.add('navigation_container');
+    Header.dataset.class = 'navigation_container';
     Header.innerHTML = `
         ${NavTitle().outerHTML}
         ${NavList().outerHTML}

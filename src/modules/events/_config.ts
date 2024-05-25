@@ -90,8 +90,6 @@ function setClassActiveBtnPagesDefault(container:HTMLDivElement, nav: HTMLUListE
 }
 function setShowApplication(isactive: boolean, itemObj: ItemsModulePages, nav:HTMLUListElement){
     const liAppp = itemObj.app_element(nav) as HTMLLIElement;
-    const elementsLIActive = nav.querySelectorAll(`li.${itemObj.app_class}`)
-    console.log(elementsLIActive);
     isactive
         ? liAppp.dataset.hidden = 'false'
         : liAppp.dataset.hidden = 'true';
