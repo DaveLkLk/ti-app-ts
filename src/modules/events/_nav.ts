@@ -44,13 +44,15 @@ const getLocalStorage = {
 }
 function setShowListApplications(nav:HTMLUListElement, isFirstLoaded: boolean){
   const arrPagesApp = Object.values(CONFIG_PAGES_MODULE)
-  const storeModulesPages = JSON.parse(localStorage.getItem('show-modules-page') || '[]') as string[];
-  arrPagesApp.forEach((module:ItemsModulePages) => {
-      const isShowApp = storeModulesPages.filter((item) => item === module.item);
-      isShowApp[0] === null || isShowApp[0] === undefined 
-          ? (module.app_element(nav) as HTMLLIElement).dataset.hidden = 'true'
-          : (module.app_element(nav) as HTMLLIElement).dataset.hidden = 'false';
-  })
+  if(!isFirstLoaded){
+    const storeModulesPages = JSON.parse(localStorage.getItem('show-modules-page') || '[]') as string[];
+    return arrPagesApp.forEach((module:ItemsModulePages) => {
+        const isShowApp = storeModulesPages.filter((item) => item === module.item);
+        isShowApp[0] === null || isShowApp[0] === undefined 
+            ? (module.app_element(nav) as HTMLLIElement).dataset.hidden = 'true'
+            : (module.app_element(nav) as HTMLLIElement).dataset.hidden = 'false';
+    })
+  }
   if(isFirstLoaded){
     return arrPagesApp.forEach((module:ItemsModulePages) => {
       const datasetActive = module.div_btn_active
@@ -154,7 +156,10 @@ export function getEvents(root: HTMLElement){
     })
   // SE MUESTRAN LAS APLICACIONES POR DEFECTO
   const menuApplications = listMenu.querySelector('.dropdown_ul.dropdown_app') as HTMLUListElement
-  setShowListApplications(menuApplications, true)
+  // --> si existe en localstorage cargamos los valores guardados, sino los que estan por defecto
+  localStorage.getItem('show-modules-page') === null
+    ? setShowListApplications(menuApplications, true)
+    : setShowListApplications(menuApplications, false)
   
   const pageApplication = root.querySelector('.navigation_app') as HTMLUListElement
   setActiveListApp(null,pageApplication,false)
