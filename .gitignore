@@ -25,3 +25,9 @@ dist-ssr
 
 # aun no implementados
 src/data/directivos.js
+
+# ERROR AL ACTUALIZAR LOS CAMBIOS DE REMOTO A LOCAL:
+# ❗❗❗❗❗❗ SOBREESCRIBIR LOS CAMBIOS LOCALES CON LOS CAMBIOS REMOTOS:
+# -> git fetch origin (asegurarse que el origin es GITHUB => /test)
+# -> git checkout test
+# -> git reset --hard origin/test
