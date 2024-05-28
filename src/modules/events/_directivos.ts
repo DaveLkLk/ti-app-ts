@@ -120,6 +120,9 @@ export function getEvents(section: HTMLElement){
             switchDependency ? searchActive(typeRequest.dpd) : searchActive(typeRequest.nm)
         }
     })
+    btnFilterDirectivos.addEventListener('click', ()=>{
+        console.log("Caracteristicas aun no agregadas");
+    })
     // DETECTAR EL CLIC AL EMAIL PARA COPIARLO AL PORTAPAPELES
     async function emailClicked (e:MouseEvent){
         e.preventDefault()
