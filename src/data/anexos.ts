@@ -89,6 +89,7 @@ export const anexosDirectivos = [
   { id: 88, office: "Unidad Ejecutora de Inversiones", anexo: 191},
   { id: 89, office: "RSU - Responsabilidad Social Universitaria", anexo: 153},
   { id: 90, office: "RSU - Responsabilidad Social Universitaria - Secretaria", anexo: 113},
+  { id: 91, office: "Comité Electoral", anexo: 189 }
 ];
 
 function deleteAccentMark(str:string){

@@ -20,6 +20,8 @@ export function getEvents(section: HTMLElement){
     const BtnDpendency = section.querySelector('#search-dependency') as HTMLDivElement;
     const indicatorFound = section.querySelector('#directivo-result-indicator') as HTMLElement;
     const resultSearch = section.querySelector('.directivo_result') as HTMLDivElement;
+    const btnFilterDirectivos = section.querySelector('.btn-view-directivos') as HTMLButtonElement
+
     
     let switchDynamic = false;
     let switchDependency = false;

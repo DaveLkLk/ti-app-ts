@@ -61,12 +61,10 @@
         display: grid;
         gap: .5rem;
       }
-      #office-form-search.form-panel .form_group{
+      #office-form-search.form-panel .form_group,
+      #directivo-form-search.form-panel .form_group{
         grid-template-columns: auto 1fr;
         gap:.7rem;
-      }
-      #directivo-form-search.form-panel .form_group{
-        grid-template-columns: 1fr;
       }
         .form_group .form_input{
           width: 100%;
@@ -86,13 +84,13 @@
         .form_group .form_input::placeholder{
           color: var(--text-tertiary);
         }
-      .btn-view-anexos{
+      .btn-view-data{
         --clr-btn: var(--bg-invert-3);
         padding: .3rem;
         border-radius: 10px;
         box-shadow: var(--shadow-filter);
       }
-      .btn-view-anexos.--active{
+      .btn-view-data.--active{
         --clr-btn: var(--bg-invert-1);
 
         box-shadow: var(--shadow-filter-active);

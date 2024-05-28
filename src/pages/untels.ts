@@ -24,7 +24,7 @@ function pageContentAnexo(){
       </div>
       <form class="form_search form-panel" id="office-form-search" data-class="form_search">
         <div class="form_group">
-          <button type="button" class="btn-view-anexos" title="Mostrar todos los anexos">
+          <button type="button" class="btn-view-data btn-view-anexos" title="Mostrar todos los anexos">
             <icon class="btn_icon">${svgEyes()}</icon>
           </button>
           <div class="form_group-row">
